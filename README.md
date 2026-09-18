@@ -604,6 +604,6 @@ TOUR_API_KEY=
 
 ## 18. 협업 안내
 
-TripPalette는 GitHub Fork와 Pull Request 방식으로 협업합니다.
+TripPalette는 GitHub Fork와 Pull Request 방식으로 협업합니다. 기능 브랜치는 `develop`에 통합하고, 검증이 끝난 `develop`만 `main`에 병합합니다.
 
 작업을 시작하기 전에 [협업 가이드](CONTRIBUTING.md)를 확인해주세요.
