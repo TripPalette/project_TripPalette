@@ -21,3 +21,9 @@ def create_app(config_class=Config):
     app.register_blueprint(main_bp)
 
     return app
+
+@app.route('/hyh')
+def hyh():
+    return render_template(hyh.html)
+
+   return app
