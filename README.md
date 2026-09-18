@@ -599,3 +599,11 @@ TOUR_API_KEY=
 - API 명세서
 
 기능이나 데이터 구조가 변경되면 코드뿐만 아니라 관련 설계 문서도 함께 수정합니다.
+
+---
+
+## 18. 협업 안내
+
+TripPalette는 GitHub Fork와 Pull Request 방식으로 협업합니다.
+
+작업을 시작하기 전에 [협업 가이드](CONTRIBUTING.md)를 확인해주세요.
