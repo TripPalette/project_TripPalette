@@ -40,6 +40,10 @@ TripPalette는 사용자의 여행 조건에 맞는 국내 여행지를 추천�
 
 TripPalette의 추천 대상은 `여행지`이며, 예약과 결제의 대상은 `숙소`입니다.
 
+### User Flow
+
+![TripPalette 사용자 이동 동선](docs/images/user-flow.png)
+
 ---
 
 ## 3. 주요 기능
@@ -106,6 +110,10 @@ TripPalette의 추천 대상은 `여행지`이며, 예약과 결제의 대상은
 비회원이 회원 전용 기능을 선택하면 이메일 로그인 또는 회원가입 페이지로 이동합니다.
 
 로그인 완료 후에는 기존에 이용하려던 페이지로 복귀할 수 있도록 구현합니다.
+
+### Use Case Diagram
+
+![TripPalette Use Case Diagram](docs/images/use-case.png)
 
 ---
 
@@ -350,30 +358,9 @@ templates/components/
 | `RESERVATION` | 숙소 예약정보 |
 | `PAYMENT` | 모의 결제정보 |
 
-### 주요 관계
+### ERD
 
-```text
-USER 1 : 1 USER_PREFERENCE
-USER 1 : N FAVORITE
-DESTINATION 1 : N FAVORITE
-USER 1 : N REVIEW
-DESTINATION 1 : N REVIEW
-DESTINATION 1 : N ACCOMMODATION
-USER 1 : N RESERVATION
-ACCOMMODATION 1 : N RESERVATION
-RESERVATION 1 : 1 PAYMENT
-```
-
-### 데이터 관계 구조
-
-```text
-USER
-├── USER_PREFERENCE
-├── FAVORITE ── DESTINATION
-├── REVIEW ── DESTINATION
-└── RESERVATION ── ACCOMMODATION ── DESTINATION
-        └── PAYMENT
-```
+![TripPalette ERD](docs/images/erd.png)
 
 ---
 
