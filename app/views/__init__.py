@@ -1,0 +1,1 @@
+"""TripPalette view blueprints."""
