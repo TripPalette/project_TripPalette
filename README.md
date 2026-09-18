@@ -429,8 +429,16 @@ templates/components/
 ### 저장소 복제
 
 ```bash
-git clone <repository-url>
-cd trippalette
+git clone https://github.com/TripPalette/project_TripPalette.git
+cd project_TripPalette
+```
+
+팀원은 Organization 저장소를 개인 계정으로 Fork한 뒤 개인 Fork 주소를 Clone합니다. 자세한 절차는 [협업 가이드](CONTRIBUTING.md)를 확인해주세요.
+
+### Python 버전
+
+```text
+Python 3.12.10
 ```
 
 ### 가상환경 생성
@@ -443,8 +451,8 @@ python -m venv venv
 
 Windows:
 
-```bash
-venv\Scripts\activate
+```powershell
+.\venv\Scripts\Activate.ps1
 ```
 
 macOS 또는 Linux:
