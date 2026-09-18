@@ -4,30 +4,31 @@
 
 담당: 개인 작업  
 예정일: 2026-09-18
+완료일: 2026-09-18
 
-- [ ] Git 저장소 초기화 및 GitHub Organization 저장소 생성·연결
-- [ ] `.gitignore` 작성
+- [x] Git 저장소 초기화 및 GitHub Organization 저장소 생성·연결
+- [x] `.gitignore` 작성
   - `.env`, 가상환경, `__pycache__`, 로그, IDE 설정 파일 제외
   - 로컬 DB와 `instance/` 데이터의 추적 여부 결정
-- [ ] 환경변수 구성
+- [x] 환경변수 구성
   - `.env`에 `SECRET_KEY`, `DATABASE_URL` 등 민감정보 저장
   - 실제 값이 없는 `.env.example` 작성
   - 코드에 비밀번호·토큰·DB 접속정보가 남아 있지 않은지 확인
-- [ ] 공동 개발용 데이터베이스 정책 결정
+- [x] 공동 개발용 데이터베이스 정책 결정
   - 개발 DB 종류와 접속 방법 문서화
   - DB 이름, 계정 및 권한 설정
   - 초기 Migration과 Seed Data 적용 방법 정의
-- [ ] Python 버전과 의존성 고정 (`requirements.txt`)
-- [ ] Organization 멤버·팀 초대 및 저장소 권한 설정
-- [ ] 기본 브랜치와 협업 규칙 설정
+- [x] Python 버전과 의존성 고정 (`.python-version`, `requirements.txt`)
+- [x] Organization 멤버 초대 및 Fork 저장소 접근 확인
+- [x] 기본 브랜치와 협업 규칙 설정
   - 브랜치 이름 및 커밋 메시지 규칙
   - PR 기반 병합과 최소 리뷰 인원 결정
   - `main` 브랜치 보호 규칙 설정
-- [ ] 협업 문서 준비
+- [x] 협업 문서 준비
   - 현재 `READEME.md` 파일명을 `README.md`로 수정
   - `README.md`에 설치·실행·DB 설정 방법 작성
   - Issue·Pull Request 템플릿 및 `CONTRIBUTING.md` 준비
-- [ ] 최초 Push 전에 비밀정보와 불필요한 파일이 포함되지 않았는지 점검
+- [x] 최초 Push 전에 비밀정보와 불필요한 파일이 포함되지 않았는지 점검
 
 완료 기준: 팀원이 저장소를 Clone한 뒤 `.env.example`과 문서만 보고 로컬 서버와 DB를 실행하고, PR 방식으로 협업할 수 있음
 
