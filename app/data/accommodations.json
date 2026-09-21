@@ -1,0 +1,78 @@
+
+[
+  {"destination_name":"창원 진해","name":"깨끗한 호텔 외인촌","address":"경상남도 창원시 진해구","description":"진해 여행을 위한 도심형 숙소","price_per_night":32000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"창원 진해","name":"진해 인터시티호텔","address":"경상남도 창원시 진해구","description":"진해 도심과 관광지 이동이 편리한 호텔","price_per_night":120000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"창원 진해","name":"글로리아 글램핑","address":"경상남도 창원시 마산합포구","description":"해안 인근에서 머무는 글램핑 숙소","price_per_night":190000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"삼척","name":"산티아고펜션","address":"강원특별자치도 삼척시 근덕면","description":"삼척 해안 인근의 펜션형 숙소","price_per_night":69000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"삼척","name":"힐스노클비치호텔","address":"강원특별자치도 삼척시","description":"삼척 바다 여행을 위한 해안형 숙소","price_per_night":120000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"삼척","name":"쏠비치 삼척","address":"강원특별자치도 삼척시 수로부인길 453","description":"해안 전망과 부대시설을 갖춘 리조트","price_per_night":153000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"여수","name":"소노캄 여수","address":"전라남도 여수시 오동도로 111","description":"오동도 인근의 해안 전망 호텔","price_per_night":157000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"여수","name":"여수 베네치아 호텔앤리조트","address":"전라남도 여수시 오동도로 61-13","description":"여수 해양공원 인근의 호텔형 리조트","price_per_night":145000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"여수","name":"유탑 마리나 호텔앤리조트","address":"전라남도 여수시 오동도로 61-15","description":"여수 바다와 야경을 즐기기 좋은 호텔","price_per_night":127000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"구례","name":"더케이 지리산가족호텔","address":"전라남도 구례군 산동면","description":"지리산 여행을 위한 가족형 호텔","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"구례","name":"지리산호수리조트","address":"전라남도 구례군 산동면","description":"지리산과 호수 풍경을 즐기는 리조트","price_per_night":100000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"구례","name":"노고단게스트하우스","address":"전라남도 구례군 산동면","description":"지리산 탐방객을 위한 게스트하우스","price_per_night":50000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"속초","name":"HJ하우스펜션","address":"강원특별자치도 속초시","description":"속초해수욕장 인근의 펜션형 숙소","price_per_night":80000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"속초","name":"씨크루즈호텔 속초","address":"강원특별자치도 속초시 청초호반로 273","description":"청초호 인근의 도심형 호텔","price_per_night":73000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"속초","name":"롯데리조트 속초","address":"강원특별자치도 속초시 대포항길 186","description":"동해 전망과 부대시설을 갖춘 리조트","price_per_night":260000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"무주","name":"나오스펜션","address":"전북특별자치도 무주군 설천면","description":"덕유산 인근의 펜션형 숙소","price_per_night":131000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"무주","name":"무주아일랜드","address":"전북특별자치도 무주군","description":"무주 자연 여행을 위한 펜션형 숙소","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"무주","name":"무주 랜드글램핑","address":"전북특별자치도 무주군 설천면 구천동로","description":"계곡과 가까운 글램핑 숙소","price_per_night":150000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"태백","name":"태백산한옥펜션","address":"강원특별자치도 태백시 소롯골길 34","description":"태백산 인근의 한옥형 펜션","price_per_night":100000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"태백","name":"태백호텔","address":"강원특별자치도 태백시 태백산로 4761","description":"태백산 여행에 편리한 호텔","price_per_night":118000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"태백","name":"오투리조트","address":"강원특별자치도 태백시 서학로 861","description":"고원 휴양과 레저를 위한 리조트","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"보령","name":"호텔 쏠레르","address":"충청남도 보령시 해수욕장8길 28","description":"대천해수욕장 인근의 호텔","price_per_night":104000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"보령","name":"대천 우연플로라호텔","address":"충청남도 보령시 신흑동 2273-1","description":"대천해수욕장 인근의 소규모 호텔","price_per_night":83000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"보령","name":"한화리조트 대천 파로스","address":"충청남도 보령시 해수욕장3길 11-10","description":"서해안 가족 여행을 위한 리조트","price_per_night":115000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"정읍","name":"앨리스데이","address":"전북특별자치도 정읍시","description":"정읍과 내장산 여행을 위한 숙소","price_per_night":90000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"정읍","name":"내장산한옥펜션","address":"전북특별자치도 정읍시 내장산로","description":"내장산 인근의 한옥형 펜션","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"정읍","name":"금강두승산글램핑","address":"전북특별자치도 정읍시","description":"정읍 자연 속에서 머무는 글램핑 숙소","price_per_night":150000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"담양","name":"그라스풀빌라리조트","address":"전라남도 담양군","description":"개별 휴식을 위한 풀빌라형 리조트","price_per_night":250000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"담양","name":"담양메타펜션","address":"전라남도 담양군 담양읍 메타프로방스3길 4-6","description":"메타프로방스 인근의 펜션형 숙소","price_per_night":50000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"담양","name":"라온글램핑","address":"전라남도 담양군","description":"담양 자연을 가까이에서 즐기는 글램핑 숙소","price_per_night":150000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"안동","name":"전통리조트 구름에","address":"경상북도 안동시 민속촌길 190","description":"전통 고택을 현대적으로 활용한 한옥 리조트","price_per_night":385000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"안동","name":"안동마애펜션","address":"경상북도 안동시","description":"안동 문화 여행을 위한 펜션형 숙소","price_per_night":100000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"안동","name":"안동 럭셔리 글램핑 라피네","address":"경상북도 안동시","description":"안동 자연 속에서 머무는 글램핑 숙소","price_per_night":150000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"순천","name":"에코그라드호텔","address":"전라남도 순천시 백강로 234","description":"순천 도심과 관광지 이동이 편리한 호텔","price_per_night":75000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"순천","name":"호텔지뜨 순천","address":"전라남도 순천시","description":"순천만국가정원 인근의 호텔","price_per_night":70000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"순천","name":"순천만S호텔","address":"전라남도 순천시","description":"순천만 여행을 위한 실속형 호텔","price_per_night":60000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"평창","name":"휘닉스파크 평창","address":"강원특별자치도 평창군 봉평면 태기로 174","description":"겨울 스포츠와 휴양을 위한 복합 리조트","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"평창","name":"숲앤숲펜션","address":"강원특별자치도 평창군","description":"평창 숲속에서 머무는 펜션형 숙소","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"평창","name":"AM호텔","address":"강원특별자치도 평창군 대관령면","description":"대관령과 겨울 관광지 이동이 편리한 호텔","price_per_night":80000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"인제","name":"인제 스피디움 호텔앤리조트","address":"강원특별자치도 인제군 기린면 상하답로 130","description":"레저 시설을 갖춘 호텔형 리조트","price_per_night":110000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"인제","name":"자작나무숲 자작향기펜션","address":"강원특별자치도 인제군","description":"자작나무숲 여행을 위한 펜션형 숙소","price_per_night":100000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"인제","name":"인제호텔","address":"강원특별자치도 인제군","description":"인제 도심에 위치한 실속형 호텔","price_per_night":70000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"강릉","name":"라카이 샌드파인","address":"강원특별자치도 강릉시 해안로 536","description":"경포해변 인근의 오션 리조트","price_per_night":100000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"강릉","name":"오션힐펜션","address":"강원특별자치도 강릉시","description":"강릉 바다 여행을 위한 펜션형 숙소","price_per_night":90000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"강릉","name":"스카이베이호텔 경포","address":"강원특별자치도 강릉시 해안로 476","description":"경포호와 해변 인근의 호텔","price_per_night":100000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"정선","name":"하이원 그랜드호텔","address":"강원특별자치도 정선군 사북읍 하이원길 265","description":"겨울 스포츠와 휴양을 위한 대형 호텔","price_per_night":120000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"정선","name":"파크로쉬 리조트앤웰니스","address":"강원특별자치도 정선군 북평면 중봉길 9-12","description":"산악 풍경 속 웰니스 휴양 리조트","price_per_night":250000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"정선","name":"메이힐스리조트","address":"강원특별자치도 정선군 고한읍 물한리길 8","description":"하이원 관광지 인근의 가족형 리조트","price_per_night":90000,"capacity":4,"rating":null,"image_url":null},
+
+  {"destination_name":"제주","name":"제주 스타라이트 글램핑","address":"제주특별자치도 제주시","description":"제주의 자연을 가까이에서 즐기는 글램핑 숙소","price_per_night":100000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"제주","name":"휘닉스 아일랜드 제주","address":"제주특별자치도 서귀포시 성산읍 섭지코지로 107","description":"섭지코지 인근의 가족형 리조트","price_per_night":185000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"제주","name":"호텔 리젠트마린 제주","address":"제주특별자치도 제주시 서부두2길 20","description":"제주시 해안과 도심 이동이 편리한 호텔","price_per_night":85000,"capacity":2,"rating":null,"image_url":null},
+
+  {"destination_name":"경주","name":"경주엔한옥펜션","address":"경상북도 경주시","description":"경주의 전통 분위기를 느낄 수 있는 한옥형 펜션","price_per_night":120000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"경주","name":"경주 파도소리 스파글램핑 펜션","address":"경상북도 경주시","description":"해안 여행과 스파를 함께 즐기는 펜션형 숙소","price_per_night":150000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"경주","name":"라한셀렉트 경주","address":"경상북도 경주시 보문로 338","description":"보문관광단지에 위치한 가족형 호텔","price_per_night":150000,"capacity":3,"rating":null,"image_url":null},
+
+  {"destination_name":"부산","name":"제이스 스파 글램핑","address":"부산광역시","description":"부산 여행을 위한 글램핑형 숙소","price_per_night":180000,"capacity":4,"rating":null,"image_url":null},
+  {"destination_name":"부산","name":"신라스테이 해운대","address":"부산광역시 해운대구 해운대로570번길 46","description":"해운대 해변과 도심 이동이 편리한 호텔","price_per_night":135000,"capacity":2,"rating":null,"image_url":null},
+  {"destination_name":"부산","name":"아난티 앳 부산 코브","address":"부산광역시 기장군 기장읍 기장해안로 268-32","description":"기장 해안에 위치한 고급 휴양 호텔","price_per_night":317000,"capacity":2,"rating":null,"image_url":null}
+]
