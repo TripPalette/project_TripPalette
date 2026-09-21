@@ -4,7 +4,7 @@ mypage_bp = Blueprint("mypage", __name__)
 
 
 @mypage_bp.get("")
-def mypage():
+def index():
     return render_template("mypage/index.html")
 
 

@@ -1,0 +1,211 @@
+[
+  {
+    "name": "창원 진해",
+    "region": "경상남도",
+    "description": "벚꽃 명소와 해안 풍경을 함께 즐길 수 있는 봄 여행지",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "삼척",
+    "region": "강원특별자치도",
+    "description": "해안 절경과 동굴, 산책로를 여유롭게 둘러볼 수 있는 여행지",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "여수",
+    "region": "전라남도",
+    "description": "다도해의 풍경과 해양 관광, 야경을 함께 즐길 수 있는 여행지",
+    "season": "봄",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "높음",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "구례",
+    "region": "전라남도",
+    "description": "지리산과 섬진강 주변의 봄꽃과 자연을 즐기기 좋은 여행지",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "속초",
+    "region": "강원특별자치도",
+    "description": "해수욕장과 설악산, 먹거리를 함께 즐길 수 있는 동해안 여행지",
+    "season": "여름",
+    "purpose": "휴양",
+    "atmosphere": "활기찬",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "무주",
+    "region": "전북특별자치도",
+    "description": "덕유산과 계곡에서 시원한 자연 활동을 즐길 수 있는 여행지",
+    "season": "여름",
+    "purpose": "액티비티",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "태백",
+    "region": "강원특별자치도",
+    "description": "고원 지대의 선선한 날씨와 산악 경관을 즐길 수 있는 여행지",
+    "season": "여름",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "저렴",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "보령",
+    "region": "충청남도",
+    "description": "대천해수욕장과 서해안의 여름 휴양을 즐길 수 있는 여행지",
+    "season": "여름",
+    "purpose": "휴양",
+    "atmosphere": "활기찬",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "정읍",
+    "region": "전북특별자치도",
+    "description": "내장산의 단풍과 고즈넉한 자연 풍경으로 알려진 여행지",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "담양",
+    "region": "전라남도",
+    "description": "대나무 숲과 메타세쿼이아길을 천천히 걷기 좋은 여행지",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "안동",
+    "region": "경상북도",
+    "description": "전통문화와 고택, 지역 음식을 함께 경험할 수 있는 여행지",
+    "season": "가을",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "순천",
+    "region": "전라남도",
+    "description": "순천만 습지와 국가정원의 가을 풍경을 즐길 수 있는 여행지",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "평창",
+    "region": "강원특별자치도",
+    "description": "설원과 겨울 스포츠, 고원 휴양을 함께 즐길 수 있는 여행지",
+    "season": "겨울",
+    "purpose": "액티비티",
+    "atmosphere": "활기찬",
+    "budget_level": "높음",
+    "recommended_days": 3,
+    "image_url": null
+  },
+  {
+    "name": "인제",
+    "region": "강원특별자치도",
+    "description": "자작나무숲과 산악 경관 속에서 겨울 자연을 체험할 수 있는 여행지",
+    "season": "겨울",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "강릉",
+    "region": "강원특별자치도",
+    "description": "겨울 바다와 카페 거리, 동해안 먹거리를 즐길 수 있는 여행지",
+    "season": "겨울",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "정선",
+    "region": "강원특별자치도",
+    "description": "스키와 리조트, 산악 지형의 겨울 풍경을 즐길 수 있는 여행지",
+    "season": "겨울",
+    "purpose": "액티비티",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 3,
+    "image_url": null
+  },
+  {
+    "name": "제주",
+    "region": "제주특별자치도",
+    "description": "해안과 오름, 지역 문화를 계절에 관계없이 즐길 수 있는 여행지",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 3,
+    "image_url": null
+  },
+  {
+    "name": "경주",
+    "region": "경상북도",
+    "description": "신라 문화유산과 전통적인 도시 풍경을 사계절 즐길 수 있는 여행지",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2,
+    "image_url": null
+  },
+  {
+    "name": "부산",
+    "region": "부산광역시",
+    "description": "해변과 도심, 시장과 먹거리를 함께 즐길 수 있는 사계절 여행지",
+    "season": "사계절",
+    "purpose": "미식",
+    "atmosphere": "활기찬",
+    "budget_level": "높음",
+    "recommended_days": 3,
+    "image_url": null
+  }
+]
