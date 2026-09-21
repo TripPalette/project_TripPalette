@@ -1,6 +1,6 @@
 # TripPalette 협업 가이드
 
-TripPalette는 GitHub Fork와 Pull Request 방식으로 협업합니다. 모든 참여자는 작업을 시작하기 전에 이 문서를 확인합니다.
+TripPalette는 GitHub Fork, Feature Branch, Pull Request 방식으로 협업합니다. 기능 브랜치는 `develop`에 통합하고, 검증이 끝난 `develop`만 `main`에 병합합니다. 모든 참여자는 작업을 시작하기 전에 이 문서를 확인합니다.
 
 ## 1. 저장소 구조
 
@@ -28,32 +28,33 @@ git remote add upstream https://github.com/TripPalette/project_TripPalette.git
 
 ### 팀장
 
-팀장은 Organization 원본 저장소를 관리하므로 `origin`이 `TripPalette/project_TripPalette`를 가리킵니다. 별도의 `upstream`은 필요하지 않습니다.
+팀장은 Organization 원본 저장소를 관리하므로 `origin`이 `TripPalette/project_TripPalette`를 가리킵니다. 별도의 `upstream`은 필요하지 않습니다. 팀장의 개인 작업 브랜치는 `kdk`를 사용하고 `develop`으로 PR을 생성합니다.
 
 ## 2. 작업 시작 전 동기화
 
-팀원은 새 작업을 시작하기 전에 개인 Fork의 `main`을 Organization의 최신 `main`과 동기화합니다.
+팀원은 처음 한 번 Organization의 `develop`을 개인 Fork와 로컬에 연결합니다.
 
 ```bash
-git switch main
 git fetch upstream
-git merge upstream/main
-git push origin main
+git switch -c develop --track upstream/develop
+git push -u origin develop
 ```
 
-GitHub의 개인 Fork 페이지에서 `Sync fork`와 `Update branch`를 사용한 경우에는 다음 명령으로 로컬에 반영합니다.
+이후 새 작업을 시작하기 전에 개인 Fork의 `develop`을 Organization의 최신 `develop`과 동기화합니다.
 
 ```bash
-git switch main
-git pull origin main
+git switch develop
+git fetch upstream
+git merge upstream/develop
+git push origin develop
 ```
 
 ## 3. 브랜치 규칙
 
-`main` 브랜치에서 직접 개발하지 않습니다. 기능이나 작업 단위로 브랜치를 생성합니다.
+`main`과 `develop` 브랜치에서 직접 개발하지 않습니다. 최신 `develop`에서 기능이나 작업 단위의 브랜치를 생성합니다.
 
 ```bash
-git switch main
+git switch develop
 git switch -c feature/기능이름
 ```
 
@@ -95,11 +96,11 @@ git push -u origin feature/기능이름
 
 ## 6. Pull Request
 
-팀원은 개인 Fork의 작업 브랜치에서 Organization 원본의 `main`으로 Pull Request를 생성합니다.
+팀원은 개인 Fork의 작업 브랜치에서 Organization 원본의 `develop`으로 Pull Request를 생성합니다.
 
 ```text
 base repository: TripPalette/project_TripPalette
-base branch: main
+base branch: develop
 
 head repository: <본인계정>/project_TripPalette
 compare branch: feature/기능이름
@@ -114,7 +115,7 @@ PR에는 다음 내용을 작성합니다.
 - 화면 변경이 있다면 스크린샷
 - 팀원이 알아야 할 참고사항
 
-PR 생성 후에는 팀장 또는 리뷰어의 검토를 기다립니다. 임의로 `main`에 병합하지 않습니다.
+PR 생성 후에는 팀장 또는 리뷰어의 검토를 기다립니다. 임의로 `develop`이나 `main`에 병합하지 않습니다.
 
 ## 7. 리뷰와 수정
 
@@ -134,31 +135,52 @@ git push
 
 ## 8. Merge 후 동기화
 
-PR이 Organization의 `main`에 병합되면 개인 Fork와 로컬 저장소를 다시 동기화합니다.
+PR이 Organization의 `develop`에 병합되면 개인 Fork와 로컬 저장소를 다시 동기화합니다.
 
 ```bash
-git switch main
+git switch develop
 git fetch upstream
-git merge upstream/main
-git push origin main
+git merge upstream/develop
+git push origin develop
 ```
 
-기존 작업 브랜치를 계속 사용해야 한다면 최신 `main`을 반영합니다.
+기존 작업 브랜치를 계속 사용해야 한다면 최신 `develop`을 반영합니다.
 
 ```bash
 git switch feature/기능이름
-git merge main
+git merge develop
 ```
 
 작업이 끝난 브랜치는 삭제합니다.
 
 ```bash
-git switch main
+git switch develop
 git branch -d feature/기능이름
 git push origin --delete feature/기능이름
 ```
 
-## 9. 공유 파일 담당 원칙
+## 9. develop에서 main으로 배포
+
+팀장은 여러 기능이 통합된 `develop`을 실행하고 테스트합니다. 배포 가능한 상태가 되면 다음 방향으로 Pull Request를 생성합니다.
+
+```text
+base branch: main
+compare branch: develop
+```
+
+`main`에는 기능 브랜치를 직접 병합하지 않습니다. 팀장이 `develop → main` PR을 최종 검토하고 병합합니다.
+
+## 10. 데이터베이스 협업 정책
+
+- 각 팀원은 자신의 로컬 MySQL에 `trippalette` 데이터베이스를 생성합니다.
+- DB 계정과 비밀번호는 개인 `.env`에서 관리하며 공유하거나 커밋하지 않습니다.
+- 데이터베이스 덤프 파일을 주고받지 않고 `migrations/`로 스키마 변경을 공유합니다.
+- `app/models.py`와 Migration 생성은 지정된 담당자가 관리합니다.
+- 담당자가 생성한 Migration을 받은 팀원은 `flask db upgrade`를 실행합니다.
+- 개발용 데이터는 추후 `seed.py`로 생성하고 실제 개인정보나 비밀정보를 포함하지 않습니다.
+- 모델 변경이 필요하면 먼저 Issue 또는 팀 대화에서 합의한 뒤 Migration을 생성합니다.
+
+## 11. 공유 파일 담당 원칙
 
 다음 파일은 여러 기능에서 함께 사용하므로 수정하기 전에 팀에 알립니다.
 
@@ -171,7 +193,7 @@ git push origin --delete feature/기능이름
 
 `models.py`와 Migration은 지정된 담당자가 관리합니다. 새 패키지를 설치했다면 `requirements.txt`도 함께 수정합니다.
 
-## 10. 커밋 금지 파일
+## 12. 커밋 금지 파일
 
 다음 파일과 폴더는 Git에 올리지 않습니다.
 
@@ -184,7 +206,7 @@ git push origin --delete feature/기능이름
 
 환경변수 항목을 추가해야 할 때는 실제 값을 제외하고 `.env.example`만 수정합니다.
 
-## 11. 작업 완료 기준
+## 13. 작업 완료 기준
 
 PR을 만들기 전에 다음 사항을 확인합니다.
 

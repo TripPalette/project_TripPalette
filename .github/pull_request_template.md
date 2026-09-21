@@ -21,7 +21,8 @@
 
 ## 체크리스트
 
-- [ ] Organization의 `main`을 대상으로 PR을 만들었습니다.
+- [ ] 일반 작업 PR은 Organization의 `develop`을 대상으로 만들었습니다.
+- [ ] `main` 대상 PR은 팀장의 `develop → main` 통합 PR입니다.
 - [ ] 작업 브랜치를 개인 Fork의 `origin`에 Push했습니다.
 - [ ] 로컬에서 애플리케이션 실행과 기능을 확인했습니다.
 - [ ] 기존 기능이 정상적으로 동작하는지 확인했습니다.
