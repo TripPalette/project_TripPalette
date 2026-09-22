@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>{% block title %}TripPalette{% endblock %}</title>
+
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="{{ url_for('main.index') }}">TripPalette</a>
+
+        <ul>
+            <li>
+                <a href="{{ url_for('main.index') }}">홈</a>
+            </li>
+            <li>
+                <a href="{{ url_for('destination.list') }}">여행지</a>
+            </li>
+            <li>
+                <a href="{{ url_for('accommodation.list') }}">숙소</a>
+            </li>
+            <li>
+                <a href="{{ url_for('recommendation.survey') }}">추천</a>
+            </li>
+            <li>
+                <a href="{{ url_for('mypage.index') }}">마이페이지</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+<footer>
+    <p>© 2026 TripPalette</p>
+</footer>
+
+
+{% block js %}
+{% endblock %}
+
+</body>
+</html>

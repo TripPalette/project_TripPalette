@@ -1,1 +1,43 @@
+{% extends "base.html" %}
 
+{% block title %}
+여행 추천 | TripPalette
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <h1>나에게 맞는 여행 찾기</h1>
+
+    <p>간단한 설문을 통해 여행지를 추천받아보세요.</p>
+
+    <form>
+
+        <fieldset>
+            <legend>선호하는 여행 스타일</legend>
+
+            <label>
+                <input type="radio" name="style" value="nature">
+                자연
+            </label>
+
+            <label>
+                <input type="radio" name="style" value="city">
+                도시
+            </label>
+
+            <label>
+                <input type="radio" name="style" value="activity">
+                액티비티
+            </label>
+
+        </fieldset>
+
+        <button type="submit">
+            추천 결과 보기
+        </button>
+
+    </form>
+</section>
+
+{% endblock %}
