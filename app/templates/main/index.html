@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>base</title>
+{% block title %}TripPalette{% endblock %}
 
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
-    
-    <link rel="stylesheet" href="./static/css/style.css">
-</head>
+{% block content %}
+<div class="header">
+    <div class="inner">
+        <img
+            src="{{ url_for('static', filename='img/base/logo.png') }}"
+            alt="logo"
+        >
 
-<body>
+        <div class="nav">
+            <a href="#">여행지</a>
+            <a href="#">맞춤추천</a>
+            <a href="#">찜</a>
+            <a href="#">마이페이지</a>
+        </div>
 
-    <!-- header -->
-    <div class="header">
-        <div class="inner">
-            <img src="./static/img/base/logo.png" alt="logo">
-
-            <div class="nav">
-                <a href="#">여행지</a>
-                <a href="#">맞춤추천</a>
-                <a href="#">찜</a>
-                <a href="#">마이페이지</a>
-            </div>
-
-
-            <div class="search">
-                <input type="text" placeholder="검색어를 입력하세요.">
-                <img src="./static/img/base/search.svg" alt="search">
-            </div>
-            <div class="user-menu">
-                <a href="#">로그인</a>
-                <a href="#">회원가입</a>
-            </div>
-
-
+        <div class="search">
+            <input type="text" placeholder="검색어를 입력하세요.">
+            <img
+                src="{{ url_for('static', filename='img/base/search.svg') }}"
+                alt="search"
+            >
         </div>
     </div>
+</div>
 
     <div id="slider">
             <!-- Swiper -->
@@ -70,8 +57,4 @@
     <div class="footer">
 
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-</body>
-
-</html>
+{% endblock %}
