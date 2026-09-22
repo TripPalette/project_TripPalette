@@ -6,34 +6,94 @@
 
     <title>{% block title %}TripPalette{% endblock %}</title>
 
-    {% block css %}
-    {% endblock %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    {% block head %}{% endblock %}
+    {% block css %}{% endblock %}
 </head>
-
 <body>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-logo" href="{{ url_for('main.index') }}">
+                <img
+                    src="{{ url_for('static', filename='img/base/logo.png') }}"
+                    alt="TripPalette 홈"
+                >
+            </a>
 
-<header>
-    <nav>
-        <a href="{{ url_for('main.index') }}">TripPalette</a>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+            >
+                <span class="sr-only">메뉴 열기</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
 
-        <ul>
-            <li>
-                <a href="{{ url_for('main.index') }}">홈</a>
-            </li>
-            <li>
+            <nav
+                id="primary-navigation"
+                class="primary-navigation"
+                aria-label="주요 메뉴"
+            >
                 <a href="{{ url_for('destination.list') }}">여행지</a>
-            </li>
-            <li>
-                <a href="{{ url_for('accommodation.list') }}">숙소</a>
-            </li>
-            <li>
-                <a href="{{ url_for('recommendation.survey') }}">추천</a>
-            </li>
-            <li>
-                <a href="{{ url_for('mypage.index') }}">마이페이지</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+                <a href="{{ url_for('recommendation.survey') }}">맞춤추천</a>
+            </nav>
 
+            <div class="auth-navigation">
+                <a class="button button--outline" href="{{ url_for('auth.login') }}">
+                    로그인
+                </a>
+                <a class="button button--primary" href="{{ url_for('auth.signup') }}">
+                    회원가입
+                </a>
+            </div>
+        </div>
+    </header>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container flash-list" role="status" aria-live="polite">
+                {% for category, message in messages %}
+                    <p class="flash flash--{{ category }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div>
+                <a class="site-footer__brand" href="{{ url_for('main.index') }}">
+                    TripPalette
+                </a>
+                <p>나만의 여행을 발견하는 가장 쉬운 방법</p>
+            </div>
+
+            <nav class="site-footer__links" aria-label="하단 메뉴">
+                <a href="{{ url_for('destination.list') }}">여행지</a>
+                <a href="{{ url_for('recommendation.survey') }}">맞춤추천</a>
+                <a href="{{ url_for('auth.login') }}">로그인</a>
+            </nav>
+
+            <small>© 2026 TripPalette. Development project.</small>
+        </div>
+    </footer>
+
+    <script
+        src="{{ url_for('static', filename='js/common.js') }}"
+        defer
+    ></script>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
