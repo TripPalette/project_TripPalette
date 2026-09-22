@@ -1,35 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}TripPalette{% endblock %}
+{% block title %}마이페이지 | TripPalette{% endblock %}
 
 {% block content %}
-<div class="header">
-    <div class="inner">
-        <img
-            src="{{ url_for('static', filename='img/base/logo.png') }}"
-            alt="logo"
-        >
+<div class="page-section">
+    <div class="container">
+        <h1 class="page-title">마이페이지</h1>
 
-        <div class="nav">
-            <a href="#">여행지</a>
-            <a href="#">맞춤추천</a>
-            <a href="#">찜</a>
-            <a href="#">마이페이지</a>
-        </div>
-
-        <div class="search">
-            <input type="text" placeholder="검색어를 입력하세요.">
-            <img
-                src="{{ url_for('static', filename='img/base/search.svg') }}"
-                alt="search"
-            >
+        <div class="content">
+            <nav class="mypage-menu">
+                <a href="{{ url_for('mypage.favorites') }}">찜 목록</a>
+                <a href="{{ url_for('mypage.reservations') }}">예약 내역</a>
+                <a href="{{ url_for('mypage.reviews') }}">리뷰</a>
+                <a href="{{ url_for('mypage.profile') }}">프로필</a>
+            </nav>
         </div>
     </div>
-</div>
-
-<div class="content">
-</div>
-
-<div class="footer">
 </div>
 {% endblock %}

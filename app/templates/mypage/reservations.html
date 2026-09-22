@@ -1,1 +1,20 @@
+{% extends "base.html" %}
 
+{% block title %}예약 내역 | TripPalette{% endblock %}
+
+{% block content %}
+<div class="page-section">
+    <div class="container">
+        <h1 class="page-title">예약 내역</h1>
+
+        <div class="content">
+            <div class="empty-state">
+                <p>예약 내역이 없습니다.</p>
+                <a href="{{ url_for('accommodation.list') }}">
+                    숙소 둘러보기
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
