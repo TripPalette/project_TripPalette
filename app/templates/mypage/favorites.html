@@ -1,1 +1,20 @@
+{% extends "base.html" %}
 
+{% block title %}찜 목록 | TripPalette{% endblock %}
+
+{% block content %}
+<div class="page-section">
+    <div class="container">
+        <h1 class="page-title">찜 목록</h1>
+
+        <div class="content">
+            <div class="empty-state">
+                <p>찜한 여행지가 없습니다.</p>
+                <a href="{{ url_for('destination.list') }}">
+                    여행지 둘러보기
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
