@@ -1,43 +1,34 @@
 @charset "utf-8";
 
-body {
+#slider {
+    width: 960px;
+    height: 460px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
 
-    html,
-    body {
-        position: relative;
-        height: 100%;
-    }
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    body {
-        background: #000;
-        font-family:
-            Helvetica Neue,
-            Helvetica,
-            Arial,
-            sans-serif;
-        font-size: 14px;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-    }
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .swiper {
-        width: 100%;
-        height: 100%;
-    }
+#slider {
+    width: 960px;
+    height: 460px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
 
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+#slider .main-slide {
+    border-radius: 10px;
 }

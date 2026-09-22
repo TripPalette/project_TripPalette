@@ -5,10 +5,7 @@
 {% block content %}
 <div class="header">
     <div class="inner">
-        <img
-            src="{{ url_for('static', filename='img/base/logo.png') }}"
-            alt="logo"
-        >
+        <img src="{{ url_for('static', filename='img/base/logo.png') }}" alt="logo">
 
         <div class="nav">
             <a href="#">여행지</a>
@@ -19,42 +16,29 @@
 
         <div class="search">
             <input type="text" placeholder="검색어를 입력하세요.">
-            <img
-                src="{{ url_for('static', filename='img/base/search.svg') }}"
-                alt="search"
-            >
+            <img src="{{ url_for('static', filename='img/base/search.svg') }}" alt="search">
         </div>
     </div>
 </div>
 
-    <div id="slider">
-            <!-- Swiper -->
-            <div class="main slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-color: #333;">
-                        <img src=""alt="1">
-                    </div>
-                    <div class="swiper-slide" style="background-color: #333;">
-                        <img src="" alt="1">
-                    </div>
-                    <div class="swiper-slide" style="background-color: #333;">
-                        <img src=""alt="1">
-                    </div>
-                    <div class="swiper-slide" style="background-color: #333;">
-                        <img src="" alt="1">
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-
-        </div>
-
-    <div class="content">
+<!-- Swiper -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<div class="content">
+</div>
 
 
-    <div class="footer">
+<div class="footer">
 
-    </div>
+</div>
 {% endblock %}
