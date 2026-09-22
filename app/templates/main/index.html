@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>base</title>
 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
@@ -28,11 +31,37 @@
                 <input type="text" placeholder="검색어를 입력하세요.">
                 <img src="./static/img/base/search.svg" alt="search">
             </div>
-
+            <div class="user-menu">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
 
 
         </div>
     </div>
+
+    <div id="slider">
+            <!-- Swiper -->
+            <div class="main slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-color: #333;">
+                        <img src=""alt="1">
+                    </div>
+                    <div class="swiper-slide" style="background-color: #333;">
+                        <img src="" alt="1">
+                    </div>
+                    <div class="swiper-slide" style="background-color: #333;">
+                        <img src=""alt="1">
+                    </div>
+                    <div class="swiper-slide" style="background-color: #333;">
+                        <img src="" alt="1">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        </div>
 
     <div class="content">
     </div>
@@ -41,6 +70,8 @@
     <div class="footer">
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 </body>
 
 </html>

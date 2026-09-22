@@ -18,14 +18,12 @@
     position: relative;
 }
 
-
-.header img{
+.header img {
     width: 150px;
     height: 70px;
 }
 
 .nav {
-    width: 580px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,6 +62,18 @@
     height: 18px;
 }
 
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.user-menu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
 
 
 
