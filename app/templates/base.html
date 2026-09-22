@@ -6,8 +6,13 @@
 
     <title>{% block title %}TripPalette{% endblock %}</title>
 
-    {% block css %}
-    {% endblock %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    {% block head %}{% endblock %}
+    {% block css %}{% endblock %}
 </head>
 
 <body>
@@ -36,4 +41,15 @@
     </nav>
 </header>
 
+<main>
+    {% block content %}{% endblock %}
+</main>
 
+<script
+    src="{{ url_for('static', filename='js/common.js') }}"
+    defer
+></script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>
