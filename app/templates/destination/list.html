@@ -1,1 +1,35 @@
+{% extends "base.html" %}
 
+{% block title %}
+여행지 | TripPalette
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <h1>여행지</h1>
+
+    <div class="destination-list">
+
+        <article class="destination-card">
+            <h2>서울</h2>
+            <p>서울의 다양한 여행지를 만나보세요.</p>
+
+            <a href="{{ url_for('destination.detail', id=1) }}">
+                자세히 보기
+            </a>
+        </article>
+
+        <article class="destination-card">
+            <h2>부산</h2>
+            <p>바다와 함께하는 부산 여행</p>
+
+            <a href="{{ url_for('destination.detail', id=2) }}">
+                자세히 보기
+            </a>
+        </article>
+
+    </div>
+</section>
+
+{% endblock %}
