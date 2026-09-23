@@ -78,7 +78,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .primary-navigation {
->>>>>>> main
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,7 +198,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
     border: 1px solid #cfd5df;
     border-radius: 8px;
     background: #fff;
->>>>>>> main
 }
 
 .site-footer { color: #d8dde5; background: #30343b; }

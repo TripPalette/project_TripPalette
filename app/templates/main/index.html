@@ -8,7 +8,6 @@
     href="{{ url_for('static', filename='css/main.css') }}"
 >
 {% endblock %}
->>>>>>> main
 
 {% block content %}
 <section class="hero" aria-labelledby="hero-title">
@@ -18,12 +17,22 @@
             src="{{ hero_destination.image_url }}"
             alt="{{ hero_destination.name }} 여행 풍경"
         >
+    {% else %}
+        <div class="hero__placeholder" aria-hidden="true"></div>
     {% endif %}
+
     <div class="hero__overlay"></div>
 
     <div class="container hero__content">
         <p class="eyebrow">YOUR TRAVEL, YOUR PALETTE</p>
         <h1 id="hero-title">나만의 여행을<br>발견하는 가장 쉬운 방법</h1>
+
+        {% if hero_destination %}
+            <p class="hero__destination-name">
+                {{ hero_destination.name }}
+            </p>
+        {% endif %}
+
         <p class="hero__description">
             TripPalette와 함께<br>특별한 여행을 시작하세요.
         </p>
@@ -60,13 +69,14 @@
                 <h2 id="popular-title">인기 여행지</h2>
                 <p>지금 사람들이 많이 찾는 여행지예요.</p>
             </div>
+
             <a class="text-link" href="{{ url_for('destination.list') }}">
                 전체보기 →
             </a>
         </div>
 
         <div class="destination-grid">
-            {% for destination in popular_destinations %}
+            {% for destination in popular_destinations[:4] %}
                 <article class="destination-card">
                     <a
                         class="destination-card__link"
@@ -80,14 +90,27 @@
                                     alt="{{ destination.name }} 여행 풍경"
                                     loading="lazy"
                                 >
+                            {% else %}
+                                <div
+                                    class="destination-card__placeholder"
+                                    aria-hidden="true"
+                                >
+                                    이미지 없음
+                                </div>
                             {% endif %}
+
                             <span class="destination-card__badge">
                                 {{ destination.name }}
                             </span>
                         </div>
+
                         <div class="destination-card__body">
                             <h3>{{ destination.name }}</h3>
-                            <p>{{ destination.description }}</p>
+
+                            {% if destination.description %}
+                                <p>{{ destination.description }}</p>
+                            {% endif %}
+
                             <div class="destination-card__meta">
                                 <span>📍 {{ destination.region }}</span>
                                 <span>{{ destination.season }}</span>
@@ -98,7 +121,6 @@
             {% else %}
                 <p class="empty-state">표시할 여행지 데이터가 없습니다.</p>
             {% endfor %}
->>>>>>> main
         </div>
     </div>
 </section>
@@ -113,10 +135,13 @@
                 나에게 딱 맞는 여행지를 찾아보세요.
             </p>
         </div>
-        <a class="button button--light" href="{{ url_for('recommendation.survey') }}">
+
+        <a
+            class="button button--light"
+            href="{{ url_for('recommendation.survey') }}"
+        >
             맞춤 여행지 찾기 →
         </a>
     </div>
 </section>
 {% endblock %}
-
