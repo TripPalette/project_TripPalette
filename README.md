@@ -22,6 +22,10 @@ TripPalette는 사용자의 여행 조건에 맞는 국내 여행지를 추천�
 | 데이터 제공 | 국내 여행지 및 숙소 관련 Open API |
 | 협업 도구 | GitHub, Figma 또는 FigJam |
 
+공통 UI를 수정하거나 새 페이지를 구현할 때는 [TripPalette CSS 디자인 가이드](docs/TripPalette-CSS-가이드.md)를 기준으로 작업합니다.
+
+현재 단계별 담당 파일과 병합 순서는 [Phase 3 작업 배정](docs/phase3/README.md)에서 확인합니다.
+
 ---
 
 ## 2. 핵심 서비스 흐름
