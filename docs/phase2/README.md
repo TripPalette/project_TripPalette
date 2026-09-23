@@ -9,6 +9,7 @@ Phase 2의 목표는 비회원이 메인 페이지에서 여행지를 검색하�
 - 기준 브랜치: `develop`
 - PR 대상: `TripPalette/project_TripPalette`의 `develop`
 - 설계 기준: `docs/TripPalette-개발-사양서.md` 6.1~6.5
+- CSS 기준: [`docs/TripPalette-CSS-가이드.md`](../TripPalette-CSS-가이드.md)
 - 협업 기준: `CONTRIBUTING.md`
 - 담당 파일 밖의 변경이 필요하면 먼저 팀장에게 알립니다.
 - 페이지에 여행지나 숙소 데이터를 하드코딩하지 않고 View가 전달한 값을 사용합니다.
@@ -49,7 +50,7 @@ git merge origin/develop
 
 | 화면 | URL | Template | 핵심 변수 |
 |---|---|---|---|
-| 메인 | `GET /` | `main/index.html` | `hero_destination`, `popular_destinations` |
+| 메인 | `GET /` | `main/index.html` | `hero_slides`, `popular_destinations` |
 | 여행지 목록 | `GET /destinations` | `destination/list.html` | `destinations`, `filters`, `selected_filters`, `keyword` |
 | 여행지 상세 | `GET /destinations/<id>` | `destination/detail.html` | `destination`, `reviews`, `accommodations` |
 | 주변 숙소 | `GET /destinations/<id>/accommodations` | `accommodation/list.html` | `destination`, `accommodations` |
@@ -85,6 +86,8 @@ atmosphere
 4. 마지막으로 카드, 글꼴, 색상, 여백과 반응형을 통일합니다.
 
 최종 공통 레이아웃 기준은 다음과 같습니다.
+
+색상과 컴포넌트의 세부 기준은 [`TripPalette-CSS-가이드.md`](../TripPalette-CSS-가이드.md)를 따릅니다.
 
 - 데스크톱 콘텐츠 최대 폭: `1200px`
 - 데스크톱 기본 좌우 여백: `32px` 이상
