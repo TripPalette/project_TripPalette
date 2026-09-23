@@ -116,13 +116,13 @@ accommodation
 사용 변수:
 
 ```text
-hero_destination
+hero_slides
 popular_destinations
 ```
 
 현재 메인 페이지 구조를 유지하면서 다음만 확인합니다.
 
-- 히어로 대표 이미지와 여행지명이 View 데이터로 출력되는지 확인
+- 히어로 정적 이미지 목록이 View의 `hero_slides`로 출력되는지 확인
 - 검색 Form이 `/destinations?keyword=...`를 생성하는지 확인
 - 인기 여행지 카드가 최대 4개 출력되는지 확인
 - 카드가 각 여행지 상세 페이지로 이동하는지 확인
@@ -212,7 +212,7 @@ docs/phase2/03-frontend-accommodation.md와 현재 base.html을 읽어줘.
 
 내 담당은 Phase 2 주변 숙소 목록, 숙소 상세와 메인 화면 점검이다.
 View에서 전달하는 destination, accommodations, accommodation,
-hero_destination, popular_destinations 변수만 사용해 Jinja 화면을 구현해줘.
+hero_slides, popular_destinations 변수만 사용해 Jinja 화면을 구현해줘.
 
 Python, 모델, Migration, base.html, 공통 style.css와 여행지 담당 파일은 수정하지 마.
 예약과 결제는 Phase 5이므로 구현하지 마.

@@ -59,19 +59,19 @@ app/static/js/common.js
 
 ## 2. 메인 페이지 조회
 
-현재 `app/views/main.py`의 JSON 직접 조회를 SQLAlchemy 조회로 교체합니다.
+현재 `app/views/main.py`의 JSON 직접 조회를 SQLAlchemy 조회로 교체합니다. 히어로 슬라이드는 프로젝트 정적 이미지의 파일명과 대체 텍스트를 View에서 전달합니다.
 
 Template 계약:
 
 ```python
 render_template(
     "main/index.html",
-    hero_destination=hero_destination,
+    hero_slides=hero_slides,
     popular_destinations=popular_destinations,
 )
 ```
 
-- 대표 여행지가 없으면 첫 여행지를 사용합니다.
+- 히어로 슬라이드는 Template에 반복해서 하드코딩하지 않습니다.
 - 데이터가 전혀 없어도 HTTP 500이 발생하지 않아야 합니다.
 - 인기 여행지는 최대 4개만 전달합니다.
 
