@@ -19,7 +19,6 @@ app/templates/auth/signup.html
 app/templates/auth/find_email.html
 app/templates/auth/reset_password.html
 app/templates/destination/detail.html
-app/templates/mypage/index.html
 app/templates/mypage/favorites.html
 app/templates/mypage/reviews.html
 app/templates/mypage/profile.html
@@ -37,11 +36,12 @@ Python View, 모델, Migration, 테스트 파일은 수정하지 않습니다.
 
 ```text
 비회원: 여행지 | 맞춤추천 | 로그인 | 회원가입
-회원: 여행지 | 맞춤추천 | 찜 | 마이페이지 | 로그아웃
+회원: 여행지 | 맞춤추천 | 마이페이지 메뉴 | 로그아웃
 ```
 
 - 로그아웃은 `method="post"` Form으로 작성합니다.
-- 찜과 마이페이지는 비회원 Header에 표시하지 않습니다.
+- 마이페이지 버튼은 찜한 여행지·작성한 리뷰·회원정보 수정 메뉴를 엽니다.
+- 별도의 마이페이지 홈 화면은 만들지 않습니다.
 - 모바일 메뉴에서도 같은 권한 분기를 유지합니다.
 
 ## 2. 인증 화면
@@ -77,12 +77,11 @@ Python View, 모델, Migration, 테스트 파일은 수정하지 않습니다.
 
 ## 4. 마이페이지
 
-### 메인
+### 마이페이지 메뉴
 
-- 사용자 이름·이메일
-- 찜 개수·작성 리뷰 개수
-- 찜 목록·리뷰 목록·회원정보 수정 이동
-- 추천은 Phase 4, 예약 내역은 Phase 5 예정 안내
+- Header의 마이페이지 아이콘은 페이지 이동 대신 메뉴를 엽니다.
+- 메뉴에서 찜 목록·리뷰 목록·회원정보 수정으로 이동합니다.
+- `/mypage` 직접 접근은 찜 목록으로 이동합니다.
 
 ### 찜 목록
 
@@ -126,7 +125,7 @@ Python View, 모델, Migration, 테스트 파일은 수정하지 않습니다.
 
 ## 완료 조건
 
-- 비회원과 회원 Header가 정확히 구분됩니다.
+- 비회원과 회원 Header가 정확히 구분되고 마이페이지 메뉴가 동작합니다.
 - 모든 인증 Form이 백엔드 입력 이름과 일치합니다.
 - 여행지 상세의 찜·리뷰 상태가 변수에 따라 달라집니다.
 - 마이페이지에 현재 사용자의 데이터만 표시됩니다.
@@ -140,6 +139,6 @@ Python View, 모델, Migration, 테스트 파일은 수정하지 않습니다.
 3. 이메일 찾기·비밀번호 재설정 Form
 4. 로그인 상태별 Header
 5. 여행지 찜·리뷰 UI
-6. 마이페이지 메인·찜·리뷰·프로필
+6. 마이페이지 메뉴·찜·리뷰·프로필
 7. 페이지별 CSS와 모바일 확인
 8. 최신 `develop` 반영 후 전체 화면 검증

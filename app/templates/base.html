@@ -41,17 +41,85 @@
                 class="primary-navigation"
                 aria-label="주요 메뉴"
             >
-                <a href="{{ url_for('destination.list') }}">여행지</a>
-                <a href="{{ url_for('recommendation.survey') }}">맞춤추천</a>
+                <div class="mobile-account-navigation">
+                    {% if g.user %}
+                        <a href="{{ url_for('mypage.favorites') }}">찜한 여행지</a>
+                        <a href="{{ url_for('mypage.reviews') }}">작성한 리뷰</a>
+                        <a href="{{ url_for('mypage.profile') }}">회원정보 수정</a>
+                        <form method="post" action="{{ url_for('auth.logout') }}">
+                            <button type="submit">로그아웃</button>
+                        </form>
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}">로그인</a>
+                        <a href="{{ url_for('auth.signup') }}">회원가입</a>
+                    {% endif %}
+                </div>
             </nav>
 
             <div class="auth-navigation">
-                <a class="button button--outline" href="{{ url_for('auth.login') }}">
-                    로그인
+                {% if g.user %}
+                <div class="mypage-menu">
+                    <button
+                        class="header-action mypage-menu__button"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="mypage-menu"
+                        data-mypage-menu-toggle
+                    >
+                        <img
+                            class="header-action__icon"
+                            src="{{ url_for('static', filename='img/base/icon-user.svg') }}"
+                            alt=""
+                        >
+                        <span>마이페이지</span>
+                    </button>
+
+                    <nav
+                        id="mypage-menu"
+                        class="mypage-menu__panel"
+                        aria-label="마이페이지 메뉴"
+                        data-mypage-menu
+                        hidden
+                    >
+                        <a href="{{ url_for('mypage.favorites') }}">찜한 여행지</a>
+                        <a href="{{ url_for('mypage.reviews') }}">작성한 리뷰</a>
+                        <a href="{{ url_for('mypage.profile') }}">회원정보 수정</a>
+                    </nav>
+                </div>
+
+                <form
+                    method="post"
+                    action="{{ url_for('auth.logout') }}"
+                    class="auth-navigation__form"
+                >
+                    <button class="header-action" type="submit">
+                        <img
+                            class="header-action__icon"
+                            src="{{ url_for('static', filename='img/base/icon-logout.svg') }}"
+                            alt=""
+                        >
+                        <span>로그아웃</span>
+                    </button>
+                </form>
+                {% else %}
+
+                <a class="header-action" href="{{ url_for('auth.login') }}">
+                    <img
+                        class="header-action__icon"
+                        src="{{ url_for('static', filename='img/base/icon-login.svg') }}"
+                        alt=""
+                    >
+                    <span>로그인</span>
                 </a>
-                <a class="button button--primary" href="{{ url_for('auth.signup') }}">
-                    회원가입
+                <a class="header-action" href="{{ url_for('auth.signup') }}">
+                    <img
+                        class="header-action__icon"
+                        src="{{ url_for('static', filename='img/base/icon-signup.svg') }}"
+                        alt=""
+                    >
+                    <span>회원가입</span>
                 </a>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -82,7 +150,12 @@
             <nav class="site-footer__links" aria-label="하단 메뉴">
                 <a href="{{ url_for('destination.list') }}">여행지</a>
                 <a href="{{ url_for('recommendation.survey') }}">맞춤추천</a>
+
+                {% if g.user %}
+                <a href="{{ url_for('mypage.favorites') }}">마이페이지</a>
+                 {% else %}
                 <a href="{{ url_for('auth.login') }}">로그인</a>
+                {% endif %}
             </nav>
 
             <small>© 2026 TripPalette. Development project.</small>

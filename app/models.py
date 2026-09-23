@@ -1,11 +1,14 @@
 from app import db
 
-# 회원 계정 정보를 저장하는 모델. 이메일을 로그인 계정으로 사용하며 중복 가입은 허용하지 않는다.
+# 회원 계정 정보를 저장하는 모델, 이메일을 로그인 계정으로사용 ,중복가입 x
 class User(db.Model):
     __tablename__ = "user"
 
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), nullable=False, unique=True)
+    email = db.Column(db.String(100),
+                       nullable=False,
+                        unique=True,
+                        )
     password_hash = db.Column(db.String(255), nullable=False)
     name = db.Column(db.String(50), nullable=False)
     phone = db.Column(db.String(20), nullable=False)
@@ -26,7 +29,7 @@ class User(db.Model):
     reservations = db.relationship("Reservation", back_populates="user")
 
 
-# 회원의 맞춤 여행지 추천 조건을 저장하는 모델. user_id의 UNIQUE 제약조건으로 1:1 관계를 보장한다.
+# 회원의 맞춤 여행지 추천 조건 저장 모델 , 한명당 하나의 최신 설정만 저장, id당 unique 제약조건적으로 1:1 관계
 class UserPreference(db.Model):
     __tablename__ = "user_preference"
 
@@ -35,7 +38,7 @@ class UserPreference(db.Model):
         db.Integer,
         db.ForeignKey("user.id"),
         nullable=False,
-        unique=True,
+        unique=True
     )
     season = db.Column(db.String(20))
     companion = db.Column(db.String(20))
@@ -44,7 +47,7 @@ class UserPreference(db.Model):
     budget = db.Column(db.Integer)
     trip_duration = db.Column(db.Integer)
 
-    # 추천 조건이 변경될 때마다 마지막 수정 시각을 갱신한다.
+    # 추천 조건이 변경될 떄마다 마지막 수정시각을 갱신
     updated_at = db.Column(
         db.DateTime,
         default=db.func.now(),
@@ -75,11 +78,11 @@ class Destination(db.Model):
 
 
 
-# 회원이 찜한 여행지를 저장하는 연결 모델. user_id와 destination_id의 복합 UNIQUE로 중복 찜을 방지한다.
+# 회원이 찜한 여행지를 저장하는 연결 모델 , 동일한 회원이 같은 여행지를 중복으로 찜하지 못하도록 id와 destination_id에 복합 unique제약조건을 적용
 class Favorite(db.Model):
     __tablename__ = "favorite"
 
-    # 회원별 동일 여행지의 중복 찜 방지
+    # 회원별 동일 여행지의 중복찜 방지
     __table_args__ = (
         db.UniqueConstraint(
             "user_id",
@@ -143,8 +146,9 @@ class Review(db.Model):
     destination = db.relationship("Destination", back_populates="reviews")
 
 
-# 여행지 주변의 숙소 정보를 저장하는 모델
-# Destination은 추천·탐색·찜·리뷰 대상이고, Accommodation은 예약 대상이다.
+# 여행지 주변의 숙소 정보를 저장
+# destination = 추천 탐색 찜 리뷰 대상
+# Accommmodation = 예약 대상
 class Accommodation(db.Model):
     __tablename__ = "accommodation"
 
@@ -167,6 +171,7 @@ class Accommodation(db.Model):
 
 
 # 회원의 숙소 예약 정보를 저장하는 모델
+
 class Reservation(db.Model):
     __tablename__ = "reservation"
     __table_args__ = (
@@ -183,7 +188,7 @@ class Reservation(db.Model):
             name="ck_reservation_people_count_positive",
         ),
 
-        # 총 예약 금액은 음수가 될 수 없다.
+        # 총예약 금액은 음수 x
         db.CheckConstraint(
             "total_price >= 0",
             name="ck_reservation_total_price_nonnegative",
@@ -216,22 +221,21 @@ class Reservation(db.Model):
 
     user = db.relationship("User", back_populates="reservations")
     accommodation = db.relationship("Accommodation", back_populates="reservations")
-    # 예약 한 건에는 하나의 최종 결제 정보만 연결한다.
+    # 예약 한건에는 하나의 최종결제정보만 연결
     payment = db.relationship("Payment", back_populates="reservation", uselist=False)
 
-    # ===========================================
-    # people_count가 accommodation.capacity 이하인지는
+    # ======================================
+    #people_count가 accommodation.capacity 이하인지는
     # 다른 테이블 값을 확인해야 하므로 예약 처리 로직에서 검증한다.
     # ===========================================
 
-
-# 숙소 예약에 대한 모의 결제 정보를 저장하는 모델
+# 숙소 예약에 대한 모의 결제정보를 저장
 class Payment(db.Model):
     __tablename__ = "payment"
 
     id = db.Column(db.Integer, primary_key=True)
 
-    # 예약 한 건당 하나의 최종 결제 정보만 허용한다.
+    # 예약 한건당 하나의 최종 결제정보만 허용
     reservation_id = db.Column(
         db.Integer,
         db.ForeignKey("reservation.id"),
@@ -246,7 +250,7 @@ class Payment(db.Model):
         default="READY",
         server_default="READY",
     )
-    # 결제가 성공하기 전에는 NULL이며 성공 시점에만 기록한다.
+    # 결졔가 성공하기 전에는 NUll이며 성공 시점에만 기록
     paid_at = db.Column(db.DateTime)
 
     reservation = db.relationship("Reservation", back_populates="payment")

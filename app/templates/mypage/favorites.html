@@ -1,20 +1,105 @@
 {% extends "base.html" %}
 
-{% block title %}찜 목록 | TripPalette{% endblock %}
+{% block title %}찜한 여행지 | TripPalette{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+{% endblock %}
 
 {% block content %}
-<div class="page-section">
+<section class="mypage-page" aria-labelledby="favorites-title">
     <div class="container">
-        <h1 class="page-title">찜 목록</h1>
+        <header class="mypage-heading">
+            <p class="mypage-eyebrow">FAVORITES</p>
+            <div class="mypage-heading__row">
+                <div>
+                    <h1 id="favorites-title">찜한 여행지</h1>
+                    <p>마음에 드는 여행지를 모아보세요.</p>
+                </div>
+                {% if favorites %}
+                    <p class="mypage-count" aria-label="찜한 여행지 수">
+                        총 <strong>{{ favorites|length }}</strong>개
+                    </p>
+                {% endif %}
+            </div>
+        </header>
 
-        <div class="content">
-            <div class="empty-state">
-                <p>찜한 여행지가 없습니다.</p>
-                <a href="{{ url_for('destination.list') }}">
+        {% if favorites %}
+            <div class="favorites-grid">
+                {% for favorite in favorites %}
+                    {% set destination = favorite.destination %}
+                    <article class="favorite-card">
+                        <a
+                            class="favorite-card__link"
+                            href="{{ url_for('destination.detail', id=destination.id) }}"
+                            aria-label="{{ destination.name }} 여행지 상세 보기"
+                        >
+                            <div class="favorite-card__media">
+                                {% if destination.image_url %}
+                                    <img
+                                        class="favorite-card__image"
+                                        src="{{ destination.image_url }}"
+                                        alt="{{ destination.name }} 대표 이미지"
+                                        loading="lazy"
+                                    >
+                                {% else %}
+                                    <div class="favorite-card__placeholder">
+                                        <img
+                                            src="{{ url_for('static', filename='img/base/icon-favorite.svg') }}"
+                                            alt=""
+                                        >
+                                        <span>이미지 준비 중</span>
+                                    </div>
+                                {% endif %}
+                                <span class="favorite-card__heart" aria-hidden="true">♥</span>
+                            </div>
+
+                            <div class="favorite-card__body">
+                                <div class="favorite-card__title-row">
+                                    <h2>{{ destination.name }}</h2>
+                                    {% if destination.region %}
+                                        <span class="favorite-card__region">
+                                            {{ destination.region }}
+                                        </span>
+                                    {% endif %}
+                                </div>
+
+                                {% if destination.description %}
+                                    <p class="favorite-card__description">
+                                        {{ destination.description }}
+                                    </p>
+                                {% endif %}
+
+                                <div class="favorite-card__tags" aria-label="여행지 정보">
+                                    {% if destination.season %}
+                                        <span>{{ destination.season }}</span>
+                                    {% endif %}
+                                    {% if destination.purpose %}
+                                        <span>{{ destination.purpose }}</span>
+                                    {% endif %}
+                                    {% if destination.atmosphere %}
+                                        <span>{{ destination.atmosphere }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="favorites-empty">
+                <img
+                    class="favorites-empty__icon"
+                    src="{{ url_for('static', filename='img/base/icon-favorite.svg') }}"
+                    alt=""
+                >
+                <h2>아직 찜한 여행지가 없어요.</h2>
+                <p>마음에 드는 여행지를 찜해보세요.</p>
+                <a class="button button--primary" href="{{ url_for('destination.list') }}">
                     여행지 둘러보기
                 </a>
             </div>
-        </div>
+        {% endif %}
     </div>
-</div>
+</section>
 {% endblock %}

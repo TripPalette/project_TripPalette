@@ -7,10 +7,10 @@
 .accommodation-back-link {
     display: inline-flex;
     margin-bottom: 24px;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 700;
 }
-.accommodation-back-link:hover { color: var(--color-primary); }
+.accommodation-back-link:hover { color: var(--color-text); }
 
 .accommodation-heading {
     margin-bottom: 28px;
@@ -30,7 +30,7 @@
 .accommodation-heading h1,
 .accommodation-detail__summary h1 {
     margin: 0;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.2;
     letter-spacing: -0.035em;
@@ -43,7 +43,7 @@
     flex: 0 0 auto;
     margin: 0;
     padding: 7px 13px;
-    color: var(--color-primary);
+    color: var(--color-text);
     background: rgba(144, 172, 155, 0.24);
     border-radius: 999px;
     font-size: 0.9rem;
@@ -88,7 +88,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary-dark);
+    color: var(--color-text);
     background: rgba(144, 172, 155, 0.24);
     font-weight: 700;
 }
@@ -101,13 +101,13 @@
 }
 .accommodation-card__title-row h2 {
     margin: 0;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-size: 1.18rem;
     line-height: 1.35;
 }
 .accommodation-card__detail {
     flex: 0 0 auto;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-size: 0.8rem;
     font-weight: 700;
 }
@@ -129,14 +129,14 @@
     gap: 8px;
 }
 .accommodation-rating {
-    color: var(--color-primary);
+    color: var(--color-text);
     font-weight: 800;
 }
 .accommodation-rating > span[aria-hidden="true"] { color: var(--color-accent); }
 .accommodation-rating--empty { color: var(--color-muted); font-size: 0.82rem; }
 .accommodation-capacity {
     padding: 4px 9px;
-    color: var(--color-primary);
+    color: var(--color-text);
     background: rgba(144, 172, 155, 0.24);
     border-radius: 999px;
     font-size: 0.78rem;
@@ -145,7 +145,7 @@
 .accommodation-price {
     margin: 15px 0 0;
     padding-top: 14px;
-    color: var(--color-primary);
+    color: var(--color-text);
     border-top: 1px solid var(--color-border);
     font-size: 1.16rem;
     font-weight: 800;
@@ -168,7 +168,7 @@
     color: var(--color-sage);
     font-size: 3rem;
 }
-.accommodation-empty h2 { margin: 8px 0 0; color: var(--color-primary); }
+.accommodation-empty h2 { margin: 8px 0 0; color: var(--color-text); }
 .accommodation-empty > p:not(.accommodation-empty__icon) {
     margin: 8px 0 22px;
     color: var(--color-muted);
@@ -204,7 +204,7 @@
 }
 .accommodation-detail__address {
     margin: 13px 0 0;
-    color: var(--color-secondary);
+    color: var(--color-text);
 }
 .accommodation-facts {
     margin: 28px 0 0;
@@ -223,7 +223,7 @@
 .accommodation-facts dt { color: var(--color-muted); font-size: 0.86rem; }
 .accommodation-facts dd {
     margin: 0;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-weight: 800;
     text-align: right;
 }
@@ -239,15 +239,15 @@
     border: 1px solid var(--color-border);
     border-radius: 16px;
 }
-.accommodation-panel h2 { margin: 0 0 12px; color: var(--color-primary); }
+.accommodation-panel h2 { margin: 0 0 12px; color: var(--color-text); }
 .accommodation-panel p { margin: 0; color: var(--color-muted); }
 .accommodation-destination-link {
     display: inline-flex;
     margin-top: 18px;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 800;
 }
-.accommodation-destination-link:hover { color: var(--color-primary); }
+.accommodation-destination-link:hover { color: var(--color-text); }
 .accommodation-phase-notice {
     margin-top: 24px;
     padding: 22px 26px;
@@ -255,7 +255,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    color: var(--color-primary);
+    color: var(--color-text);
     background: rgba(227, 210, 177, 0.55);
     border: 1px solid var(--color-beige);
     border-radius: 16px;
