@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+#slider {
+    width: 960px;
+    height: 460px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#slider {
+    width: 960px;
+    height: 460px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+#slider .main-slide {
+    border-radius: 10px;
+}

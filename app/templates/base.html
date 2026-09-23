@@ -6,10 +6,20 @@
 
     <title>{% block title %}TripPalette{% endblock %}</title>
 
+       <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
+    />
+
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
     >
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/slider.css') }}"
+>
 
     {% block head %}{% endblock %}
     {% block css %}{% endblock %}
@@ -93,6 +103,23 @@
         src="{{ url_for('static', filename='js/common.js') }}"
         defer
     ></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+   var swiper = new Swiper('.mySwiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+    </script>
 
     {% block scripts %}{% endblock %}
 </body>
