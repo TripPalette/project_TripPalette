@@ -9,7 +9,7 @@
 .destination-header h1,
 .destination-detail-info h1 {
     margin: 0;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.2;
 }
@@ -32,7 +32,7 @@
 .filter-group label {
     display: block;
     margin-bottom: 7px;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-size: 0.88rem;
     font-weight: 700;
 }
@@ -75,7 +75,7 @@
 }
 .filter-actions button:hover { background: var(--color-primary-dark); }
 .filter-actions a {
-    color: var(--color-primary);
+    color: var(--color-text);
     background: var(--color-surface);
     border: 1px solid var(--color-sage);
 }
@@ -87,8 +87,8 @@
     justify-content: space-between;
     gap: 20px;
 }
-.destination-result-header h2 { margin: 0; color: var(--color-primary); }
-.destination-result-header p { margin: 0; color: var(--color-secondary); }
+.destination-result-header h2 { margin: 0; color: var(--color-text); }
+.destination-result-header p { margin: 0; color: var(--color-text); }
 
 .destination-grid {
     display: grid;
@@ -120,18 +120,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary-dark);
+    color: var(--color-text);
     background: rgba(144, 172, 155, 0.24);
 }
 .destination-card-content { padding: 20px; }
 .destination-card-content h3 {
     margin: 0;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-size: 1.25rem;
 }
 .destination-region {
     margin: 5px 0 0;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-size: 0.88rem;
 }
 .destination-description {
@@ -149,7 +149,7 @@
 }
 .destination-tags span {
     padding: 5px 10px;
-    color: var(--color-primary);
+    color: var(--color-text);
     background: rgba(144, 172, 155, 0.24);
     border-radius: 999px;
     font-size: 0.78rem;
@@ -162,13 +162,13 @@
     border: 1px solid var(--color-border);
     border-radius: 16px;
 }
-.destination-empty h2 { margin: 0; color: var(--color-primary); }
+.destination-empty h2 { margin: 0; color: var(--color-text); }
 .destination-empty p { margin: 8px 0 0; color: var(--color-muted); }
 
 .back-link {
     display: inline-flex;
     margin-bottom: 24px;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 700;
 }
 .destination-detail-header {
@@ -186,7 +186,7 @@
 }
 .destination-detail-region {
     margin: 10px 0 0;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 700;
 }
 .destination-information,
@@ -202,7 +202,7 @@
 .destination-reviews h2,
 .destination-accommodations h2 {
     margin: 0 0 20px;
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 .destination-info-grid {
     display: grid;
@@ -216,10 +216,10 @@
 }
 .destination-info-grid h3 {
     margin: 0 0 5px;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-size: 0.88rem;
 }
-.destination-info-grid p { margin: 0; color: var(--color-primary); font-weight: 700; }
+.destination-info-grid p { margin: 0; color: var(--color-text); font-weight: 700; }
 .review-list { display: grid; gap: 12px; }
 .review-card,
 .review-empty {

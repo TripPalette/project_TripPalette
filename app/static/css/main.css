@@ -50,7 +50,7 @@
     font-weight: 800;
     letter-spacing: 0.2em;
 }
-.eyebrow--brand { color: var(--color-accent-strong); }
+
 .hero h1 {
     margin: 0;
     font-size: clamp(1.85rem, 4.2vw, 3.2rem);
@@ -185,7 +185,7 @@
 .text-link {
     flex: 0 0 auto;
     padding: 9px 0;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 700;
 }
 .destination-grid {
@@ -256,7 +256,7 @@
 }
 .destination-card__meta span:last-child {
     padding: 3px 8px;
-    color: var(--color-primary);
+    color: var(--color-text);
     background: rgba(144, 172, 155, 0.24);
     border-radius: 999px;
 }

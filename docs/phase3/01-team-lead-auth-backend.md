@@ -101,14 +101,14 @@ POST /destinations/<int:id>/reviews
 ## 7. 마이페이지
 
 ```text
-GET /mypage
+GET /mypage              → /mypage/favorites Redirect
 GET /mypage/favorites
 GET /mypage/reviews
 GET, POST /mypage/profile
 ```
 
 - 모든 URL에 `login_required`를 적용합니다.
-- 마이페이지 메인은 사용자와 찜·리뷰 개수를 전달합니다.
+- 별도 마이페이지 홈은 만들지 않고 `/mypage`를 찜 목록으로 이동시킵니다.
 - 찜·리뷰 목록은 현재 사용자의 데이터만 조회합니다.
 - 프로필은 이름과 전화번호만 수정합니다.
 - 이메일은 로그인 계정이므로 Phase 3에서 수정하지 않습니다.
@@ -129,7 +129,7 @@ GET, POST /mypage/profile
 - 비회원 마이페이지 차단
 - 찜 추가·해제와 사용자별 격리
 - 리뷰 평점·빈 내용 검증과 중복 차단
-- 찜 목록·작성 리뷰 목록
+- 마이페이지 진입 Redirect·찜 목록·작성 리뷰 목록
 - 이름·전화번호 수정
 - 존재하지 않는 여행지 404
 

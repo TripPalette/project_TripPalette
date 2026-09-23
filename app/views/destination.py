@@ -1,8 +1,10 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, flash, g, redirect, render_template, request, url_for
 from sqlalchemy import or_
+from sqlalchemy.exc import IntegrityError
 
 from app import db
-from app.models import Accommodation, Destination, Review
+from app.auth_helpers import login_required
+from app.models import Accommodation, Destination, Favorite, Review
 
 
 destination_bp = Blueprint("destination", __name__)
@@ -86,13 +88,108 @@ def detail(id):
             .limit(3)
         ).scalars()
     )
+    is_favorite = False
+    can_review = False
+    if g.user is not None:
+        is_favorite = db.session.scalar(
+            db.select(Favorite.id).where(
+                Favorite.user_id == g.user.id,
+                Favorite.destination_id == destination.id,
+            )
+        ) is not None
+        has_review = db.session.scalar(
+            db.select(Review.id).where(
+                Review.user_id == g.user.id,
+                Review.destination_id == destination.id,
+            )
+        ) is not None
+        can_review = not has_review
 
     return render_template(
         "destination/detail.html",
         destination=destination,
         reviews=reviews,
         accommodations=accommodations,
+        is_favorite=is_favorite,
+        can_review=can_review,
     )
+
+
+@destination_bp.post("/<int:id>/favorite")
+@login_required
+def toggle_favorite(id):
+    destination = db.get_or_404(Destination, id)
+    favorite = db.session.scalar(
+        db.select(Favorite).where(
+            Favorite.user_id == g.user.id,
+            Favorite.destination_id == destination.id,
+        )
+    )
+
+    if favorite is None:
+        db.session.add(
+            Favorite(user_id=g.user.id, destination_id=destination.id)
+        )
+        message = "찜 목록에 추가했습니다."
+    else:
+        db.session.delete(favorite)
+        message = "찜 목록에서 삭제했습니다."
+
+    try:
+        db.session.commit()
+    except IntegrityError:
+        db.session.rollback()
+        flash("찜 상태를 변경하지 못했습니다. 다시 시도해 주세요.", "error")
+    else:
+        flash(message, "success")
+
+    return redirect(url_for("destination.detail", id=destination.id))
+
+
+@destination_bp.post("/<int:id>/reviews")
+@login_required
+def create_review(id):
+    destination = db.get_or_404(Destination, id)
+    content = (request.form.get("content") or "").strip()
+    try:
+        rating = int(request.form.get("rating", ""))
+    except (TypeError, ValueError):
+        rating = None
+
+    error = None
+    if rating is None or not 1 <= rating <= 5:
+        error = "평점은 1점부터 5점 사이로 입력해 주세요."
+    elif not content:
+        error = "리뷰 내용을 입력해 주세요."
+    elif db.session.scalar(
+        db.select(Review.id).where(
+            Review.user_id == g.user.id,
+            Review.destination_id == destination.id,
+        )
+    ):
+        error = "이 여행지에는 이미 리뷰를 작성했습니다."
+
+    if error is None:
+        db.session.add(
+            Review(
+                user_id=g.user.id,
+                destination_id=destination.id,
+                rating=rating,
+                content=content,
+            )
+        )
+        try:
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+            error = "이 여행지에는 이미 리뷰를 작성했습니다."
+        else:
+            flash("리뷰가 등록되었습니다.", "success")
+
+    if error is not None:
+        flash(error, "error")
+
+    return redirect(url_for("destination.detail", id=destination.id))
 
 
 @destination_bp.get("/<int:id>/accommodations")
