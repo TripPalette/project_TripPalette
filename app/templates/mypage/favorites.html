@@ -28,27 +28,42 @@
             <div class="favorites-grid">
                 {% for favorite in favorites %}
                     {% set destination = favorite.destination %}
-                    <article class="favorite-card">
+                    {% set media = destination_media.get(destination.name) %}
+                    <article
+                        class="favorite-card"
+                        {% if not media %}
+                            data-unsplash-photo
+                            data-destination-name="{{ destination.name }}"
+                        {% endif %}
+                    >
                         <a
                             class="favorite-card__link"
                             href="{{ url_for('destination.detail', id=destination.id) }}"
                             aria-label="{{ destination.name }} 여행지 상세 보기"
                         >
                             <div class="favorite-card__media">
-                                {% if destination.image_url %}
+                                {% if media %}
                                     <img
                                         class="favorite-card__image"
-                                        src="{{ destination.image_url }}"
+                                        src="{{ url_for('static', filename=media.cover) }}"
                                         alt="{{ destination.name }} 대표 이미지"
                                         loading="lazy"
                                     >
                                 {% else %}
-                                    <div class="favorite-card__placeholder">
+                                    <img
+                                        class="favorite-card__image"
+                                        alt="{{ destination.name }} 대표 이미지"
+                                        loading="lazy"
+                                        data-unsplash-image
+                                        hidden
+                                    >
+                                    <div class="favorite-card__placeholder" data-unsplash-placeholder>
                                         <img
                                             src="{{ url_for('static', filename='img/base/icon-favorite.svg') }}"
                                             alt=""
                                         >
-                                        <span>이미지 준비 중</span>
+                                        <strong>{{ destination.name }}</strong>
+                                        <span>여행 사진 준비 중</span>
                                     </div>
                                 {% endif %}
                                 <span class="favorite-card__heart" aria-hidden="true">♥</span>
@@ -83,6 +98,10 @@
                                 </div>
                             </div>
                         </a>
+                        <small class="unsplash-attribution" data-unsplash-attribution hidden>
+                            Photo by <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
+                            on <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        </small>
                     </article>
                 {% endfor %}
             </div>

@@ -1,10 +1,11 @@
-from flask import Blueprint, flash, g, redirect, render_template, request, url_for
+from flask import Blueprint, flash, g, jsonify, redirect, render_template, request, url_for
 from sqlalchemy import or_
 from sqlalchemy.exc import IntegrityError
 
 from app import db
 from app.auth_helpers import login_required
 from app.models import Accommodation, Destination, Favorite, Review
+from app.unsplash import get_destination_photo, has_search_term
 
 
 destination_bp = Blueprint("destination", __name__)
@@ -26,6 +27,29 @@ def _distinct_values(column):
         .order_by(column)
     )
     return list(db.session.execute(statement).scalars())
+
+
+@destination_bp.get("/api/photo")
+def photo():
+    """Return an Unsplash photo while keeping the access key on the server."""
+    destination_name = (request.args.get("name") or "").strip()
+    if not destination_name or len(destination_name) > 100:
+        return jsonify({"available": False}), 400
+
+    destination_exists = db.session.scalar(
+        db.select(Destination.id).where(Destination.name == destination_name)
+    ) is not None
+    if not destination_exists and not has_search_term(destination_name):
+        return jsonify({"available": False}), 404
+
+    photo_data = get_destination_photo(destination_name)
+    response = jsonify(
+        {"available": photo_data is not None, "photo": photo_data}
+    )
+    response.headers["Cache-Control"] = (
+        "public, max-age=21600" if photo_data else "no-store"
+    )
+    return response
 
 
 @destination_bp.get("", endpoint="list")
