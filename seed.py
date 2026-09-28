@@ -153,7 +153,9 @@ def upsert_destinations(items):
         destination.atmosphere = item.get("atmosphere") or None
         destination.budget_level = item.get("budget_level") or None
         destination.recommended_days = item.get("recommended_days")
-        destination.image_url = normalize_image_url(item.get("image_url"))
+        # Destination photos are loaded at runtime from Unsplash.
+        # Always clear legacy TourAPI URLs when seed data is applied.
+        destination.image_url = None
 
     db.session.flush()
     return existing_destinations, created, updated

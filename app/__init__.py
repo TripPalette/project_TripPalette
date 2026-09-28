@@ -38,4 +38,10 @@ def create_app(config_class=Config):
     app.register_blueprint(reservation_bp, url_prefix="/reservations")
     app.register_blueprint(mypage_bp, url_prefix="/mypage")
 
+    from app.destination_media import DESTINATION_MEDIA
+
+    @app.context_processor
+    def inject_destination_media():
+        return {"destination_media": DESTINATION_MEDIA}
+
     return app

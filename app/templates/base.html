@@ -14,7 +14,7 @@
     {% block head %}{% endblock %}
     {% block css %}{% endblock %}
 </head>
-<body>
+<body data-unsplash-photo-endpoint="{{ url_for('destination.photo') }}">
     <header class="site-header">
         <div class="container site-header__inner">
             <a class="site-logo" href="{{ url_for('main.index') }}">
@@ -140,30 +140,64 @@
 
     <footer class="site-footer">
         <div class="container site-footer__inner">
-            <div>
+            <div class="site-footer__brand-block">
                 <a class="site-footer__brand" href="{{ url_for('main.index') }}">
-                    TripPalette
+                    <span class="site-footer__brand-mark" aria-hidden="true"></span>
+                    <span>TripPalette</span>
                 </a>
                 <p>나만의 여행을 발견하는 가장 쉬운 방법</p>
             </div>
 
             <nav class="site-footer__links" aria-label="하단 메뉴">
-                <a href="{{ url_for('destination.list') }}">여행지</a>
-                <a href="{{ url_for('recommendation.survey') }}">맞춤추천</a>
+                <a href="{{ url_for('destination.list') }}">여행지 찾기</a>
+                <a href="{{ url_for('recommendation.survey') }}">맞춤 추천</a>
+                <a href="{{ url_for('accommodation.list') }}">숙소 찾기</a>
 
                 {% if g.user %}
                 <a href="{{ url_for('mypage.favorites') }}">마이페이지</a>
-                 {% else %}
+                {% else %}
                 <a href="{{ url_for('auth.login') }}">로그인</a>
                 {% endif %}
             </nav>
 
-            <small>© 2026 TripPalette. Development project.</small>
+            <div class="site-footer__message">
+                <div class="site-footer__socials" aria-hidden="true">
+                    <span>
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <circle cx="17.5" cy="6.5" r="1"></circle>
+                        </svg>
+                    </span>
+                    <span>
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2.5" y="5" width="19" height="14" rx="4"></rect>
+                            <path d="m10 9 5 3-5 3Z"></path>
+                        </svg>
+                    </span>
+                    <span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 5h16v11H9l-5 4V5Z"></path>
+                            <path d="M8 10h8M8 13h5"></path>
+                        </svg>
+                    </span>
+                </div>
+                <p>좋은 여행이, 더 좋은 일상을 만듭니다.</p>
+            </div>
+
+            <div class="site-footer__bottom">
+                <small>© 2026 TripPalette. Development project.</small>
+                <span>Team travel project</span>
+            </div>
         </div>
     </footer>
 
     <script
         src="{{ url_for('static', filename='js/common.js') }}"
+        defer
+    ></script>
+    <script
+        src="{{ url_for('static', filename='js/destination-images.js') }}"
         defer
     ></script>
 

@@ -479,9 +479,11 @@ pip install -r requirements.txt
 SECRET_KEY=your-secret-key
 DATABASE_URL=mysql+pymysql://username:password@localhost/trippalette
 TOUR_API_KEY=your-open-api-key
+UNSPLASH_ACCESS_KEY=your-unsplash-access-key
+UNSPLASH_APP_NAME=trippalette
 ```
 
-> 실제 환경변수 이름은 프로젝트에서 사용하는 Open API와 설정 방식에 맞게 변경해야 합니다.
+`UNSPLASH_ACCESS_KEY`는 Unsplash Developers에서 애플리케이션을 만든 뒤 발급받은 Access Key를 사용합니다. 키가 없거나 사진 조회에 실패하면 기존 여행지 이미지가 표시됩니다.
 
 ### 데이터베이스 마이그레이션
 
@@ -543,6 +545,8 @@ GitHub에는 실제 값이 없는 예시 파일만 공유합니다.
 SECRET_KEY=
 DATABASE_URL=
 TOUR_API_KEY=
+UNSPLASH_ACCESS_KEY=
+UNSPLASH_APP_NAME=trippalette
 ```
 
 ---

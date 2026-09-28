@@ -163,3 +163,91 @@ document.addEventListener("DOMContentLoaded", () => {
     setTrackPosition(physicalIndex, false);
     startAutoplay();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const initializeTabs = ({
+        tabSelector,
+        panelSelector,
+        tabDataKey,
+        panelDataKey,
+    }) => {
+        const tabs = Array.from(document.querySelectorAll(tabSelector));
+        const panels = Array.from(document.querySelectorAll(panelSelector));
+
+        if (!tabs.length || !panels.length) {
+            return;
+        }
+
+        const activate = (key, focusTab = false) => {
+            tabs.forEach((tab) => {
+                const isActive = tab.dataset[tabDataKey] === key;
+                tab.classList.toggle("is-active", isActive);
+                tab.setAttribute("aria-selected", String(isActive));
+                tab.tabIndex = isActive ? 0 : -1;
+
+                if (isActive && focusTab) {
+                    tab.focus();
+                }
+            });
+
+            panels.forEach((panel) => {
+                const isActive = panel.dataset[panelDataKey] === key;
+                panel.hidden = !isActive;
+                panel.classList.remove("is-entering");
+
+                if (isActive) {
+                    window.requestAnimationFrame(() => {
+                        panel.classList.add("is-entering");
+                    });
+                }
+            });
+        };
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
+                activate(tab.dataset[tabDataKey]);
+            });
+
+            tab.addEventListener("keydown", (event) => {
+                let nextIndex = null;
+
+                if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+                    nextIndex = (index + 1) % tabs.length;
+                } else if (
+                    event.key === "ArrowLeft"
+                    || event.key === "ArrowUp"
+                ) {
+                    nextIndex = (index - 1 + tabs.length) % tabs.length;
+                } else if (event.key === "Home") {
+                    nextIndex = 0;
+                } else if (event.key === "End") {
+                    nextIndex = tabs.length - 1;
+                }
+
+                if (nextIndex !== null) {
+                    event.preventDefault();
+                    activate(tabs[nextIndex].dataset[tabDataKey], true);
+                }
+            });
+        });
+
+        const initialTab =
+            tabs.find((tab) => tab.getAttribute("aria-selected") === "true")
+            || tabs[0];
+        activate(initialTab.dataset[tabDataKey]);
+    };
+
+    initializeTabs({
+        tabSelector: "[data-region-tab]",
+        panelSelector: "[data-region-panel]",
+        tabDataKey: "regionTab",
+        panelDataKey: "regionPanel",
+    });
+
+    initializeTabs({
+        tabSelector: "[data-companion-tab]",
+        panelSelector: "[data-companion-panel]",
+        tabDataKey: "companionTab",
+        panelDataKey: "companionPanel",
+    });
+});
