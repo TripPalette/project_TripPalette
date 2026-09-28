@@ -46,6 +46,8 @@
 .favorite-card {
     min-width: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 16px;
@@ -54,7 +56,7 @@
 }
 .favorite-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .favorite-card:focus-within { box-shadow: var(--shadow-card); }
-.favorite-card__link { display: block; height: 100%; }
+.favorite-card__link { display: block; flex: 1; }
 .favorite-card__media {
     position: relative;
     overflow: hidden;

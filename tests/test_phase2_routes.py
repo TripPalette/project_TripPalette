@@ -1,5 +1,6 @@
 import unittest
 from contextlib import contextmanager
+from unittest.mock import patch
 
 from flask import template_rendered
 
@@ -12,6 +13,7 @@ class TestConfig:
     SECRET_KEY = "phase2-test-key"
     SQLALCHEMY_DATABASE_URI = "sqlite://"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    UNSPLASH_ACCESS_KEY = None
 
 
 @contextmanager
@@ -44,6 +46,7 @@ class Phase2RouteTestCase(unittest.TestCase):
             atmosphere="낭만적인",
             budget_level="보통",
             recommended_days=3,
+            image_url="https://tong.visitkorea.or.kr/legacy-jeju.jpg",
         )
         self.gangneung = Destination(
             name="강릉",
@@ -103,13 +106,59 @@ class Phase2RouteTestCase(unittest.TestCase):
         )
         self.assertEqual(
             [item.name for item in context["popular_destinations"]],
-            ["제주", "강릉"],
+            ["제주"],
         )
         page = response.get_data(as_text=True)
         self.assertEqual(page.count('class="hero__slide"'), 4)
         self.assertEqual(page.count("data-hero-dot="), 4)
         self.assertIn('action="/destinations"', page)
         self.assertIn('name="keyword"', page)
+        self.assertIn('data-destination-name="제주"', page)
+        self.assertNotIn("tong.visitkorea.or.kr", page)
+        self.assertIn(
+            "img/destination/generated/jeju-dol-hareubang-v1.png",
+            page,
+        )
+
+    def test_unsplash_photo_api_returns_async_photo_payload(self):
+        photo = {
+            "id": "photo-1",
+            "urls": {
+                "small": "https://images.unsplash.com/small",
+                "regular": "https://images.unsplash.com/regular",
+            },
+            "alt": "Jeju coast",
+            "photographer": "Test Photographer",
+            "photographer_url": "https://unsplash.com/@tester",
+            "photo_url": "https://unsplash.com/photos/photo-1",
+            "unsplash_url": "https://unsplash.com",
+        }
+        with patch(
+            "app.views.destination.get_destination_photo",
+            return_value=photo,
+        ) as get_photo:
+            response = self.client.get("/destinations/api/photo?name=제주")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.json["available"])
+        self.assertEqual(response.json["photo"]["id"], "photo-1")
+        self.assertIn("max-age=21600", response.headers["Cache-Control"])
+        get_photo.assert_called_once_with("제주")
+
+    def test_unsplash_photo_api_keeps_fallback_when_unavailable(self):
+        with patch(
+            "app.views.destination.get_destination_photo",
+            return_value=None,
+        ):
+            response = self.client.get("/destinations/api/photo?name=제주")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.json["available"])
+        self.assertEqual(response.headers["Cache-Control"], "no-store")
+        self.assertEqual(
+            self.client.get("/destinations/api/photo?name=없는지역").status_code,
+            404,
+        )
 
     def test_destination_list(self):
         response, template, context = self.get_context("/destinations")
@@ -117,6 +166,14 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(template, "destination/list.html")
         self.assertEqual(len(context["destinations"]), 2)
         self.assertEqual(context["keyword"], "")
+        self.assertNotIn(
+            "tong.visitkorea.or.kr",
+            response.get_data(as_text=True),
+        )
+        self.assertIn(
+            "jeju-dol-hareubang-v1.png",
+            response.get_data(as_text=True),
+        )
 
     def test_destination_keyword_search(self):
         response, _, context = self.get_context(
@@ -171,6 +228,15 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(template, "destination/detail.html")
         self.assertEqual(context["destination"].name, "제주")
         self.assertEqual(context["reviews"], [])
+        self.assertNotIn(
+            "tong.visitkorea.or.kr",
+            response.get_data(as_text=True),
+        )
+        page = response.get_data(as_text=True)
+        self.assertIn("destination-detail-gallery", page)
+        self.assertIn("jeju-sea-v1.png", page)
+        self.assertIn("jeju-dol-hareubang-v1.png", page)
+        self.assertIn("jeju-night-v1.png", page)
         self.assertEqual(
             [item.name for item in context["accommodations"]],
             ["제주 테스트 호텔"],

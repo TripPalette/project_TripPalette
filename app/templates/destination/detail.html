@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+담{% extends "base.html" %}
 
 {% block title %}{{ destination.name }} | TripPalette{% endblock %}
 
@@ -18,18 +18,43 @@
 
     <header class="destination-detail-header">
 
-        {% if destination.image_url %}
-            <img
-                src="{{ destination.image_url }}"
-                alt="{{ destination.name }} 대표 이미지"
-                class="destination-detail-image"
-            >
+        {% set media = destination_media.get(destination.name) %}
+        {% if media %}
+            <div class="destination-detail-gallery" aria-label="{{ destination.name }} 여행 사진">
+                {% for image in media.gallery %}
+                    <img
+                        class="destination-detail-gallery__image"
+                        src="{{ url_for('static', filename=image.filename) }}"
+                        alt="{{ image.alt }}"
+                        {% if not loop.first %}loading="lazy"{% endif %}
+                    >
+                {% endfor %}
+            </div>
         {% else %}
             <div
-                class="destination-detail-placeholder"
-                aria-label="{{ destination.name }} 이미지 없음"
+                class="destination-detail-media"
+                data-unsplash-photo
+                data-destination-name="{{ destination.name }}"
             >
-                이미지 없음
+                <img
+                    alt="{{ destination.name }} 대표 이미지"
+                    class="destination-detail-image"
+                    data-unsplash-image
+                    data-unsplash-size="regular"
+                    hidden
+                >
+                <div
+                    class="destination-detail-placeholder"
+                    aria-label="{{ destination.name }} 이미지 준비 중"
+                    data-unsplash-placeholder
+                >
+                    <strong>{{ destination.name }}</strong>
+                    <span>여행 사진 준비 중</span>
+                </div>
+                <small class="unsplash-attribution" data-unsplash-attribution hidden>
+                    Photo by <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
+                    on <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
+                </small>
             </div>
         {% endif %}
 
