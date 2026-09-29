@@ -50,17 +50,9 @@
                             href="{{ url_for('accommodation.detail', id=accommodation.id) }}"
                         >
                             <div class="accommodation-card__media">
-                                {% if accommodation.image_url %}
-                                    <img
-                                        src="{{ accommodation.image_url }}"
-                                        alt="{{ accommodation.name }} 숙소 전경"
-                                        loading="lazy"
-                                    >
-                                {% else %}
-                                    <div class="accommodation-placeholder" aria-hidden="true">
-                                        <span>숙소 이미지 준비 중</span>
-                                    </div>
-                                {% endif %}
+                                <div class="accommodation-placeholder" aria-hidden="true">
+                                    <span>숙소 이미지 준비 중</span>
+                                </div>
                             </div>
 
                             <div class="accommodation-card__body">

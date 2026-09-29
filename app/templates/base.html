@@ -6,6 +6,21 @@
 
     <title>{% block title %}TripPalette{% endblock %}</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@1,600&family=Nanum+Pen+Script&display=swap"
+    >
+
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
@@ -14,7 +29,7 @@
     {% block head %}{% endblock %}
     {% block css %}{% endblock %}
 </head>
-<body data-unsplash-photo-endpoint="{{ url_for('destination.photo') }}">
+<body>
     <header class="site-header">
         <div class="container site-header__inner">
             <a class="site-logo" href="{{ url_for('main.index') }}">
@@ -142,23 +157,13 @@
         <div class="container site-footer__inner">
             <div class="site-footer__brand-block">
                 <a class="site-footer__brand" href="{{ url_for('main.index') }}">
-                    <span class="site-footer__brand-mark" aria-hidden="true"></span>
-                    <span>TripPalette</span>
+                    <img
+                        src="{{ url_for('static', filename='img/base/logo.png') }}"
+                        alt="TripPalette 홈"
+                    >
                 </a>
                 <p>나만의 여행을 발견하는 가장 쉬운 방법</p>
             </div>
-
-            <nav class="site-footer__links" aria-label="하단 메뉴">
-                <a href="{{ url_for('destination.list') }}">여행지 찾기</a>
-                <a href="{{ url_for('recommendation.survey') }}">맞춤 추천</a>
-                <a href="{{ url_for('accommodation.list') }}">숙소 찾기</a>
-
-                {% if g.user %}
-                <a href="{{ url_for('mypage.favorites') }}">마이페이지</a>
-                {% else %}
-                <a href="{{ url_for('auth.login') }}">로그인</a>
-                {% endif %}
-            </nav>
 
             <div class="site-footer__message">
                 <div class="site-footer__socials" aria-hidden="true">
@@ -196,11 +201,6 @@
         src="{{ url_for('static', filename='js/common.js') }}"
         defer
     ></script>
-    <script
-        src="{{ url_for('static', filename='js/destination-images.js') }}"
-        defer
-    ></script>
-
     {% block scripts %}{% endblock %}
 </body>
 </html>

@@ -12,6 +12,7 @@ from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from app import db
+from app.account_deletion import format_deletion_date, purge_expired_accounts
 from app.auth_helpers import get_safe_next_url, load_logged_in_user, login_required
 from app.models import User
 
@@ -23,6 +24,7 @@ MIN_PASSWORD_LENGTH = 8
 @auth_bp.before_app_request
 def load_current_user():
     """모든 요청에서 Template과 View가 현재 사용자를 참조하게 한다."""
+    purge_expired_accounts()
     load_logged_in_user()
 
 
@@ -59,6 +61,13 @@ def login():
         else:
             session.clear()
             session["user_id"] = user.id
+            if user.scheduled_deletion_at is not None:
+                deletion_date = format_deletion_date(user.scheduled_deletion_at)
+                flash(
+                    f"이 계정은 {deletion_date}에 탈퇴될 예정입니다. "
+                    "마이페이지에서 탈퇴를 철회할 수 있습니다.",
+                    "warning",
+                )
             return redirect(next_url or url_for("main.index"))
 
     return render_template(

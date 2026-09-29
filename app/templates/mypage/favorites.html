@@ -15,6 +15,7 @@
                 <div>
                     <h1 id="favorites-title">찜한 여행지</h1>
                     <p>마음에 드는 여행지를 모아보세요.</p>
+                    <a class="button" href="{{ url_for('recommendation.survey') }}">맞춤 여행 설정</a>
                 </div>
                 {% if favorites %}
                     <p class="mypage-count" aria-label="찜한 여행지 수">
@@ -29,13 +30,7 @@
                 {% for favorite in favorites %}
                     {% set destination = favorite.destination %}
                     {% set media = destination_media.get(destination.name) %}
-                    <article
-                        class="favorite-card"
-                        {% if not media %}
-                            data-unsplash-photo
-                            data-destination-name="{{ destination.name }}"
-                        {% endif %}
-                    >
+                    <article class="favorite-card">
                         <a
                             class="favorite-card__link"
                             href="{{ url_for('destination.detail', id=destination.id) }}"
@@ -50,14 +45,7 @@
                                         loading="lazy"
                                     >
                                 {% else %}
-                                    <img
-                                        class="favorite-card__image"
-                                        alt="{{ destination.name }} 대표 이미지"
-                                        loading="lazy"
-                                        data-unsplash-image
-                                        hidden
-                                    >
-                                    <div class="favorite-card__placeholder" data-unsplash-placeholder>
+                                    <div class="favorite-card__placeholder">
                                         <img
                                             src="{{ url_for('static', filename='img/base/icon-favorite.svg') }}"
                                             alt=""
@@ -98,10 +86,6 @@
                                 </div>
                             </div>
                         </a>
-                        <small class="unsplash-attribution" data-unsplash-attribution hidden>
-                            Photo by <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
-                            on <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
-                        </small>
                     </article>
                 {% endfor %}
             </div>

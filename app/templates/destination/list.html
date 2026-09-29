@@ -7,9 +7,26 @@
 {% endblock %}
 
 {% block content %}
+{% macro filter_options(name, label, options, selected_value) %}
+    <fieldset class="filter-row">
+        <legend>{{ label }}</legend>
+        <div class="filter-options">
+            <label class="filter-chip">
+                <input type="radio" name="{{ name }}" value="" {% if not selected_value %}checked{% endif %}>
+                <span>전체</span>
+            </label>
+            {% for option in options %}
+                <label class="filter-chip">
+                    <input type="radio" name="{{ name }}" value="{{ option }}" {% if selected_value == option %}checked{% endif %}>
+                    <span>{{ option }}</span>
+                </label>
+            {% endfor %}
+        </div>
+    </fieldset>
+{% endmacro %}
+
 <section class="destination-hero" aria-labelledby="destination-page-title">
     <div class="destination-hero__content">
-        <span class="destination-hero__eyebrow">TRIPPALETTE EXPLORE</span>
         <h1 id="destination-page-title">어디로 떠나볼까요?</h1>
         <p>나에게 맞는 여행지를 찾아<br>특별한 여행을 시작해보세요.</p>
     </div>
@@ -18,86 +35,18 @@
 <section class="destination-list-shell">
     <div class="destination-page">
         <form action="{{ url_for('destination.list') }}" method="get" class="destination-filter">
-            <div class="destination-filter__heading">
-                <span>TRIP SEARCH</span>
-                <h2>여행지 찾기</h2>
-            </div>
-
-            <div class="filter-group filter-group--keyword">
-                <label for="keyword">검색어</label>
+            <div class="destination-filter__search-row">
+                <label class="sr-only" for="keyword">여행지 검색</label>
                 <div class="filter-control filter-control--search">
-                    <span aria-hidden="true"></span>
+                    <span class="filter-search-icon" aria-hidden="true"></span>
                     <input
                         type="search"
                         id="keyword"
                         name="keyword"
                         value="{{ keyword or '' }}"
-                        placeholder="어떤 여행을 꿈꾸시나요?"
+                        placeholder="예) 제주도, 바다, 맛집, 힐링"
                     >
                 </div>
-            </div>
-
-            <div class="filter-group">
-                <label for="region">지역</label>
-                <select id="region" name="region">
-                    <option value="">전체 지역</option>
-                    {% for region in filters.regions %}
-                        <option
-                            value="{{ region }}"
-                            {% if selected_filters.region == region %}selected{% endif %}
-                        >
-                            {{ region }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="season">계절</label>
-                <select id="season" name="season">
-                    <option value="">전체 계절</option>
-                    {% for season in filters.seasons %}
-                        <option
-                            value="{{ season }}"
-                            {% if selected_filters.season == season %}selected{% endif %}
-                        >
-                            {{ season }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="purpose">여행 목적</label>
-                <select id="purpose" name="purpose">
-                    <option value="">전체 목적</option>
-                    {% for purpose in filters.purposes %}
-                        <option
-                            value="{{ purpose }}"
-                            {% if selected_filters.purpose == purpose %}selected{% endif %}
-                        >
-                            {{ purpose }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="atmosphere">분위기</label>
-                <select id="atmosphere" name="atmosphere">
-                    <option value="">전체 분위기</option>
-                    {% for atmosphere in filters.atmospheres %}
-                        <option
-                            value="{{ atmosphere }}"
-                            {% if selected_filters.atmosphere == atmosphere %}selected{% endif %}
-                        >
-                            {{ atmosphere }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="filter-actions">
                 <a href="{{ url_for('destination.list') }}" class="filter-reset">
                     <span aria-hidden="true">↻</span>
                     초기화
@@ -107,27 +56,22 @@
                     여행지 검색
                 </button>
             </div>
+
+            {{ filter_options('region', '지역', filters.regions, selected_filters.region) }}
+            {{ filter_options('season', '계절', filters.seasons, selected_filters.season) }}
+            {{ filter_options('purpose', '여행 목적', filters.purposes, selected_filters.purpose) }}
+            {{ filter_options('atmosphere', '분위기', filters.atmospheres, selected_filters.atmosphere) }}
         </form>
 
         <div class="destination-result-header">
-            <div>
-                <span>DESTINATIONS</span>
-                <h2>여행지</h2>
-            </div>
-            <p>총 {{ destinations|length }}개의 여행지</p>
+            <h2>조건에 맞는 여행지 <strong>{{ destinations|length }}</strong>곳</h2>
         </div>
 
         {% if destinations %}
             <div class="destination-grid">
                 {% for destination in destinations %}
                     {% set media = destination_media.get(destination.name) %}
-                    <article
-                        class="destination-card"
-                        {% if not media %}
-                            data-unsplash-photo
-                            data-destination-name="{{ destination.name }}"
-                        {% endif %}
-                    >
+                    <article class="destination-card">
                         <a
                             href="{{ url_for('destination.detail', id=destination.id) }}"
                             class="destination-card-link"
@@ -140,16 +84,9 @@
                                         loading="lazy"
                                     >
                                 {% else %}
-                                    <img
-                                        alt="{{ destination.name }} 대표 이미지"
-                                        loading="lazy"
-                                        data-unsplash-image
-                                        hidden
-                                    >
                                     <div
                                         class="destination-image-placeholder"
                                         aria-label="{{ destination.name }} 이미지 준비 중"
-                                        data-unsplash-placeholder
                                     >
                                         <strong>{{ destination.name }}</strong>
                                         <span>여행 사진 준비 중</span>
@@ -172,22 +109,33 @@
 
                                 <div class="destination-tags">
                                     {% if destination.season %}
-                                        <span>{{ destination.season }}</span>
+                                        <span class="destination-tag destination-tag--season">{{ destination.season }}</span>
                                     {% endif %}
                                     {% if destination.purpose %}
-                                        <span>{{ destination.purpose }}</span>
+                                        <span class="destination-tag destination-tag--purpose">{{ destination.purpose }}</span>
                                     {% endif %}
                                     {% if destination.atmosphere %}
-                                        <span>{{ destination.atmosphere }}</span>
+                                        <span class="destination-tag destination-tag--atmosphere">{{ destination.atmosphere }}</span>
                                     {% endif %}
                                 </div>
+                                <span class="destination-card-arrow" aria-hidden="true">→</span>
                             </div>
                         </a>
-
-                        <small class="unsplash-attribution" data-unsplash-attribution hidden>
-                            Photo by <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
-                            on <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
-                        </small>
+                        {% if g.user %}
+                            <form class="destination-card-favorite" method="post" action="{{ url_for('destination.toggle_favorite', id=destination.id) }}">
+                                <button
+                                    type="submit"
+                                    aria-label="{{ destination.name }} {% if destination.id in favorite_destination_ids %}찜 해제{% else %}찜하기{% endif %}"
+                                    aria-pressed="{{ 'true' if destination.id in favorite_destination_ids else 'false' }}"
+                                >{% if destination.id in favorite_destination_ids %}♥{% else %}♡{% endif %}</button>
+                            </form>
+                        {% else %}
+                            <a
+                                class="destination-card-favorite"
+                                href="{{ url_for('auth.login', next=request.full_path.rstrip('?')) }}"
+                                aria-label="로그인하고 {{ destination.name }} 찜하기"
+                            >♡</a>
+                        {% endif %}
                     </article>
                 {% endfor %}
             </div>
