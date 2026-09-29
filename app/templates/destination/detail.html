@@ -7,13 +7,13 @@
 {% block content %}
 
 <link rel="stylesheet"
-      href="{{ url_for('static', filename='css/destination.css') }}">
+      href="{{ url_for('static', filename='css/destination-detail.css') }}">
 
-<section class="detail-page">
+<main class="destination-detail">
 
-    <!-- TOP IMAGE -->
+    <!-- HERO -->
 
-    <div class="detail-hero">
+    <section class="detail-hero">
 
         <img
             src="{{ url_for(
@@ -23,223 +23,209 @@
             alt="{{ destination.name }}"
         >
 
-        <div class="hero-buttons">
+        <button class="favorite-btn">
+            ♡
+        </button>
 
-            <a
-                href="{{ url_for('destination.list') }}"
-                class="back-button"
-            >
-                ← 여행지 목록
-            </a>
+    </section>
 
-            <button class="favorite-button">
-                ♡ 찜하기
-            </button>
+
+    <!-- 기본 정보 -->
+
+    <section class="destination-info">
+
+        <span class="region">
+            {{ destination.region }}
+        </span>
+
+        <h1>
+            {{ destination.name }}
+        </h1>
+
+        <div class="rating">
+            ★ 4.8
+            <span>여행자 리뷰 124개</span>
+        </div>
+
+    </section>
+
+
+    <!-- 소개 -->
+
+    <section class="detail-content">
+
+        <span class="label">
+            ABOUT
+        </span>
+
+        <h2>
+            여행지 소개
+        </h2>
+
+        <p>
+            {{ destination.description }}
+        </p>
+
+        <p>
+            TripPalette가 추천하는 특별한 여행지입니다.
+            아름다운 풍경과 다양한 볼거리를 즐기며
+            나만의 여행을 만들어보세요.
+        </p>
+
+    </section>
+
+
+    <!-- 여행 정보 -->
+
+    <section class="detail-content">
+
+        <span class="label">
+            INFORMATION
+        </span>
+
+        <h2>
+            여행 정보
+        </h2>
+
+        <div class="information-grid">
+
+            <div class="information-item">
+                <span>📍</span>
+                <strong>위치</strong>
+                <p>{{ destination.region }}</p>
+            </div>
+
+            <div class="information-item">
+                <span>☀️</span>
+                <strong>추천 계절</strong>
+                <p>봄 · 여름 · 가을</p>
+            </div>
+
+            <div class="information-item">
+                <span>📷</span>
+                <strong>추천 여행</strong>
+                <p>사진 · 산책 · 관광</p>
+            </div>
+
+            <div class="information-item">
+                <span>❤️</span>
+                <strong>TripPalette 추천</strong>
+                <p>추천 여행지</p>
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- TITLE -->
+    <!-- 리뷰 -->
 
-    <div class="detail-header">
+    <section class="detail-content">
+
+        <div class="review-heading">
+
+            <div>
+                <span class="label">
+                    REVIEWS
+                </span>
+
+                <h2>
+                    여행자 리뷰
+                </h2>
+            </div>
+
+            <strong class="review-score">
+                ★ 4.8
+            </strong>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="review-user">
+
+                <div class="profile">
+                    여행자
+                </div>
+
+                <div>
+                    <strong>
+                        TripPalette 여행자
+                    </strong>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                </div>
+
+            </div>
+
+            <p>
+                정말 아름다운 여행지였어요.
+                사진으로 보는 것보다 직접 가보니
+                훨씬 좋았습니다.
+            </p>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="review-user">
+
+                <div class="profile">
+                    여행자
+                </div>
+
+                <div>
+                    <strong>
+                        여행자
+                    </strong>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                </div>
+
+            </div>
+
+            <p>
+                가족과 함께 방문하기 좋았어요.
+                다시 가고 싶은 곳입니다.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- 주변 숙소 -->
+
+    <section class="nearby-accommodation">
 
         <div>
 
-            <span class="region-tag">
-                {{ destination.region }}
+            <span class="label">
+                STAY NEARBY
             </span>
 
-            <h1>
-                {{ destination.name }}
-            </h1>
-
-            <p class="detail-subtitle">
-                푸른 바다와 웅장한 성산일출봉이
-                만들어내는 제주도의 아름다움을 느껴보세요.
-            </p>
-
-            <div class="detail-info">
-
-                <span>🍃 자연</span>
-
-                <span>📷 관광</span>
-
-                <span>🌳 휴양</span>
-
-                <span>📍 제주특별자치도</span>
-
-            </div>
-
-        </div>
-
-
-        <!-- NEARBY ACCOMMODATION -->
-
-        <aside class="nearby-box">
-
-            <div class="nearby-title">
-
-                <div>
-                    <h3>이 여행지 주변 숙소</h3>
-                    <p>
-                        여행지와 가까운 숙소에서
-                        편안하게 머물러보세요.
-                    </p>
-                </div>
-
-                <a href="#">전체 보기 →</a>
-
-            </div>
-
-
-            <div class="hotel-list">
-
-                {% for hotel in accommodations %}
-
-                <a
-                    href="{{ url_for(
-                        'accommodation.detail',
-                        accommodation_id=hotel.id
-                    ) }}"
-                    class="hotel-card"
-                >
-
-                    <div class="hotel-image">
-
-                        <img
-                            src="{{ url_for(
-                                'static',
-                                filename='images/' + hotel.image
-                            ) }}"
-                            alt="{{ hotel.name }}"
-                        >
-
-                        <span>♡</span>
-
-                    </div>
-
-                    <h4>{{ hotel.name }}</h4>
-
-                    <div class="rating">
-                        ⭐ {{ hotel.rating }}
-                    </div>
-
-                    <strong>
-                        ₩ {{ hotel.price }}
-                    </strong>
-
-                </a>
-
-                {% endfor %}
-
-            </div>
-
-        </aside>
-
-    </div>
-
-
-    <!-- ABOUT -->
-
-    <section class="about-section">
-
-        <div class="about-content">
-
-            <span class="about-label">
-                ABOUT
-            </span>
-
-            <h2>여행지 소개</h2>
+            <h2>
+                주변 숙소
+            </h2>
 
             <p>
-                {{ destination.description }}
+                여행지 근처의 숙소를 찾아보세요.
             </p>
 
-
-            <!-- IMAGE GALLERY -->
-
-            <div class="mini-gallery">
-
-                {% for image in destination.images %}
-
-                <img
-                    src="{{ url_for(
-                        'static',
-                        filename='images/' + image
-                    ) }}"
-                    alt=""
-                >
-
-                {% endfor %}
-
-            </div>
-
         </div>
+
+        <a href="{{ url_for('accommodation.list') }}">
+            숙소 둘러보기 →
+        </a>
 
     </section>
 
-
-    <!-- REVIEWS -->
-
-    <section class="review-section">
-
-        <div class="section-title">
-
-            <h2>여행지 리뷰</h2>
-
-            <span>
-                {{ reviews|length }}개의 리뷰
-            </span>
-
-        </div>
-
-
-        <div class="review-box">
-
-            {% for review in reviews %}
-
-            <div class="review">
-
-                <div class="profile">
-                    👤
-                </div>
-
-                <div class="review-content">
-
-                    <div class="review-top">
-
-                        <strong>
-                            {{ review.name }}
-                        </strong>
-
-                        <span>
-                            {{ review.date }}
-                        </span>
-
-                    </div>
-
-                    <div class="stars">
-                        {% for i in range(review.rating) %}
-                            ⭐
-                        {% endfor %}
-                    </div>
-
-                    <p>
-                        {{ review.content }}
-                    </p>
-
-                </div>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </section>
-
-</section>
+</main>
 
 {% endblock %}
