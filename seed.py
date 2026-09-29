@@ -72,14 +72,6 @@ def optional_rating(value, label):
     return rating
 
 
-def normalize_image_url(value):
-    if not value:
-        return None
-    if value.startswith("http://tong.visitkorea.or.kr/"):
-        return value.replace("http://", "https://", 1)
-    return value
-
-
 def validate_destinations(items):
     seen_names = set()
     for index, item in enumerate(items, start=1):
@@ -153,8 +145,7 @@ def upsert_destinations(items):
         destination.atmosphere = item.get("atmosphere") or None
         destination.budget_level = item.get("budget_level") or None
         destination.recommended_days = item.get("recommended_days")
-        # Destination photos are loaded at runtime from Unsplash.
-        # Always clear legacy TourAPI URLs when seed data is applied.
+        # 여행지 이미지는 승인된 로컬 정적 파일에서만 표시한다.
         destination.image_url = None
 
     db.session.flush()
@@ -196,7 +187,8 @@ def upsert_accommodations(items, destinations_by_name):
             item.get("rating"),
             f"숙소 {destination_name} / {name}",
         )
-        accommodation.image_url = normalize_image_url(item.get("image_url"))
+        # 숙소 외부 이미지 연동을 사용하지 않으므로 기존 URL도 제거한다.
+        accommodation.image_url = None
 
     return created, updated
 

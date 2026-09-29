@@ -56,37 +56,6 @@
 - 출처와 사용 권한이 확인된 이미지를 확보하기 전까지 `image_url`은 `null`로 저장합니다.
 - 개인정보, 실제 예약정보, 결제정보를 포함하지 않습니다.
 
-### TourAPI 이미지 수집
-
-여행지 사진은 seed JSON에 저장하지 않고 화면에서 Unsplash API로 불러옵니다.
-`scripts/collect_tour_images.py`는 보류된 숙소 사진을 정리할 때만 사용하는
-숙소 전용 수집 도구입니다.
-
-- 인증키는 `.env`의 `TOUR_API_KEY`에서만 읽습니다.
-- 숙소는 이름과 주소를 대조한 뒤 상세 이미지를 최대 3장 선택합니다.
-- 정확하게 일치하지 않는 숙소는 자동 반영하지 않고 검토 대상으로 분리합니다.
-- 3장은 `matched`, 1~2장은 `partial`, 0장은 `review`로 보고서에 기록합니다.
-- 각 이미지의 URL, 대체 텍스트, 출처, 저작권 유형과 콘텐츠 ID를 함께 저장합니다.
-- `image_url`에는 목록 화면용 첫 번째 이미지를, `images`에는 상세 화면용 전체
-  이미지를 저장합니다.
-- 외부 이미지가 없거나 불확실하면 공통 기본 이미지를 사용합니다.
-
-숙소 한 항목만 미리보기로 확인합니다.
-
-```powershell
-.\venv\Scripts\python.exe scripts\collect_tour_images.py --target accommodations --limit 1
-```
-
-보고서를 확인한 뒤 전체 결과를 JSON에 반영합니다.
-
-```powershell
-.\venv\Scripts\python.exe scripts\collect_tour_images.py --write
-```
-
-결과 보고서는 `app/data/tour-image-report.json`에 생성됩니다. API 호출 제한과
-장애의 영향을 줄이기 위해 사용자 요청 때마다 API를 호출하지 않고, 수집 시점에
-확정한 URL을 seed JSON에 저장합니다.
-
 ## 주요 가격 확인 출처
 
 가격은 조회일과 객실 조건에 따라 달라질 수 있습니다.

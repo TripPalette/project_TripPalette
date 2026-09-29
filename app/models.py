@@ -18,6 +18,12 @@ class User(db.Model):
         default=db.func.now(),
         server_default=db.func.current_timestamp(),
     )
+    withdrawal_requested_at = db.Column(db.DateTime, nullable=True)
+    scheduled_deletion_at = db.Column(
+        db.DateTime,
+        nullable=True,
+        index=True,
+    )
 
     preference = db.relationship(
         "UserPreference",

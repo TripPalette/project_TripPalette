@@ -13,22 +13,26 @@ HERO_SLIDES = (
     {
         "filename": "img/main/hero-jeju-sunset.png",
         "destination_name": "제주",
+        "caption": "바다와 섬이 빚어낸 쉼",
         "alt": "제주 바다와 야자수가 어우러진 저녁 풍경",
     },
     {
         "filename": "img/main/hero-busan-gwangalli-hd.png",
         "destination_name": "부산",
+        "caption": "도시와 바다가 만나는 밤",
         "alt": "부산 광안리 바다를 가로지르는 대교와 해안 야경",
     },
     {
         "filename": "img/main/hero-pohang-sunset-hd.png",
         "destination_name": "포항",
+        "caption": "해가 가장 먼저 머무는 곳",
         "alt": "붉은 저녁 아래 포항 해변과 야생화",
     },
     {
-        "filename": "img/main/hero-geochang-hd.png",
-        "destination_name": "거창",
-        "alt": "산과 구름이 내려다보이는 거창의 전망대",
+        "filename": "img/destination/generated/yeosu-harbor-night-v1.png",
+        "destination_name": "여수",
+        "caption": "빛으로 물드는 낭만적인 밤바다",
+        "alt": "불빛이 바다에 비치는 여수 항구의 야경",
     },
 )
 
@@ -42,10 +46,26 @@ REGION_GROUP_RULES = (
 )
 
 COMPANION_DESTINATION_GROUPS = (
-    {"label": "혼자", "phrase": "혼자", "names": ("제주", "강릉", "구례")},
-    {"label": "연인", "phrase": "연인과", "names": ("여수", "속초", "보령")},
-    {"label": "가족", "phrase": "가족과", "names": ("제주", "평창", "안동")},
-    {"label": "친구", "phrase": "친구와", "names": ("창원 진해", "삼척", "태백")},
+    {
+        "label": "혼자",
+        "headline": "나를 위한 특별한 시간",
+        "names": ("제주", "강릉", "구례"),
+    },
+    {
+        "label": "연인",
+        "headline": "둘만의 특별한 추억",
+        "names": ("여수", "속초", "보령"),
+    },
+    {
+        "label": "가족",
+        "headline": "함께여서 더 행복한 여행",
+        "names": ("제주", "평창", "안동"),
+    },
+    {
+        "label": "친구",
+        "headline": "언제나 즐거운 우리",
+        "names": ("창원 진해", "삼척", "태백"),
+    },
 )
 
 REGION_FALLBACK_IMAGES = {
@@ -167,7 +187,7 @@ def index():
     companion_groups = [
         {
             "label": group["label"],
-            "phrase": group["phrase"],
+            "headline": group["headline"],
             "destinations": _ordered_destinations(
                 destinations_by_name,
                 group["names"],
@@ -178,7 +198,15 @@ def index():
 
     return render_template(
         "main/index.html",
-        hero_slides=HERO_SLIDES,
+        hero_slides=[
+            {
+                **slide,
+                "destination": destinations_by_name.get(
+                    slide["destination_name"]
+                ),
+            }
+            for slide in HERO_SLIDES
+        ],
         popular_destinations=_ordered_destinations(
             destinations_by_name,
             POPULAR_DESTINATION_NAMES,

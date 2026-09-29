@@ -24,16 +24,9 @@
 
         <article class="accommodation-detail">
             <div class="accommodation-detail__media">
-                {% if accommodation.image_url %}
-                    <img
-                        src="{{ accommodation.image_url }}"
-                        alt="{{ accommodation.name }} 숙소 전경"
-                    >
-                {% else %}
-                    <div class="accommodation-placeholder accommodation-placeholder--detail" aria-hidden="true">
-                        <span>숙소 이미지 준비 중</span>
-                    </div>
-                {% endif %}
+                <div class="accommodation-placeholder accommodation-placeholder--detail" aria-hidden="true">
+                    <span>숙소 이미지 준비 중</span>
+                </div>
             </div>
 
             <div class="accommodation-detail__summary">

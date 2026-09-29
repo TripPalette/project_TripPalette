@@ -29,13 +29,10 @@
 
 .detail-hero__gallery img:first-child { grid-row: 1 / 3; }
 
-.detail-hero__fallback,
-.detail-hero__fallback > img {
+.detail-hero__fallback {
     width: 100%;
     height: 100%;
 }
-
-.detail-hero__fallback > img { object-fit: cover; }
 
 .detail-hero__placeholder {
     display: flex;
@@ -49,16 +46,6 @@
 }
 
 .detail-hero__placeholder strong { font-size: 1.6rem; }
-
-.detail-hero .unsplash-attribution {
-    position: absolute;
-    right: 16px;
-    bottom: 12px;
-    padding: 5px 8px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.58);
-    border-radius: 6px;
-}
 
 .detail-hero__actions {
     position: absolute;
