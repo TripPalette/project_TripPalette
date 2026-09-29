@@ -1,0 +1,758 @@
+/* =========================================
+   기본
+========================================= */
+
+.travel-detail {
+    width: 100%;
+
+    color: #222;
+
+    background: #fff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.travel-hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 620px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition:
+        opacity .5s ease,
+        transform 1s ease;
+}
+
+
+.hero-image.loaded {
+    opacity: 1;
+}
+
+
+.travel-hero:hover .hero-image {
+    transform: scale(1.02);
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.65)
+        );
+}
+
+
+.hero-text {
+    position: absolute;
+
+    left: 8%;
+
+    bottom: 75px;
+
+    color: white;
+}
+
+
+.hero-region {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 13px;
+}
+
+
+.hero-text h1 {
+    margin: 0 0 15px;
+
+    font-size: 64px;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+}
+
+
+.hero-rating {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 15px;
+}
+
+
+.hero-rating span:first-child {
+    color: #ffc857;
+
+    font-size: 20px;
+}
+
+
+.hero-heart,
+.stay-heart {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.95);
+
+    color: #222;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
+}
+
+
+.hero-heart {
+    top: 30px;
+
+    right: 40px;
+}
+
+
+.hero-heart:hover,
+.stay-heart:hover {
+    color: #ff7043;
+}
+
+
+/* =========================================
+   이미지 로딩
+========================================= */
+
+.image-loading {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #888;
+
+    background: #eee;
+
+    font-size: 14px;
+}
+
+
+.hero-image.loaded
+~ .image-loading {
+    display: none;
+}
+
+
+/* =========================================
+   공통 SECTION
+========================================= */
+
+.travel-section {
+    max-width: 1120px;
+
+    margin: auto;
+
+    padding: 90px 25px;
+
+    border-bottom:
+        1px solid #eee;
+}
+
+
+.section-tag {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #ff7043;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+
+.travel-section h2 {
+    margin: 0;
+
+    font-size: 36px;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro-section {
+    display: grid;
+
+    grid-template-columns:
+        35% 65%;
+
+    gap: 30px;
+}
+
+
+.intro-section h2 {
+    font-size: 42px;
+
+    line-height: 1.35;
+}
+
+
+.intro-text {
+    grid-column: 2;
+
+    max-width: 760px;
+
+    margin-top: -10px;
+
+    color: #777;
+
+    font-size: 16px;
+
+    line-height: 2;
+}
+
+
+/* =========================================
+   여행 정보
+========================================= */
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 35px;
+}
+
+
+.travel-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+.travel-info-card {
+    padding: 28px;
+
+    border:
+        1px solid #eee;
+
+    border-radius: 18px;
+
+    background: #fafafa;
+
+    transition: .2s;
+}
+
+
+.travel-info-card:hover {
+    transform: translateY(-4px);
+
+    background: #fff;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.07);
+}
+
+
+.info-icon {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+
+.travel-info-card span,
+.travel-info-card strong {
+    display: block;
+}
+
+
+.travel-info-card span {
+    margin-bottom: 7px;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+.travel-info-card strong {
+    font-size: 15px;
+}
+
+
+/* =========================================
+   숙소
+========================================= */
+
+.stay-section {
+    padding: 100px 25px;
+
+    background:
+        #f7f5f2;
+}
+
+
+.stay-heading {
+    max-width: 1120px;
+
+    margin:
+        0 auto 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+
+.stay-heading h2 {
+    margin: 0;
+
+    font-size: 38px;
+}
+
+
+.stay-heading p {
+    margin: 12px 0 0;
+
+    color: #888;
+}
+
+
+.more-button {
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+
+/* 숙소 CARD */
+
+.stay-card {
+    max-width: 1120px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1fr;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08);
+}
+
+
+.stay-image {
+    position: relative;
+
+    min-height: 450px;
+
+    background: #eee;
+}
+
+
+.stay-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.stay-heart {
+    top: 20px;
+
+    right: 20px;
+}
+
+
+.stay-content {
+    padding: 55px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.stay-location {
+    color: #ff7043;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.stay-content h3 {
+    margin: 10px 0;
+
+    font-size: 32px;
+}
+
+
+.stay-rating {
+    color: #ff7043;
+
+    font-size: 15px;
+}
+
+
+.stay-description {
+    margin:
+        25px 0 35px;
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+
+.stay-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.stay-bottom small {
+    display: block;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+.stay-bottom strong {
+    font-size: 23px;
+}
+
+
+.stay-button {
+    padding: 14px 22px;
+
+    border-radius: 30px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.stay-button:hover {
+    background: #ff7043;
+}
+
+
+/* =========================================
+   REVIEW
+========================================= */
+
+.review-section {
+    padding-bottom: 100px;
+}
+
+
+.overall-rating {
+    color: #ff7043;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.review {
+    display: flex;
+
+    gap: 17px;
+
+    padding: 28px 0;
+
+    border-top:
+        1px solid #eee;
+}
+
+
+.review-avatar {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1f1f1;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+.review-content strong {
+    font-size: 14px;
+}
+
+
+.stars {
+    margin-top: 6px;
+
+    color: #ff7043;
+
+    letter-spacing: 2px;
+}
+
+
+.review-content p {
+    margin: 12px 0 0;
+
+    color: #777;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   마지막
+========================================= */
+
+.travel-cta {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background: #222;
+
+    color: white;
+}
+
+
+.travel-cta span {
+    color: #ff7043;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.travel-cta h2 {
+    margin: 18px 0 30px;
+
+    font-size: 45px;
+
+    line-height: 1.35;
+}
+
+
+.travel-cta a {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 768px) {
+
+    .travel-hero {
+        height: 500px;
+    }
+
+
+    .hero-text {
+        left: 25px;
+
+        bottom: 45px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+
+    .hero-heart {
+        right: 20px;
+    }
+
+
+    .intro-section {
+        display: block;
+    }
+
+
+    .intro-section h2 {
+        margin-bottom: 30px;
+
+        font-size: 30px;
+    }
+
+
+    .travel-info-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .stay-heading {
+        display: block;
+    }
+
+
+    .more-button {
+        display: inline-block;
+
+        margin-top: 20px;
+    }
+
+
+    .stay-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stay-image {
+        min-height: 300px;
+    }
+
+
+    .stay-content {
+        padding: 35px 25px;
+    }
+
+
+    .stay-content h3 {
+        font-size: 27px;
+    }
+
+
+    .travel-cta h2 {
+        font-size: 32px;
+    }
+
+}
