@@ -2,7 +2,7 @@
   {
     "destination_name": "창원 진해",
     "name": "깨끗한 호텔 외인촌",
-    "address": "경상남도 창원시 진해구",
+    "address": "경상남도 창원시 진해구 청안로 7",
     "description": "진해 여행을 위한 도심형 숙소",
     "price_per_night": 32000,
     "capacity": 2,
@@ -13,7 +13,7 @@
   {
     "destination_name": "창원 진해",
     "name": "진해 인터시티호텔",
-    "address": "경상남도 창원시 진해구",
+    "address": "경상남도 창원시 진해구 충장로 98",
     "description": "진해 도심과 관광지 이동이 편리한 호텔",
     "price_per_night": 120000,
     "capacity": 2,
@@ -23,11 +23,11 @@
   },
   {
     "destination_name": "창원 진해",
-    "name": "글로리아 글램핑",
-    "address": "경상남도 창원시 마산합포구",
-    "description": "해안 인근에서 머무는 글램핑 숙소",
-    "price_per_night": 190000,
-    "capacity": 4,
+    "name": "호텔38.5도씨",
+    "address": "경상남도 창원시 진해구 충장로82번길 15",
+    "description": "진해 도심에 위치한 숙소",
+    "price_per_night": 70000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
@@ -35,7 +35,7 @@
   {
     "destination_name": "삼척",
     "name": "산티아고펜션",
-    "address": "강원특별자치도 삼척시 근덕면",
+    "address": "강원특별자치도 삼척시 근덕면 덕산해안로 66-13",
     "description": "삼척 해안 인근의 펜션형 숙소",
     "price_per_night": 69000,
     "capacity": 2,
@@ -46,7 +46,7 @@
   {
     "destination_name": "삼척",
     "name": "힐스노클비치호텔",
-    "address": "강원특별자치도 삼척시",
+    "address": "강원특별자치도 삼척시 근덕면 장호항길 76-2",
     "description": "삼척 바다 여행을 위한 해안형 숙소",
     "price_per_night": 120000,
     "capacity": 2,
@@ -185,7 +185,7 @@
   {
     "destination_name": "구례",
     "name": "더케이 지리산가족호텔",
-    "address": "전라남도 구례군 산동면",
+    "address": "전라남도 구례군 산동면 지리산온천로 317",
     "description": "지리산 여행을 위한 가족형 호텔",
     "price_per_night": 120000,
     "capacity": 4,
@@ -196,7 +196,7 @@
   {
     "destination_name": "구례",
     "name": "지리산호수리조트",
-    "address": "전라남도 구례군 산동면",
+    "address": "전라남도 구례군 산동면 구만제로 610",
     "description": "지리산과 호수 풍경을 즐기는 리조트",
     "price_per_night": 100000,
     "capacity": 4,
@@ -235,7 +235,7 @@
   {
     "destination_name": "구례",
     "name": "노고단게스트하우스",
-    "address": "전라남도 구례군 산동면",
+    "address": "전라남도 구례군 산동면 하관1길 40",
     "description": "지리산 탐방객을 위한 게스트하우스",
     "price_per_night": 50000,
     "capacity": 2,
@@ -246,7 +246,7 @@
   {
     "destination_name": "속초",
     "name": "HJ하우스펜션",
-    "address": "강원특별자치도 속초시",
+    "address": "강원특별자치도 속초시 해오름로188번길 17",
     "description": "속초해수욕장 인근의 펜션형 숙소",
     "price_per_night": 80000,
     "capacity": 2,
@@ -307,7 +307,7 @@
   {
     "destination_name": "무주",
     "name": "나오스펜션",
-    "address": "전북특별자치도 무주군 설천면",
+    "address": "전북특별자치도 무주군 설천면 외배방길 13",
     "description": "덕유산 인근의 펜션형 숙소",
     "price_per_night": 131000,
     "capacity": 4,
@@ -318,7 +318,7 @@
   {
     "destination_name": "무주",
     "name": "무주아일랜드",
-    "address": "전북특별자치도 무주군",
+    "address": "전북특별자치도 무주군 설천면 외배방길 16",
     "description": "무주 자연 여행을 위한 펜션형 숙소",
     "price_per_night": 120000,
     "capacity": 4,
@@ -329,7 +329,7 @@
   {
     "destination_name": "무주",
     "name": "무주 랜드글램핑",
-    "address": "전북특별자치도 무주군 설천면 구천동로",
+    "address": "전북특별자치도 무주군 설천면 구천동로 1092-48",
     "description": "계곡과 가까운 글램핑 숙소",
     "price_per_night": 150000,
     "capacity": 4,
@@ -412,7 +412,7 @@
   {
     "destination_name": "보령",
     "name": "대천 우연플로라호텔",
-    "address": "충청남도 보령시 신흑동 2273-1",
+    "address": "충청남도 보령시 해수욕장8길 48",
     "description": "대천해수욕장 인근의 소규모 호텔",
     "price_per_night": 83000,
     "capacity": 2,
@@ -433,8 +433,8 @@
   },
   {
     "destination_name": "정읍",
-    "name": "앨리스데이",
-    "address": "전북특별자치도 정읍시",
+    "name": "엘리스테이",
+    "address": "전북특별자치도 정읍시 서당길 14",
     "description": "정읍과 내장산 여행을 위한 숙소",
     "price_per_night": 90000,
     "capacity": 2,
@@ -445,7 +445,7 @@
   {
     "destination_name": "정읍",
     "name": "내장산한옥펜션",
-    "address": "전북특별자치도 정읍시 내장산로",
+    "address": "전북특별자치도 정읍시 대석1길 13-26",
     "description": "내장산 인근의 한옥형 펜션",
     "price_per_night": 120000,
     "capacity": 4,
@@ -456,7 +456,7 @@
   {
     "destination_name": "정읍",
     "name": "금강두승산글램핑",
-    "address": "전북특별자치도 정읍시",
+    "address": "전북특별자치도 정읍시 고부면 영원로 222-16",
     "description": "정읍 자연 속에서 머무는 글램핑 숙소",
     "price_per_night": 150000,
     "capacity": 4,
@@ -467,7 +467,7 @@
   {
     "destination_name": "담양",
     "name": "그라스풀빌라리조트",
-    "address": "전라남도 담양군",
+    "address": "전라남도 담양군 담양읍 메타프로방스1길 42-7",
     "description": "개별 휴식을 위한 풀빌라형 리조트",
     "price_per_night": 250000,
     "capacity": 4,
@@ -489,7 +489,7 @@
   {
     "destination_name": "담양",
     "name": "라온글램핑",
-    "address": "전라남도 담양군",
+    "address": "전라남도 담양군 용면 금성산성길 548",
     "description": "담양 자연을 가까이에서 즐기는 글램핑 숙소",
     "price_per_night": 150000,
     "capacity": 4,
@@ -538,8 +538,8 @@
   },
   {
     "destination_name": "안동",
-    "name": "안동마애펜션",
-    "address": "경상북도 안동시",
+    "name": "안동마애원두막펜션",
+    "address": "경상북도 안동시 풍산읍 마애길 36",
     "description": "안동 문화 여행을 위한 펜션형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -550,7 +550,7 @@
   {
     "destination_name": "안동",
     "name": "안동 럭셔리 글램핑 라피네",
-    "address": "경상북도 안동시",
+    "address": "경상북도 안동시 남후면 암산1길 18",
     "description": "안동 자연 속에서 머무는 글램핑 숙소",
     "price_per_night": 150000,
     "capacity": 4,
@@ -572,7 +572,7 @@
   {
     "destination_name": "순천",
     "name": "호텔지뜨 순천",
-    "address": "전라남도 순천시",
+    "address": "전라남도 순천시 팔마2길 11",
     "description": "순천만국가정원 인근의 호텔",
     "price_per_night": 70000,
     "capacity": 2,
@@ -583,7 +583,7 @@
   {
     "destination_name": "순천",
     "name": "순천만S호텔",
-    "address": "전라남도 순천시",
+    "address": "전라남도 순천시 팔마2길 61",
     "description": "순천만 여행을 위한 실속형 호텔",
     "price_per_night": 60000,
     "capacity": 2,
@@ -605,7 +605,7 @@
   {
     "destination_name": "평창",
     "name": "숲앤숲펜션",
-    "address": "강원특별자치도 평창군",
+    "address": "강원특별자치도 평창군 대관령면 차항길 162-22",
     "description": "평창 숲속에서 머무는 펜션형 숙소",
     "price_per_night": 120000,
     "capacity": 4,
@@ -615,8 +615,8 @@
   },
   {
     "destination_name": "평창",
-    "name": "AM호텔",
-    "address": "강원특별자치도 평창군 대관령면",
+    "name": "올림피아드호텔 평창",
+    "address": "강원특별자치도 평창군 대관령면 송천길 30",
     "description": "대관령과 겨울 관광지 이동이 편리한 호텔",
     "price_per_night": 80000,
     "capacity": 2,
@@ -647,11 +647,11 @@
   },
   {
     "destination_name": "인제",
-    "name": "자작나무숲 자작향기펜션",
-    "address": "강원특별자치도 인제군",
-    "description": "자작나무숲 여행을 위한 펜션형 숙소",
-    "price_per_night": 100000,
-    "capacity": 4,
+    "name": "호텔스카이락",
+    "address": "강원특별자치도 인제군 인제읍 비봉로 39",
+    "description": "인제읍에 위치한 숙소",
+    "price_per_night": 70000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
@@ -659,7 +659,7 @@
   {
     "destination_name": "인제",
     "name": "인제호텔",
-    "address": "강원특별자치도 인제군",
+    "address": "강원특별자치도 인제군 인제읍 인제로187번길 4",
     "description": "인제 도심에 위치한 실속형 호텔",
     "price_per_night": 70000,
     "capacity": 2,
@@ -737,7 +737,7 @@
   {
     "destination_name": "강릉",
     "name": "오션힐펜션",
-    "address": "강원특별자치도 강릉시",
+    "address": "강원특별자치도 강릉시 해안로 651-9",
     "description": "강릉 바다 여행을 위한 펜션형 숙소",
     "price_per_night": 90000,
     "capacity": 4,
@@ -847,11 +847,11 @@
   },
   {
     "destination_name": "제주",
-    "name": "제주 스타라이트 글램핑",
-    "address": "제주특별자치도 제주시",
-    "description": "제주의 자연을 가까이에서 즐기는 글램핑 숙소",
-    "price_per_night": 100000,
-    "capacity": 4,
+    "name": "롯데시티호텔 제주",
+    "address": "제주특별자치도 제주시 도령로 83",
+    "description": "제주시 도심에 위치한 호텔",
+    "price_per_night": 150000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
@@ -881,7 +881,7 @@
   {
     "destination_name": "경주",
     "name": "경주엔한옥펜션",
-    "address": "경상북도 경주시",
+    "address": "경상북도 경주시 충효서악길 81",
     "description": "경주의 전통 분위기를 느낄 수 있는 한옥형 펜션",
     "price_per_night": 120000,
     "capacity": 4,
@@ -891,11 +891,11 @@
   },
   {
     "destination_name": "경주",
-    "name": "경주 파도소리 스파글램핑 펜션",
-    "address": "경상북도 경주시",
-    "description": "해안 여행과 스파를 함께 즐기는 펜션형 숙소",
-    "price_per_night": 150000,
-    "capacity": 4,
+    "name": "힐튼호텔 경주",
+    "address": "경상북도 경주시 보문로 484-7",
+    "description": "보문관광단지에 위치한 호텔",
+    "price_per_night": 200000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
@@ -942,7 +942,7 @@
   {
     "destination_name": "부산",
     "name": "제이스 스파 글램핑",
-    "address": "부산광역시",
+    "address": "부산광역시 기장군 일광읍 이천8길 132-20",
     "description": "부산 여행을 위한 글램핑형 숙소",
     "price_per_night": 180000,
     "capacity": 4,
@@ -1003,7 +1003,7 @@
   {
     "destination_name": "가평",
     "name": "가평 슈가펜션",
-    "address": "경기도 가평군",
+    "address": "경기도 가평군 북면 가화로 1422-14",
     "description": "가평 자연 여행을 위한 펜션형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1014,7 +1014,7 @@
   {
     "destination_name": "가평",
     "name": "아늑에어호텔",
-    "address": "경기도 가평군",
+    "address": "경기도 가평군 조종면 조종희망로5번길 6",
     "description": "가평 관광지 이동이 편리한 호텔",
     "price_per_night": 80000,
     "capacity": 2,
@@ -1025,7 +1025,7 @@
   {
     "destination_name": "가평",
     "name": "더스테이힐링파크",
-    "address": "경기도 가평군 설악면",
+    "address": "경기도 가평군 설악면 한서로268번길 157",
     "description": "자연과 휴양 시설을 함께 즐기는 복합형 숙소",
     "price_per_night": 180000,
     "capacity": 2,
@@ -1035,18 +1035,18 @@
   },
   {
     "destination_name": "포천",
-    "name": "산정호수계곡 늘푸른허브펜션",
-    "address": "경기도 포천시 영북면",
-    "description": "산정호수와 계곡 여행을 위한 펜션",
-    "price_per_night": 100000,
-    "capacity": 4,
+    "name": "호텔갤러리",
+    "address": "경기도 포천시 소흘읍 죽엽산로 432-17",
+    "description": "포천 소흘읍에 위치한 호텔",
+    "price_per_night": 80000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
   },
   {
     "destination_name": "포천",
-    "name": "포천 아도니스호텔",
+    "name": "아도니스아트힐호텔",
     "address": "경기도 포천시 신북면 포천로2414번길 24",
     "description": "포천 자연 관광지와 가까운 호텔",
     "price_per_night": 98000,
@@ -1097,7 +1097,7 @@
   {
     "destination_name": "양평",
     "name": "양평 포레스트펜션",
-    "address": "경기도 양평군",
+    "address": "경기도 양평군 단월면 석산로 777",
     "description": "양평 숲과 강변 여행을 위한 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1108,7 +1108,7 @@
   {
     "destination_name": "양평",
     "name": "블룸비스타 호텔앤컨퍼런스",
-    "address": "경기도 양평군 강하면",
+    "address": "경기도 양평군 강하면 강남로 316",
     "description": "남한강 인근의 호텔형 연수·휴양 숙소",
     "price_per_night": 130000,
     "capacity": 2,
@@ -1158,7 +1158,7 @@
   {
     "destination_name": "홍천",
     "name": "홍천 신영펜션",
-    "address": "강원특별자치도 홍천군",
+    "address": "강원특별자치도 홍천군 서면 한치골길 75-12",
     "description": "홍천 자연 속에서 머무는 펜션",
     "price_per_night": 90000,
     "capacity": 4,
@@ -1168,11 +1168,11 @@
   },
   {
     "destination_name": "홍천",
-    "name": "사가우드 홍천",
-    "address": "강원특별자치도 홍천군",
-    "description": "숲과 어우러진 독립형 휴양 숙소",
-    "price_per_night": 180000,
-    "capacity": 4,
+    "name": "세이지우드 호텔 홍천",
+    "address": "강원특별자치도 홍천군 두촌면 광석로 898-160",
+    "description": "홍천 두촌면에 위치한 호텔",
+    "price_per_night": 250000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
@@ -1219,7 +1219,7 @@
   {
     "destination_name": "양양",
     "name": "양양 프리지아 펜션",
-    "address": "강원특별자치도 양양군",
+    "address": "강원특별자치도 양양군 강현면 진미로54번길 10",
     "description": "양양 해안 여행을 위한 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1280,7 +1280,7 @@
   {
     "destination_name": "제천",
     "name": "제천힐링펜션",
-    "address": "충청북도 제천시",
+    "address": "충청북도 제천시 봉양읍 제원로 520-2",
     "description": "제천 자연 여행을 위한 펜션형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1290,10 +1290,10 @@
   },
   {
     "destination_name": "제천",
-    "name": "하운드호텔 제천역",
+    "name": "하운드호텔 제천",
     "address": "충청북도 제천시 의림대로 33",
-    "description": "제천역과 도심 이동이 편리한 호텔",
-    "price_per_night": 66000,
+    "description": "제천역 인근에 위치한 숙소",
+    "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
     "image_url": null,
@@ -1313,7 +1313,7 @@
   {
     "destination_name": "단양",
     "name": "단양 르블랑펜션",
-    "address": "충청북도 단양군",
+    "address": "충청북도 단양군 대강면 사인암길 61-32",
     "description": "남한강과 단양 관광지를 둘러보기 좋은 펜션",
     "price_per_night": 90000,
     "capacity": 4,
@@ -1323,8 +1323,8 @@
   },
   {
     "destination_name": "단양",
-    "name": "단양관광호텔 에델바이스",
-    "address": "충청북도 단양군 단양읍",
+    "name": "인터투어 단양관광호텔",
+    "address": "충청북도 단양군 단양읍 삼봉로 31",
     "description": "단양 도심과 관광지 이동이 편리한 호텔",
     "price_per_night": 80000,
     "capacity": 2,
@@ -1335,7 +1335,7 @@
   {
     "destination_name": "단양",
     "name": "소노벨 단양",
-    "address": "충청북도 단양군 단양읍 삼봉로 187-17",
+    "address": "충청북도 단양군 단양읍 삼봉로 187-18",
     "description": "남한강 전망과 부대시설을 갖춘 리조트",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1374,7 +1374,7 @@
   {
     "destination_name": "충주",
     "name": "충주 서유숙펜션",
-    "address": "충청북도 충주시",
+    "address": "충청북도 충주시 소태면 덕은로 596",
     "description": "충주 자연 여행을 위한 펜션형 숙소",
     "price_per_night": 90000,
     "capacity": 4,
@@ -1463,7 +1463,7 @@
   {
     "destination_name": "태안",
     "name": "태안 칸타빌레펜션",
-    "address": "충청남도 태안군",
+    "address": "충청남도 태안군 남면 청포대길 57-38",
     "description": "태안 해변 여행을 위한 펜션형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1474,7 +1474,7 @@
   {
     "destination_name": "태안",
     "name": "롱비치 패밀리 호텔",
-    "address": "충청남도 태안군",
+    "address": "충청남도 태안군 소원면 만리포2길 120",
     "description": "서해안 가족 여행을 위한 호텔",
     "price_per_night": 90000,
     "capacity": 4,
@@ -1524,7 +1524,7 @@
   {
     "destination_name": "부여",
     "name": "부여 억새정원 펜션",
-    "address": "충청남도 부여군",
+    "address": "충청남도 부여군 부여읍 신기정로94번길 31-10",
     "description": "부여 문화 여행을 위한 전원형 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1535,7 +1535,7 @@
   {
     "destination_name": "부여",
     "name": "부여파크아트빌라스",
-    "address": "충청남도 부여군 규암면",
+    "address": "충청남도 부여군 규암면 서궁로 129",
     "description": "취사 가능한 객실을 갖춘 빌라형 숙소",
     "price_per_night": 130000,
     "capacity": 4,
@@ -1557,7 +1557,7 @@
   {
     "destination_name": "포항",
     "name": "포항 포에버펜션",
-    "address": "경상북도 포항시",
+    "address": "경상북도 포항시 북구 송라면 해안로 2917-17",
     "description": "포항 해안 여행을 위한 펜션형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1606,8 +1606,8 @@
   },
   {
     "destination_name": "포항",
-    "name": "오션힐스 골프리조트",
-    "address": "경상북도 포항시",
+    "name": "오포항리조트",
+    "address": "경상북도 포항시 북구 송라면 대전길 7-1",
     "description": "골프와 휴양을 함께 즐기는 리조트형 숙소",
     "price_per_night": 130000,
     "capacity": 4,
@@ -1618,7 +1618,7 @@
   {
     "destination_name": "문경",
     "name": "문경 힐하우스펜션",
-    "address": "경상북도 문경시",
+    "address": "경상북도 문경시 농암면 청화로 581-4",
     "description": "문경새재와 자연 여행을 위한 펜션",
     "price_per_night": 90000,
     "capacity": 4,
@@ -1629,7 +1629,7 @@
   {
     "destination_name": "문경",
     "name": "페트로호텔",
-    "address": "경상북도 문경시",
+    "address": "경상북도 문경시 문경읍 새재2길 32-3",
     "description": "문경 관광지 이동이 편리한 호텔",
     "price_per_night": 70000,
     "capacity": 2,
@@ -1689,8 +1689,8 @@
   },
   {
     "destination_name": "청송",
-    "name": "주왕산 온천관광호텔",
-    "address": "경상북도 청송군 주왕산면",
+    "name": "주왕산관광호텔",
+    "address": "경상북도 청송군 청송읍 중앙로 315",
     "description": "주왕산 여행과 온천을 함께 즐기는 호텔",
     "price_per_night": 128000,
     "capacity": 2,
@@ -1740,7 +1740,7 @@
   {
     "destination_name": "거제",
     "name": "더100펜션",
-    "address": "경상남도 거제시",
+    "address": "경상남도 거제시 장목면 거제북로 2520-1",
     "description": "거제 바다 여행을 위한 가족형 펜션",
     "price_per_night": 120000,
     "capacity": 4,
@@ -1828,8 +1828,8 @@
   },
   {
     "destination_name": "통영",
-    "name": "통영아이펜션",
-    "address": "경상남도 통영시",
+    "name": "아이키즈펜션",
+    "address": "경상남도 통영시 용남면 용남해안로 351",
     "description": "통영 바다 여행을 위한 펜션형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1850,7 +1850,7 @@
   },
   {
     "destination_name": "통영",
-    "name": "금호통영마리나리조트",
+    "name": "금호리조트 통영마리나",
     "address": "경상남도 통영시 큰발개1길 33",
     "description": "마리나와 해양 관광에 편리한 리조트",
     "price_per_night": 120000,
@@ -1872,7 +1872,7 @@
   {
     "destination_name": "남해",
     "name": "푸르다 남해펜션",
-    "address": "경상남도 남해군",
+    "address": "경상남도 남해군 미조면 동부대로 70-25",
     "description": "남해의 자연과 바다를 즐기는 펜션",
     "price_per_night": 130000,
     "capacity": 4,
@@ -1915,7 +1915,7 @@
   {
     "destination_name": "군산",
     "name": "선유도 씨에스타펜션",
-    "address": "전북특별자치도 군산시 옥도면",
+    "address": "전북특별자치도 군산시 옥도면 선유남길 19-9",
     "description": "선유도 섬 여행에 알맞은 펜션",
     "price_per_night": 120000,
     "capacity": 4,
@@ -1937,7 +1937,7 @@
   {
     "destination_name": "군산",
     "name": "유로빌리지",
-    "address": "전북특별자치도 군산시",
+    "address": "전북특별자치도 군산시 옥구읍 신장길 26",
     "description": "가족과 머물기 좋은 독립형 숙소",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1948,7 +1948,7 @@
   {
     "destination_name": "부안",
     "name": "부안 아침바다 펜션",
-    "address": "전북특별자치도 부안군 변산면",
+    "address": "전북특별자치도 부안군 변산면 궁항로 72-13",
     "description": "변산 해안 여행을 위한 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -1970,7 +1970,7 @@
   {
     "destination_name": "부안",
     "name": "소노벨 변산",
-    "address": "전북특별자치도 부안군 변산면 변산해변로 51",
+    "address": "전북특별자치도 부안군 변산면 소노로 10",
     "description": "변산 해변과 부대시설을 갖춘 리조트",
     "price_per_night": 132000,
     "capacity": 4,
@@ -2009,7 +2009,7 @@
   {
     "destination_name": "완주",
     "name": "더펜션퍼스트",
-    "address": "전북특별자치도 완주군",
+    "address": "전북특별자치도 완주군 상관면 상관소양로 74",
     "description": "완주의 자연 속에서 쉬기 좋은 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -2020,7 +2020,7 @@
   {
     "destination_name": "완주",
     "name": "브라운도트호텔 완주 봉동점",
-    "address": "전북특별자치도 완주군 봉동읍",
+    "address": "전북특별자치도 완주군 봉동읍 원둔산1길 5",
     "description": "완주 여행의 거점으로 이용하기 좋은 호텔",
     "price_per_night": 70000,
     "capacity": 2,
@@ -2031,7 +2031,7 @@
   {
     "destination_name": "완주",
     "name": "상관리조트&스파",
-    "address": "전북특별자치도 완주군 상관면",
+    "address": "전북특별자치도 완주군 상관면 죽림편백길 118-38",
     "description": "휴식과 스파를 함께 즐길 수 있는 리조트",
     "price_per_night": 120000,
     "capacity": 4,
@@ -2070,7 +2070,7 @@
   {
     "destination_name": "신안",
     "name": "신안 나무늘보펜션",
-    "address": "전라남도 신안군",
+    "address": "전라남도 신안군 자은면 구영1길 22-41",
     "description": "신안 섬 여행을 여유롭게 즐기는 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -2081,7 +2081,7 @@
   {
     "destination_name": "신안",
     "name": "라마다프라자호텔 & 씨원리조트 자은도",
-    "address": "전라남도 신안군 자은면",
+    "address": "전라남도 신안군 자은면 자은서부1길 163-101",
     "description": "자은도 해변과 부대시설을 갖춘 복합 숙소",
     "price_per_night": 172000,
     "capacity": 4,
@@ -2103,7 +2103,7 @@
   {
     "destination_name": "제주 조천",
     "name": "제주 도유펜션",
-    "address": "제주특별자치도 제주시 조천읍",
+    "address": "제주특별자치도 제주시 조천읍 신촌10길 40",
     "description": "제주 동부 여행에 알맞은 펜션",
     "price_per_night": 100000,
     "capacity": 4,
@@ -2114,7 +2114,7 @@
   {
     "destination_name": "제주 조천",
     "name": "에코랜드 호텔",
-    "address": "제주특별자치도 제주시 조천읍 번영로 1278-169",
+    "address": "제주특별자치도 제주시 조천읍 남조로 1982",
     "description": "곶자왈 자연 속에서 쉬기 좋은 호텔",
     "price_per_night": 121000,
     "capacity": 2,
@@ -2191,11 +2191,11 @@
   },
   {
     "destination_name": "제주 애월",
-    "name": "제주 놀멍펜션",
-    "address": "제주특별자치도 제주시 애월읍",
-    "description": "애월 해안 여행을 위한 펜션형 숙소",
-    "price_per_night": 100000,
-    "capacity": 4,
+    "name": "다인오세아노호텔",
+    "address": "제주특별자치도 제주시 애월읍 애월해안로 394",
+    "description": "애월 해안에 위치한 호텔",
+    "price_per_night": 150000,
+    "capacity": 2,
     "rating": null,
     "image_url": null,
     "images": []
@@ -2214,7 +2214,7 @@
   {
     "destination_name": "제주 애월",
     "name": "제주리조트",
-    "address": "제주특별자치도 제주시 애월읍",
+    "address": "제주특별자치도 제주시 애월읍 가문동상4길 11",
     "description": "가족 단위 제주 여행에 편리한 리조트",
     "price_per_night": 100000,
     "capacity": 4,
@@ -2225,7 +2225,7 @@
   {
     "destination_name": "서귀포",
     "name": "굿데이펜션",
-    "address": "제주특별자치도 서귀포시",
+    "address": "제주특별자치도 서귀포시 남성로115번길 2",
     "description": "서귀포 관광을 여유롭게 즐기는 펜션",
     "price_per_night": 90000,
     "capacity": 4,
