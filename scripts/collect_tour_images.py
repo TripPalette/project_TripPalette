@@ -23,7 +23,6 @@ from dotenv import load_dotenv
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DESTINATIONS_PATH = ROOT / "app" / "data" / "destinations.json"
 ACCOMMODATIONS_PATH = ROOT / "app" / "data" / "accommodations.json"
 DEFAULT_REPORT_PATH = ROOT / "app" / "data" / "tour-image-report.json"
 
@@ -53,13 +52,13 @@ class ApiError(RuntimeError):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="TourAPI 이미지 URL을 수집해 seed JSON에 연결합니다."
+        description="숙소 TourAPI 이미지 URL을 seed JSON에 연결합니다."
     )
     parser.add_argument(
         "--target",
-        choices=("all", "destinations", "accommodations"),
-        default="all",
-        help="수집 대상(기본값: all)",
+        choices=("accommodations",),
+        default="accommodations",
+        help="수집 대상(여행지는 Unsplash 런타임 API만 사용)",
     )
     parser.add_argument(
         "--limit",
@@ -532,32 +531,19 @@ def main() -> int:
     if "%" in service_key:
         service_key = unquote(service_key)
 
-    destinations = load_json(DESTINATIONS_PATH)
     accommodations = load_json(ACCOMMODATIONS_PATH)
     reports: list[dict[str, Any]] = []
 
-    if args.target in {"all", "destinations"}:
-        reports.extend(
-            process_records(
-                destinations,
-                "destination",
-                service_key,
-                args.limit,
-                args.overwrite,
-                args.delay,
-            )
+    reports.extend(
+        process_records(
+            accommodations,
+            "accommodation",
+            service_key,
+            args.limit,
+            args.overwrite,
+            args.delay,
         )
-    if args.target in {"all", "accommodations"}:
-        reports.extend(
-            process_records(
-                accommodations,
-                "accommodation",
-                service_key,
-                args.limit,
-                args.overwrite,
-                args.delay,
-            )
-        )
+    )
 
     summary = {
         "mode": "write" if args.write else "preview",
@@ -572,10 +558,7 @@ def main() -> int:
     write_json(args.report.resolve(), summary)
 
     if args.write:
-        if args.target in {"all", "destinations"}:
-            write_json(DESTINATIONS_PATH, destinations)
-        if args.target in {"all", "accommodations"}:
-            write_json(ACCOMMODATIONS_PATH, accommodations)
+        write_json(ACCOMMODATIONS_PATH, accommodations)
 
     print(
         "완료: "

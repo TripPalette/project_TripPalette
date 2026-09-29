@@ -23,7 +23,7 @@ Phase 3의 목표는 이메일 기반 인증과 회원별 여행지 찜·리뷰�
 - 로그인 후 원래 페이지 복귀
 - 이름·전화번호를 이용한 가입 이메일 찾기
 - 사용자 정보 확인 후 비밀번호 재설정
-- 로그인 상태에 따른 Header 분기
+- 로그인 상태에 따른 Header와 마이페이지 드롭다운 분기
 - 여행지 찜 추가·해제
 - 여행지 리뷰 작성
 - 마이페이지 요약·찜 목록·작성 리뷰 목록
@@ -49,7 +49,7 @@ Phase 3의 목표는 이메일 기반 인증과 회원별 여행지 찜·리뷰�
 | 비밀번호 재설정 | `GET`, `POST` | `/auth/reset-password` | 가능 |
 | 여행지 찜 전환 | `POST` | `/destinations/<id>/favorite` | 로그인으로 이동 |
 | 여행지 리뷰 작성 | `POST` | `/destinations/<id>/reviews` | 로그인으로 이동 |
-| 마이페이지 | `GET` | `/mypage` | 로그인으로 이동 |
+| 마이페이지 진입 | `GET` | `/mypage` | 로그인 후 찜 목록으로 이동 |
 | 찜 목록 | `GET` | `/mypage/favorites` | 로그인으로 이동 |
 | 작성 리뷰 | `GET` | `/mypage/reviews` | 로그인으로 이동 |
 | 회원정보 수정 | `GET`, `POST` | `/mypage/profile` | 로그인으로 이동 |
@@ -66,7 +66,6 @@ Phase 3의 목표는 이메일 기반 인증과 회원별 여행지 찜·리뷰�
 | `auth/find_email.html` | `found_email`, `form_data` |
 | `auth/reset_password.html` | `form_data` |
 | `destination/detail.html` | 기존 변수 + `is_favorite`, `can_review` |
-| `mypage/index.html` | `user`, `favorite_count`, `review_count` |
 | `mypage/favorites.html` | `favorites` |
 | `mypage/reviews.html` | `reviews` |
 | `mypage/profile.html` | `user` |
@@ -138,5 +137,5 @@ app/static/js/auth.js
 - 회원별 찜과 리뷰 데이터가 섞이지 않습니다.
 - 같은 여행지의 중복 찜·중복 리뷰가 차단됩니다.
 - 리뷰 평점은 1~5만 허용됩니다.
-- Header가 로그인 상태에 따라 정확히 달라집니다.
+- Header가 로그인 상태에 따라 달라지고 마이페이지 메뉴에서 찜·리뷰·프로필로 이동합니다.
 - Phase 3 테스트와 기존 Phase 2 테스트가 모두 통과합니다.
