@@ -1,203 +1,233 @@
 {% extends "base.html" %}
 
-{% block title %}여행지 찾기{% endblock %}
-
-{% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/destination.css') }}">
-{% endblock %}
+{% block title %}여행지 찾기 | TripPalette{% endblock %}
 
 {% block content %}
-<section class="destination-hero" aria-labelledby="destination-page-title">
-    <div class="destination-hero__content">
-        <span class="destination-hero__eyebrow">TRIPPALETTE EXPLORE</span>
-        <h1 id="destination-page-title">어디로 떠나볼까요?</h1>
-        <p>나에게 맞는 여행지를 찾아<br>특별한 여행을 시작해보세요.</p>
-    </div>
-</section>
 
-<section class="destination-list-shell">
-    <div class="destination-page">
-        <form action="{{ url_for('destination.list') }}" method="get" class="destination-filter">
-            <div class="destination-filter__heading">
-                <span>TRIP SEARCH</span>
-                <h2>여행지 찾기</h2>
-            </div>
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/destination.css') }}">
 
-            <div class="filter-group filter-group--keyword">
-                <label for="keyword">검색어</label>
-                <div class="filter-control filter-control--search">
-                    <span aria-hidden="true"></span>
-                    <input
-                        type="search"
-                        id="keyword"
-                        name="keyword"
-                        value="{{ keyword or '' }}"
-                        placeholder="어떤 여행을 꿈꾸시나요?"
-                    >
-                </div>
-            </div>
+<section class="destination-page">
 
-            <div class="filter-group">
-                <label for="region">지역</label>
-                <select id="region" name="region">
-                    <option value="">전체 지역</option>
-                    {% for region in filters.regions %}
-                        <option
-                            value="{{ region }}"
-                            {% if selected_filters.region == region %}selected{% endif %}
-                        >
-                            {{ region }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
+    <!-- HERO -->
+    <section class="destination-hero">
 
-            <div class="filter-group">
-                <label for="season">계절</label>
-                <select id="season" name="season">
-                    <option value="">전체 계절</option>
-                    {% for season in filters.seasons %}
-                        <option
-                            value="{{ season }}"
-                            {% if selected_filters.season == season %}selected{% endif %}
-                        >
-                            {{ season }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
+        <div class="hero-text">
 
-            <div class="filter-group">
-                <label for="purpose">여행 목적</label>
-                <select id="purpose" name="purpose">
-                    <option value="">전체 목적</option>
-                    {% for purpose in filters.purposes %}
-                        <option
-                            value="{{ purpose }}"
-                            {% if selected_filters.purpose == purpose %}selected{% endif %}
-                        >
-                            {{ purpose }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
+            <p class="hero-script">
+                Great Travel<br>
+                Better Life
+            </p>
 
-            <div class="filter-group">
-                <label for="atmosphere">분위기</label>
-                <select id="atmosphere" name="atmosphere">
-                    <option value="">전체 분위기</option>
-                    {% for atmosphere in filters.atmospheres %}
-                        <option
-                            value="{{ atmosphere }}"
-                            {% if selected_filters.atmosphere == atmosphere %}selected{% endif %}
-                        >
-                            {{ atmosphere }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
+            <h1>어디로 떠나볼까요?</h1>
 
-            <div class="filter-actions">
-                <a href="{{ url_for('destination.list') }}" class="filter-reset">
-                    <span aria-hidden="true">↻</span>
-                    초기화
-                </a>
-                <button type="submit">
-                    <span class="filter-submit__icon" aria-hidden="true"></span>
-                    여행지 검색
-                </button>
-            </div>
-        </form>
+            <p>
+                나에게 맞는 여행지를 찾아보세요.<br>
+                특별한 여행을 시작해보세요.
+            </p>
 
-        <div class="destination-result-header">
-            <div>
-                <span>DESTINATIONS</span>
-                <h2>여행지</h2>
-            </div>
-            <p>총 {{ destinations|length }}개의 여행지</p>
         </div>
 
-        {% if destinations %}
-            <div class="destination-grid">
-                {% for destination in destinations %}
-                    {% set media = destination_media.get(destination.name) %}
-                    <article
-                        class="destination-card"
-                        {% if not media %}
-                            data-unsplash-photo
-                            data-destination-name="{{ destination.name }}"
-                        {% endif %}
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-box">
+
+        <form method="GET"
+              action="{{ url_for('destination.list') }}">
+
+            <div class="search-item">
+
+                <label>검색어</label>
+
+                <input
+                    type="text"
+                    name="keyword"
+                    value="{{ keyword }}"
+                    placeholder="제주도"
+                >
+
+            </div>
+
+
+            <div class="search-item">
+
+                <label>지역</label>
+
+                <select name="region">
+
+                    <option value="">전체 지역</option>
+
+                    <option value="제주"
+                        {% if region == "제주" %}selected{% endif %}>
+                        제주
+                    </option>
+
+                    <option value="부산"
+                        {% if region == "부산" %}selected{% endif %}>
+                        부산
+                    </option>
+
+                    <option value="경북"
+                        {% if region == "경북" %}selected{% endif %}>
+                        경북
+                    </option>
+
+                    <option value="강원"
+                        {% if region == "강원" %}selected{% endif %}>
+                        강원
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="search-item">
+
+                <label>계절</label>
+
+                <select>
+
+                    <option>전체 계절</option>
+                    <option>봄</option>
+                    <option>여름</option>
+                    <option>가을</option>
+                    <option>겨울</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="search-item">
+
+                <label>여행 목적</label>
+
+                <select name="category">
+
+                    <option value="">전체 목적</option>
+
+                    <option value="자연"
+                        {% if category == "자연" %}selected{% endif %}>
+                        자연
+                    </option>
+
+                    <option value="바다"
+                        {% if category == "바다" %}selected{% endif %}>
+                        바다
+                    </option>
+
+                    <option value="역사"
+                        {% if category == "역사" %}selected{% endif %}>
+                        역사
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="search-buttons">
+
+                <button
+                    type="button"
+                    class="reset-btn"
+                    onclick="location.href='{{ url_for('destination.list') }}'">
+
+                    ↻ 검색 초기화
+
+                </button>
+
+                <button type="submit"
+                        class="search-btn">
+
+                    🔍 검색하기 →
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- DESTINATION LIST -->
+
+    <section class="destination-section">
+
+        <div class="section-title">
+
+            <h2>여행지</h2>
+
+            <span>
+                검색 결과 {{ destinations|length }}개
+            </span>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+            {% for destination in destinations %}
+
+            <a
+                href="{{ url_for(
+                    'destination.detail',
+                    destination_id=destination.id
+                ) }}"
+                class="destination-card"
+            >
+
+                <div class="card-image">
+
+                    <img
+                        src="{{ url_for(
+                            'static',
+                            filename='images/' + destination.image
+                        ) }}"
+                        alt="{{ destination.name }}"
                     >
-                        <a
-                            href="{{ url_for('destination.detail', id=destination.id) }}"
-                            class="destination-card-link"
-                        >
-                            <div class="destination-card-media">
-                                {% if media %}
-                                    <img
-                                        src="{{ url_for('static', filename=media.cover) }}"
-                                        alt="{{ destination.name }} 대표 이미지"
-                                        loading="lazy"
-                                    >
-                                {% else %}
-                                    <img
-                                        alt="{{ destination.name }} 대표 이미지"
-                                        loading="lazy"
-                                        data-unsplash-image
-                                        hidden
-                                    >
-                                    <div
-                                        class="destination-image-placeholder"
-                                        aria-label="{{ destination.name }} 이미지 준비 중"
-                                        data-unsplash-placeholder
-                                    >
-                                        <strong>{{ destination.name }}</strong>
-                                        <span>여행 사진 준비 중</span>
-                                    </div>
-                                {% endif %}
-                            </div>
 
-                            <div class="destination-card-content">
-                                {% if destination.region %}
-                                    <span class="destination-region">{{ destination.region }}</span>
-                                {% endif %}
+                    <button
+                        type="button"
+                        class="heart"
+                        onclick="event.preventDefault();"
+                    >
+                        ♡
+                    </button>
 
-                                <h3>{{ destination.name }}</h3>
+                    <span class="arrow">→</span>
 
-                                {% if destination.description %}
-                                    <p class="destination-description">
-                                        {{ destination.description }}
-                                    </p>
-                                {% endif %}
+                </div>
 
-                                <div class="destination-tags">
-                                    {% if destination.season %}
-                                        <span>{{ destination.season }}</span>
-                                    {% endif %}
-                                    {% if destination.purpose %}
-                                        <span>{{ destination.purpose }}</span>
-                                    {% endif %}
-                                    {% if destination.atmosphere %}
-                                        <span>{{ destination.atmosphere }}</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </a>
 
-                        <small class="unsplash-attribution" data-unsplash-attribution hidden>
-                            Photo by <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
-                            on <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
-                        </small>
-                    </article>
-                {% endfor %}
-            </div>
-        {% else %}
-            <div class="destination-empty">
-                <h2>조건에 맞는 여행지가 없어요</h2>
-                <p>검색어나 필터를 변경해 다시 검색해보세요.</p>
-                <a href="{{ url_for('destination.list') }}">전체 여행지 보기</a>
-            </div>
-        {% endif %}
-    </div>
+                <div class="card-content">
+
+                    <span class="category">
+                        {{ destination.region }}
+                    </span>
+
+                    <h3>
+                        {{ destination.name }}
+                    </h3>
+
+                    <p>
+                        {{ destination.description }}
+                    </p>
+
+                </div>
+
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
 </section>
+
 {% endblock %}

@@ -1,181 +1,245 @@
-담{% extends "base.html" %}
+{% extends "base.html" %}
 
-{% block title %}{{ destination.name }} | TripPalette{% endblock %}
-
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/destination.css') }}">
+{% block title %}
+{{ destination.name }} | TripPalette
 {% endblock %}
 
 {% block content %}
-<div class="destination-detail">
 
-    <a
-        href="{{ url_for('destination.list') }}"
-        class="back-link"
-    >
-        ← 여행지 목록으로
-    </a>
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/destination.css') }}">
 
-    <header class="destination-detail-header">
+<section class="detail-page">
 
-        {% set media = destination_media.get(destination.name) %}
-        {% if media %}
-            <div class="destination-detail-gallery" aria-label="{{ destination.name }} 여행 사진">
-                {% for image in media.gallery %}
-                    <img
-                        class="destination-detail-gallery__image"
-                        src="{{ url_for('static', filename=image.filename) }}"
-                        alt="{{ image.alt }}"
-                        {% if not loop.first %}loading="lazy"{% endif %}
-                    >
-                {% endfor %}
-            </div>
-        {% else %}
-            <div
-                class="destination-detail-media"
-                data-unsplash-photo
-                data-destination-name="{{ destination.name }}"
-            >
-                <img
-                    alt="{{ destination.name }} 대표 이미지"
-                    class="destination-detail-image"
-                    data-unsplash-image
-                    data-unsplash-size="regular"
-                    hidden
-                >
-                <div
-                    class="destination-detail-placeholder"
-                    aria-label="{{ destination.name }} 이미지 준비 중"
-                    data-unsplash-placeholder
-                >
-                    <strong>{{ destination.name }}</strong>
-                    <span>여행 사진 준비 중</span>
-                </div>
-                <small class="unsplash-attribution" data-unsplash-attribution hidden>
-                    Photo by <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
-                    on <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
-                </small>
-            </div>
-        {% endif %}
+    <!-- TOP IMAGE -->
 
-        <div class="destination-detail-info">
+    <div class="detail-hero">
 
-            <h1>{{ destination.name }}</h1>
-
-            {% if destination.region %}
-                <p class="destination-detail-region">
-                    {{ destination.region }}
-                </p>
-            {% endif %}
-
-            {% if destination.description %}
-                <p class="destination-detail-description">
-                    {{ destination.description }}
-                </p>
-            {% endif %}
-
-        </div>
-
-    </header>
-
-
-    <section class="destination-information">
-
-        <h2>여행 정보</h2>
-
-        <div class="destination-info-grid">
-
-            {% if destination.season %}
-                <div>
-                    <h3>추천 계절</h3>
-                    <p>{{ destination.season }}</p>
-                </div>
-            {% endif %}
-
-            {% if destination.purpose %}
-                <div>
-                    <h3>여행 목적</h3>
-                    <p>{{ destination.purpose }}</p>
-                </div>
-            {% endif %}
-
-            {% if destination.atmosphere %}
-                <div>
-                    <h3>분위기</h3>
-                    <p>{{ destination.atmosphere }}</p>
-                </div>
-            {% endif %}
-
-            {% if destination.budget_level %}
-                <div>
-                    <h3>예산 수준</h3>
-                    <p>{{ destination.budget_level }}</p>
-                </div>
-            {% endif %}
-
-            {% if destination.recommended_days %}
-                <div>
-                    <h3>추천 여행 기간</h3>
-                    <p>{{ destination.recommended_days }}일</p>
-                </div>
-            {% endif %}
-
-        </div>
-
-    </section>
-
-
-    <section class="destination-reviews">
-
-        <h2>여행 후기</h2>
-
-        {% if reviews %}
-
-            <div class="review-list">
-
-                {% for review in reviews %}
-
-                    <article class="review-card">
-
-                        {% if review.content %}
-                            <p>{{ review.content }}</p>
-                        {% endif %}
-
-                    </article>
-
-                {% endfor %}
-
-            </div>
-
-        {% else %}
-
-            <div class="review-empty">
-                <p>아직 등록된 리뷰가 없습니다.</p>
-            </div>
-
-        {% endif %}
-
-    </section>
-
-
-    <section class="destination-accommodations">
-
-        <h2>주변 숙소</h2>
-
-        {% if accommodations %}
-            <p>여행지 주변 숙소를 확인해보세요.</p>
-        {% else %}
-            <p>주변 숙소 정보를 확인해보세요.</p>
-        {% endif %}
-
-        <a
-            href="{{ url_for('destination.accommodations', id=destination.id) }}"
-            class="accommodation-button"
+        <img
+            src="{{ url_for(
+                'static',
+                filename='images/' + destination.image
+            ) }}"
+            alt="{{ destination.name }}"
         >
-            주변 숙소 보기
-        </a>
+
+        <div class="hero-buttons">
+
+            <a
+                href="{{ url_for('destination.list') }}"
+                class="back-button"
+            >
+                ← 여행지 목록
+            </a>
+
+            <button class="favorite-button">
+                ♡ 찜하기
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="detail-header">
+
+        <div>
+
+            <span class="region-tag">
+                {{ destination.region }}
+            </span>
+
+            <h1>
+                {{ destination.name }}
+            </h1>
+
+            <p class="detail-subtitle">
+                푸른 바다와 웅장한 성산일출봉이
+                만들어내는 제주도의 아름다움을 느껴보세요.
+            </p>
+
+            <div class="detail-info">
+
+                <span>🍃 자연</span>
+
+                <span>📷 관광</span>
+
+                <span>🌳 휴양</span>
+
+                <span>📍 제주특별자치도</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEARBY ACCOMMODATION -->
+
+        <aside class="nearby-box">
+
+            <div class="nearby-title">
+
+                <div>
+                    <h3>이 여행지 주변 숙소</h3>
+                    <p>
+                        여행지와 가까운 숙소에서
+                        편안하게 머물러보세요.
+                    </p>
+                </div>
+
+                <a href="#">전체 보기 →</a>
+
+            </div>
+
+
+            <div class="hotel-list">
+
+                {% for hotel in accommodations %}
+
+                <a
+                    href="{{ url_for(
+                        'accommodation.detail',
+                        accommodation_id=hotel.id
+                    ) }}"
+                    class="hotel-card"
+                >
+
+                    <div class="hotel-image">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='images/' + hotel.image
+                            ) }}"
+                            alt="{{ hotel.name }}"
+                        >
+
+                        <span>♡</span>
+
+                    </div>
+
+                    <h4>{{ hotel.name }}</h4>
+
+                    <div class="rating">
+                        ⭐ {{ hotel.rating }}
+                    </div>
+
+                    <strong>
+                        ₩ {{ hotel.price }}
+                    </strong>
+
+                </a>
+
+                {% endfor %}
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section">
+
+        <div class="about-content">
+
+            <span class="about-label">
+                ABOUT
+            </span>
+
+            <h2>여행지 소개</h2>
+
+            <p>
+                {{ destination.description }}
+            </p>
+
+
+            <!-- IMAGE GALLERY -->
+
+            <div class="mini-gallery">
+
+                {% for image in destination.images %}
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename='images/' + image
+                    ) }}"
+                    alt=""
+                >
+
+                {% endfor %}
+
+            </div>
+
+        </div>
 
     </section>
 
-</div>
+
+    <!-- REVIEWS -->
+
+    <section class="review-section">
+
+        <div class="section-title">
+
+            <h2>여행지 리뷰</h2>
+
+            <span>
+                {{ reviews|length }}개의 리뷰
+            </span>
+
+        </div>
+
+
+        <div class="review-box">
+
+            {% for review in reviews %}
+
+            <div class="review">
+
+                <div class="profile">
+                    👤
+                </div>
+
+                <div class="review-content">
+
+                    <div class="review-top">
+
+                        <strong>
+                            {{ review.name }}
+                        </strong>
+
+                        <span>
+                            {{ review.date }}
+                        </span>
+
+                    </div>
+
+                    <div class="stars">
+                        {% for i in range(review.rating) %}
+                            ⭐
+                        {% endfor %}
+                    </div>
+
+                    <p>
+                        {{ review.content }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</section>
+
 {% endblock %}
