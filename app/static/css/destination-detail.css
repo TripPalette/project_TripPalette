@@ -125,12 +125,6 @@
     word-break: keep-all;
 }
 
-.destination-description {
-    margin: 0;
-    color: #606a75;
-    font-size: 16px;
-    line-height: 1.8;
-    word-break: keep-all;
 }
 
 
@@ -615,9 +609,10 @@
         padding: 16px;
     }
 
-    .info-card strong {
+    }info-card strong {
         font-size: 14px;
     }
+
 
     .review-form-card {
         padding: 20px;
