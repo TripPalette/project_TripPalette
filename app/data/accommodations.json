@@ -7,7 +7,7 @@
     "price_per_night": 32000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/창원(봄)/깨끗한 호텔외인촌/방.jpg"
   },
   {
     "destination_name": "창원 진해",
@@ -17,7 +17,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/창원(봄)/잔해이터시티호텔/unnamed.jpg"
   },
   {
     "destination_name": "창원 진해",
@@ -27,7 +27,7 @@
     "price_per_night": 190000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/창원(봄)/글로리아글램핑/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -37,7 +37,7 @@
     "price_per_night": 69000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/삼척(봄)/산티아고펜션/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -47,7 +47,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/삼척(봄)/힐스노클비치호텔/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -57,7 +57,7 @@
     "price_per_night": 153000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/삼척(봄)/쏠비치삼척/다운로드.jpg"
   },
   {
     "destination_name": "여수",

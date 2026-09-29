@@ -49,7 +49,7 @@
                             href="{{ url_for('accommodation.detail', id=accommodation.id) }}"
                         >
                             <div class="accommodation-card__media">
-                                {% if accommodation.image_url %}
+                                {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}
                                     <img
                                         src="{{ accommodation.image_url }}"
                                         alt="{{ accommodation.name }} 숙소 전경"
@@ -57,7 +57,7 @@
                                         onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
                                     >
                                 {% endif %}
-                                <div class="accommodation-placeholder" {% if accommodation.image_url %}hidden{% endif %}>
+                                <div class="accommodation-placeholder" {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}hidden{% endif %}>
                                     <span class="accommodation-placeholder__mark" aria-hidden="true">⌂</span>
                                     <strong>{{ accommodation.name }}</strong>
                                     <span>숙소 이미지 준비 중</span>

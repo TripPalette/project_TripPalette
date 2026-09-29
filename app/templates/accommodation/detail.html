@@ -27,7 +27,7 @@
 
         <article class="accommodation-detail">
             <div class="accommodation-detail__media">
-                {% if accommodation.image_url %}
+                {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}
                     <img
                         src="{{ accommodation.image_url }}"
                         alt="{{ accommodation.name }} 숙소 전경"
@@ -36,7 +36,7 @@
                 {% endif %}
                 <div
                     class="accommodation-placeholder accommodation-placeholder--detail"
-                    {% if accommodation.image_url %}hidden{% endif %}
+                    {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}hidden{% endif %}
                 >
                     <span class="accommodation-placeholder__mark" aria-hidden="true">⌂</span>
                     <strong>{{ accommodation.name }}</strong>
@@ -187,7 +187,7 @@
                             <article class="accommodation-nearby-card">
                                 <a href="{{ url_for('accommodation.detail', id=nearby.id) }}">
                                     <div class="accommodation-nearby-card__media">
-                                        {% if nearby.image_url %}
+                                        {% if nearby.image_url and nearby.image_url.startswith('/static/') %}
                                             <img
                                                 src="{{ nearby.image_url }}"
                                                 alt="{{ nearby.name }} 숙소 전경"
@@ -197,7 +197,7 @@
                                         {% endif %}
                                         <div
                                             class="accommodation-placeholder accommodation-placeholder--nearby"
-                                            {% if nearby.image_url %}hidden{% endif %}
+                                            {% if nearby.image_url and nearby.image_url.startswith('/static/') %}hidden{% endif %}
                                         >
                                             <span class="accommodation-placeholder__mark" aria-hidden="true">⌂</span>
                                             <span>숙소 이미지 준비 중</span>
