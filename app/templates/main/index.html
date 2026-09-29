@@ -131,10 +131,6 @@
         </div>
 
         <div class="destination-grid">
-<<<<<<< HEAD
-            {% for destination in popular_destinations[:4] %}
-                <article class="destination-card">
-=======
             {% for destination in popular_destinations %}
                 {% set media = destination_media.get(destination.name) %}
                 <article
@@ -144,7 +140,6 @@
                         data-destination-name="{{ destination.name }}"
                     {% endif %}
                 >
->>>>>>> main
                     <a
                         class="destination-card__link"
                         href="{{ url_for('destination.detail', id=destination.id) }}"
@@ -158,13 +153,6 @@
                                     loading="lazy"
                                 >
                             {% else %}
-<<<<<<< HEAD
-                                <div
-                                    class="destination-card__placeholder"
-                                    aria-hidden="true"
-                                >
-                                    이미지 없음
-=======
                                 <img
                                     class="destination-card__image"
                                     alt="{{ destination.name }} 여행 풍경"
@@ -175,7 +163,6 @@
                                 <div class="destination-card__placeholder" data-unsplash-placeholder>
                                     <strong>{{ destination.name }}</strong>
                                     <span>여행 사진 준비 중</span>
->>>>>>> main
                                 </div>
                             {% endif %}
                             <span class="destination-card__badge">{{ destination.name }}</span>
