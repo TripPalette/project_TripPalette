@@ -7,6 +7,7 @@ from app import create_app, db
 from app.account_deletion import utcnow
 from app.models import (
     Accommodation,
+    AccommodationReview,
     Destination,
     Favorite,
     Payment,
@@ -134,6 +135,12 @@ class AccountWithdrawalTestCase(unittest.TestCase):
                     rating=5,
                     content="좋아요",
                 ),
+                AccommodationReview(
+                    user_id=self.user_id,
+                    accommodation_id=accommodation.id,
+                    rating=5,
+                    content="숙소도 좋아요",
+                ),
                 reservation,
             )
         )
@@ -154,7 +161,14 @@ class AccountWithdrawalTestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertIsNone(db.session.get(User, self.user_id))
-        for model in (UserPreference, Favorite, Review, Reservation, Payment):
+        for model in (
+            UserPreference,
+            Favorite,
+            Review,
+            AccommodationReview,
+            Reservation,
+            Payment,
+        ):
             self.assertEqual(
                 db.session.scalar(db.select(db.func.count(model.id))),
                 0,
