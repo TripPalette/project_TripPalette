@@ -32,6 +32,10 @@ class User(db.Model):
     )
     favorites = db.relationship("Favorite", back_populates="user")
     reviews = db.relationship("Review", back_populates="user")
+    accommodation_reviews = db.relationship(
+        "AccommodationReview",
+        back_populates="user",
+    )
     reservations = db.relationship("Reservation", back_populates="user")
 
 
@@ -174,6 +178,44 @@ class Accommodation(db.Model):
 
     destination = db.relationship("Destination", back_populates="accommodations")
     reservations = db.relationship("Reservation", back_populates="accommodation")
+    reviews = db.relationship(
+        "AccommodationReview",
+        back_populates="accommodation",
+    )
+
+
+class AccommodationReview(db.Model):
+    __tablename__ = "accommodation_review"
+    __table_args__ = (
+        db.UniqueConstraint(
+            "user_id",
+            "accommodation_id",
+            name="uq_accommodation_review_user_accommodation",
+        ),
+        db.CheckConstraint(
+            "rating >= 1 AND rating <= 5",
+            name="ck_accommodation_review_rating_range",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    accommodation_id = db.Column(
+        db.Integer,
+        db.ForeignKey("accommodation.id"),
+        nullable=False,
+    )
+    rating = db.Column(db.Integer, nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+
+    user = db.relationship("User", back_populates="accommodation_reviews")
+    accommodation = db.relationship("Accommodation", back_populates="reviews")
 
 
 # 회원의 숙소 예약 정보를 저장하는 모델

@@ -48,23 +48,31 @@ REGION_GROUP_RULES = (
 COMPANION_DESTINATION_GROUPS = (
     {
         "label": "혼자",
+        "icon": "solo",
         "headline": "나를 위한 특별한 시간",
-        "names": ("제주", "강릉", "구례"),
+        "recommendation_title": "혼자 떠나기 좋은 여행지",
+        "names": ("제주", "강릉", "구례", "안동"),
     },
     {
         "label": "연인",
+        "icon": "couple",
         "headline": "둘만의 특별한 추억",
-        "names": ("여수", "속초", "보령"),
+        "recommendation_title": "연인과 떠나기 좋은 여행지",
+        "names": ("남해", "여수", "경주", "제주"),
     },
     {
         "label": "가족",
+        "icon": "family",
         "headline": "함께여서 더 행복한 여행",
-        "names": ("제주", "평창", "안동"),
+        "recommendation_title": "가족과 떠나기 좋은 여행지",
+        "names": ("제주", "평창", "안동", "경주"),
     },
     {
-        "label": "친구",
+        "label": "친구와",
+        "icon": "friends",
         "headline": "언제나 즐거운 우리",
-        "names": ("창원 진해", "삼척", "태백"),
+        "recommendation_title": "친구와 떠나기 좋은 여행지",
+        "names": ("창원 진해", "삼척", "태백", "부산"),
     },
 )
 
@@ -187,7 +195,9 @@ def index():
     companion_groups = [
         {
             "label": group["label"],
+            "icon": group["icon"],
             "headline": group["headline"],
+            "recommendation_title": group["recommendation_title"],
             "destinations": _ordered_destinations(
                 destinations_by_name,
                 group["names"],
