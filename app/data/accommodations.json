@@ -7,8 +7,7 @@
     "price_per_night": 32000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/창원(봄)/깨끗한 호텔외인촌/방.jpg"
   },
   {
     "destination_name": "창원 진해",
@@ -18,8 +17,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/창원(봄)/잔해이터시티호텔/unnamed.jpg"
   },
   {
     "destination_name": "창원 진해",
@@ -29,8 +27,7 @@
     "price_per_night": 190000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/창원(봄)/글로리아글램핑/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -40,8 +37,7 @@
     "price_per_night": 69000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/삼척(봄)/산티아고펜션/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -51,8 +47,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/삼척(봄)/힐스노클비치호텔/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -62,36 +57,7 @@
     "price_per_night": 153000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/97/4041797_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/97/4041797_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/97/4041797_image2_1.jpg",
-        "alt": "삼척_쏠비치호텔&리조트 삼척 (7).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "쏠비치 삼척",
-        "license": "공공누리 제3유형",
-        "content_id": "2662796"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/98/4041798_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/98/4041798_image2_1.jpg",
-        "alt": "삼척_쏠비치호텔&리조트 삼척 (8).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "쏠비치 삼척",
-        "license": "공공누리 제3유형",
-        "content_id": "2662796"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/99/4041799_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/99/4041799_image2_1.jpg",
-        "alt": "삼척_쏠비치호텔&리조트 삼척 (9).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "쏠비치 삼척",
-        "license": "공공누리 제3유형",
-        "content_id": "2662796"
-      }
-    ]
+    "image_url": "/static/img/삼척(봄)/쏠비치삼척/다운로드.jpg"
   },
   {
     "destination_name": "여수",
@@ -101,36 +67,7 @@
     "price_per_night": 157000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/57/4061257_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/57/4061257_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/57/4061257_image2_1.jpg",
-        "alt": "여수_소노캄 여수 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노캄 여수",
-        "license": "공공누리 제3유형",
-        "content_id": "1785294"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/58/4061258_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/58/4061258_image2_1.jpg",
-        "alt": "여수_소노캄 여수 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노캄 여수",
-        "license": "공공누리 제3유형",
-        "content_id": "1785294"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/59/4061259_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/59/4061259_image2_1.jpg",
-        "alt": "여수_소노캄 여수 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노캄 여수",
-        "license": "공공누리 제3유형",
-        "content_id": "1785294"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "여수",
@@ -140,36 +77,7 @@
     "price_per_night": 145000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/25/2698425_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/25/2698425_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/25/2698425_image3_1.jpg",
-        "alt": "전남_여수_베네치아_스위트",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "여수 베네치아 호텔앤리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "2700983"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/31/2698431_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/31/2698431_image3_1.jpg",
-        "alt": "전남_여수_베네치아_외관1",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "여수 베네치아 호텔앤리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "2700983"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/33/2698433_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/33/2698433_image3_1.jpg",
-        "alt": "전남_여수_베네치아_외관3",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "여수 베네치아 호텔앤리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "2700983"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "여수",
@@ -179,8 +87,7 @@
     "price_per_night": 127000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "구례",
@@ -190,8 +97,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "구례",
@@ -201,36 +107,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/96/2594996_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/96/2594996_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/96/2594996_image2_1.jpg",
-        "alt": "[전남 구례] 지리산호수리조트 4",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "지리산호수리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "2595004"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/97/2594997_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/97/2594997_image2_1.jpg",
-        "alt": "[전남 구례] 지리산호수리조트 3",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "지리산호수리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "2595004"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/98/2594998_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/98/2594998_image2_1.jpg",
-        "alt": "[전남 구례] 지리산호수리조트 2",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "지리산호수리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "2595004"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "구례",
@@ -240,8 +117,7 @@
     "price_per_night": 50000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "속초",
@@ -251,8 +127,7 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "속초",
@@ -262,8 +137,7 @@
     "price_per_night": 73000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "속초",
@@ -273,36 +147,7 @@
     "price_per_night": 260000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/56/3573756_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/56/3573756_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/56/3573756_image2_1.jpg",
-        "alt": "속초_롯데리조트속초 (2)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "롯데리조트 속초",
-        "license": "공공누리 제3유형",
-        "content_id": "2662936"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/57/3573757_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/57/3573757_image2_1.jpg",
-        "alt": "속초_롯데리조트속초 (3)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "롯데리조트 속초",
-        "license": "공공누리 제3유형",
-        "content_id": "2662936"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/58/3573758_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/58/3573758_image2_1.jpg",
-        "alt": "속초_롯데리조트속초 (4)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "롯데리조트 속초",
-        "license": "공공누리 제3유형",
-        "content_id": "2662936"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "무주",
@@ -312,8 +157,7 @@
     "price_per_night": 131000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "무주",
@@ -323,8 +167,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "무주",
@@ -334,8 +177,7 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "태백",
@@ -345,8 +187,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "태백",
@@ -356,36 +197,7 @@
     "price_per_night": 118000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/91/3414891_image2_1.jpeg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/91/3414891_image2_1.jpeg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/91/3414891_image2_1.jpeg",
-        "alt": "태백호텔_외관2",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "태백호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "3415124"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/94/3414894_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/94/3414894_image2_1.jpg",
-        "alt": "태백호텔_정자1",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "태백호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "3415124"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/95/3414895_image2_1.JPG",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/95/3414895_image2_1.JPG",
-        "alt": "태백호텔_야경1",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "태백호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "3415124"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "태백",
@@ -395,8 +207,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "보령",
@@ -406,8 +217,7 @@
     "price_per_night": 104000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "보령",
@@ -417,8 +227,7 @@
     "price_per_night": 83000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "보령",
@@ -428,8 +237,7 @@
     "price_per_night": 115000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "정읍",
@@ -439,8 +247,7 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "정읍",
@@ -450,8 +257,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "정읍",
@@ -461,8 +267,7 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "담양",
@@ -472,8 +277,7 @@
     "price_per_night": 250000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "담양",
@@ -483,8 +287,7 @@
     "price_per_night": 50000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "담양",
@@ -494,8 +297,7 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "안동",
@@ -505,36 +307,7 @@
     "price_per_night": 385000,
     "capacity": 4,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/68/3535468_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/68/3535468_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/68/3535468_image3_1.jpg",
-        "alt": "안동_전통리조트 구름에_감동재사 (5)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "전통리조트 구름에",
-        "license": "공공누리 제3유형",
-        "content_id": "2544095"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/69/3535469_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/69/3535469_image3_1.jpg",
-        "alt": "안동_전통리조트 구름에_계남고택 (6)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "전통리조트 구름에",
-        "license": "공공누리 제3유형",
-        "content_id": "2544095"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/84/3535484_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/84/3535484_image3_1.jpg",
-        "alt": "안동_전통리조트 구름에_서운정 (21)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "전통리조트 구름에",
-        "license": "공공누리 제3유형",
-        "content_id": "2544095"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "안동",
@@ -544,8 +317,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "안동",
@@ -555,8 +327,7 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "순천",
@@ -566,8 +337,7 @@
     "price_per_night": 75000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "순천",
@@ -577,8 +347,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "순천",
@@ -588,8 +357,7 @@
     "price_per_night": 60000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "평창",
@@ -599,8 +367,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "평창",
@@ -610,8 +377,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "평창",
@@ -621,18 +387,7 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/18/2558818_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/18/2558818_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/18/2558818_image2_1.jpg",
-        "alt": "AM호텔_01",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "AM호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2558830"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "인제",
@@ -642,8 +397,7 @@
     "price_per_night": 110000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "인제",
@@ -653,8 +407,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "인제",
@@ -664,36 +417,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/09/2690909_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/09/2690909_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/09/2690909_image3_1.jpg",
-        "alt": "강원_인제_인제호텔_로비1",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "인제호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2595790"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/10/2690910_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/10/2690910_image3_1.jpg",
-        "alt": "강원_인제_인제호텔_로비2",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "인제호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2595790"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/15/2690915_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/15/2690915_image3_1.jpg",
-        "alt": "강원_인제_인제호텔_로비7",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "인제호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2595790"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "강릉",
@@ -703,36 +427,7 @@
     "price_per_night": 100000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/15/3504815_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/15/3504815_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/15/3504815_image3_1.jpg",
-        "alt": "강릉_라카이 샌드파인 (44)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라카이 샌드파인",
-        "license": "공공누리 제3유형",
-        "content_id": "1798704"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/16/3504816_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/16/3504816_image3_1.jpg",
-        "alt": "강릉_라카이 샌드파인 (45)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라카이 샌드파인",
-        "license": "공공누리 제3유형",
-        "content_id": "1798704"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/17/3504817_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/17/3504817_image3_1.jpg",
-        "alt": "강릉_라카이 샌드파인 (46)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라카이 샌드파인",
-        "license": "공공누리 제3유형",
-        "content_id": "1798704"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "강릉",
@@ -742,8 +437,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "강릉",
@@ -753,8 +447,7 @@
     "price_per_night": 100000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "정선",
@@ -764,36 +457,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/61/3084761_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/61/3084761_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/61/3084761_image3_1.jpg",
-        "alt": "하이원그랜드호텔 컨벤션타워 (20)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "하이원 그랜드호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "143034"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/92/3588692_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/92/3588692_image3_1.jpg",
-        "alt": "정선_하이원 그랜드호텔 (2)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "하이원 그랜드호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "143034"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/93/3588693_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/93/3588693_image3_1.jpg",
-        "alt": "정선_하이원 그랜드호텔 (3)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "하이원 그랜드호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "143034"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "정선",
@@ -803,36 +467,7 @@
     "price_per_night": 250000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/60/3086460_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/60/3086460_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/60/3086460_image2_1.jpg",
-        "alt": "파크로쉬 리조트앤웰니스 (6)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "파크로쉬 리조트앤웰니스",
-        "license": "공공누리 제3유형",
-        "content_id": "2589656"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/61/3086461_image2_1.png",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/61/3086461_image2_1.png",
-        "alt": "파크로쉬 리조트앤웰니스 (6)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "파크로쉬 리조트앤웰니스",
-        "license": "공공누리 제3유형",
-        "content_id": "2589656"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/62/3086462_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/62/3086462_image2_1.jpg",
-        "alt": "파크로쉬 리조트앤웰니스 (7)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "파크로쉬 리조트앤웰니스",
-        "license": "공공누리 제3유형",
-        "content_id": "2589656"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "정선",
@@ -842,8 +477,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "제주",
@@ -853,8 +487,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "제주",
@@ -864,8 +497,7 @@
     "price_per_night": 185000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/제주/휘닉스 아일랜드 제주/1.jpg"
   },
   {
     "destination_name": "제주",
@@ -875,8 +507,7 @@
     "price_per_night": 85000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/제주/호텔 리젠트마린 제주/1.jpg"
   },
   {
     "destination_name": "경주",
@@ -886,8 +517,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "경주",
@@ -897,8 +527,7 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "경주",
@@ -908,36 +537,7 @@
     "price_per_night": 150000,
     "capacity": 3,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/07/3337707_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/07/3337707_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/07/3337707_image2_1.jpg",
-        "alt": "라한셀렉트 경주 (2)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라한셀렉트 경주",
-        "license": "공공누리 제3유형",
-        "content_id": "3337718"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/08/3337708_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/08/3337708_image2_1.jpg",
-        "alt": "라한셀렉트 경주 (3)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라한셀렉트 경주",
-        "license": "공공누리 제3유형",
-        "content_id": "3337718"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/09/3337709_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/09/3337709_image2_1.jpg",
-        "alt": "라한셀렉트 경주 (4)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라한셀렉트 경주",
-        "license": "공공누리 제3유형",
-        "content_id": "3337718"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "부산",
@@ -947,8 +547,7 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/부산/제이스 스파 글램핑/1.jpg"
   },
   {
     "destination_name": "부산",
@@ -958,8 +557,7 @@
     "price_per_night": 135000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/부산/신라스테이 해운대/1.jpg"
   },
   {
     "destination_name": "부산",
@@ -969,36 +567,7 @@
     "price_per_night": 317000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/16/3512516_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/16/3512516_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/16/3512516_image3_1.jpg",
-        "alt": "부산_아난티 앳 부산 코브 (1)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아난티 앳 부산 코브",
-        "license": "공공누리 제3유형",
-        "content_id": "2503780"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/17/3512517_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/17/3512517_image3_1.jpg",
-        "alt": "부산_아난티 앳 부산 코브 (2)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아난티 앳 부산 코브",
-        "license": "공공누리 제3유형",
-        "content_id": "2503780"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/19/3512519_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/19/3512519_image3_1.jpg",
-        "alt": "부산_아난티 앳 부산 코브 (4)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아난티 앳 부산 코브",
-        "license": "공공누리 제3유형",
-        "content_id": "2503780"
-      }
-    ]
+    "image_url": "/static/img/accommodation/부산/아난티 앳 부산 코브/1.jpg"
   },
   {
     "destination_name": "가평",
@@ -1008,8 +577,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "가평",
@@ -1019,8 +587,7 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "가평",
@@ -1030,8 +597,7 @@
     "price_per_night": 180000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "포천",
@@ -1041,8 +607,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "포천",
@@ -1052,8 +617,7 @@
     "price_per_night": 98000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "포천",
@@ -1063,36 +627,7 @@
     "price_per_night": 123000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/19/4006319_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/19/4006319_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/19/4006319_image2_1.jpg",
-        "alt": "포천_한화리조트 산정호수 안시 (1).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "한화리조트 산정호수 안시",
-        "license": "공공누리 제3유형",
-        "content_id": "136520"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/20/4006320_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/20/4006320_image2_1.jpg",
-        "alt": "포천_한화리조트 산정호수 안시 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "한화리조트 산정호수 안시",
-        "license": "공공누리 제3유형",
-        "content_id": "136520"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/21/4006321_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/21/4006321_image2_1.jpg",
-        "alt": "포천_한화리조트 산정호수 안시 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "한화리조트 산정호수 안시",
-        "license": "공공누리 제3유형",
-        "content_id": "136520"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "양평",
@@ -1102,8 +637,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "양평",
@@ -1113,8 +647,7 @@
     "price_per_night": 130000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "양평",
@@ -1124,36 +657,7 @@
     "price_per_night": 174000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/94/4061194_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/94/4061194_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/94/4061194_image2_1.jpg",
-        "alt": "양평_소노벨 양평 (1).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 양평",
-        "license": "공공누리 제3유형",
-        "content_id": "136060"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/95/4061195_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/95/4061195_image2_1.jpg",
-        "alt": "양평_소노벨 양평 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 양평",
-        "license": "공공누리 제3유형",
-        "content_id": "136060"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/96/4061196_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/96/4061196_image2_1.jpg",
-        "alt": "양평_소노벨 양평 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 양평",
-        "license": "공공누리 제3유형",
-        "content_id": "136060"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "홍천",
@@ -1163,8 +667,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "홍천",
@@ -1174,8 +677,7 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "홍천",
@@ -1185,36 +687,7 @@
     "price_per_night": 210000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/99/4080899_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/99/4080899_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/99/4080899_image2_1.jpg",
-        "alt": "홍천_소노펠리체 빌리지 비발디파크 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노펠리체 빌리지 비발디파크",
-        "license": "공공누리 제3유형",
-        "content_id": "4080891"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/00/4080900_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/00/4080900_image2_1.jpg",
-        "alt": "홍천_소노펠리체 빌리지 비발디파크 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노펠리체 빌리지 비발디파크",
-        "license": "공공누리 제3유형",
-        "content_id": "4080891"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/01/4080901_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/01/4080901_image2_1.jpg",
-        "alt": "홍천_소노펠리체 빌리지 비발디파크 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노펠리체 빌리지 비발디파크",
-        "license": "공공누리 제3유형",
-        "content_id": "4080891"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "양양",
@@ -1224,8 +697,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "양양",
@@ -1235,8 +707,7 @@
     "price_per_night": 61000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "양양",
@@ -1246,36 +717,7 @@
     "price_per_night": 114000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/92/4071192_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/92/4071192_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/92/4071192_image2_1.jpg",
-        "alt": "양양_쏠비치 양양 (6).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "쏠비치 양양",
-        "license": "공공누리 제3유형",
-        "content_id": "590440"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/97/4071197_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/97/4071197_image2_1.jpg",
-        "alt": "양양_쏠비치 양양 (1).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "쏠비치 양양",
-        "license": "공공누리 제3유형",
-        "content_id": "590440"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/98/4071198_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/98/4071198_image2_1.jpg",
-        "alt": "양양_쏠비치 양양 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "쏠비치 양양",
-        "license": "공공누리 제3유형",
-        "content_id": "590440"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "제천",
@@ -1285,8 +727,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "제천",
@@ -1296,8 +737,7 @@
     "price_per_night": 66000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "제천",
@@ -1307,8 +747,7 @@
     "price_per_night": 224000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "단양",
@@ -1318,8 +757,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "단양",
@@ -1329,8 +767,7 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "단양",
@@ -1340,36 +777,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/21/4060921_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/21/4060921_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/21/4060921_image2_1.jpg",
-        "alt": "단양_소노벨 단양 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 단양",
-        "license": "공공누리 제3유형",
-        "content_id": "228935"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/22/4060922_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/22/4060922_image2_1.jpg",
-        "alt": "단양_소노벨 단양 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 단양",
-        "license": "공공누리 제3유형",
-        "content_id": "228935"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/23/4060923_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/23/4060923_image2_1.jpg",
-        "alt": "단양_소노벨 단양 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 단양",
-        "license": "공공누리 제3유형",
-        "content_id": "228935"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "충주",
@@ -1379,8 +787,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "충주",
@@ -1390,36 +797,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/28/1848228_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/28/1848228_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/28/1848228_image2_1.jpg",
-        "alt": "충북_충주_충주 후렌드리 호텔03",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "호텔 더베이스",
-        "license": "공공누리 제3유형",
-        "content_id": "142839"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/29/1848229_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/29/1848229_image2_1.jpg",
-        "alt": "충북_충주_충주 후렌드리 호텔02",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "호텔 더베이스",
-        "license": "공공누리 제3유형",
-        "content_id": "142839"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/30/1848230_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/30/1848230_image2_1.jpg",
-        "alt": "충북_충주_충주 후렌드리 호텔04",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "호텔 더베이스",
-        "license": "공공누리 제3유형",
-        "content_id": "142839"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "충주",
@@ -1429,36 +807,7 @@
     "price_per_night": 199000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/84/3525284_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/84/3525284_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/84/3525284_image2_1.jpg",
-        "alt": "충주_켄싱턴리조트 충주 (1)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "켄싱턴리조트 충주",
-        "license": "공공누리 제3유형",
-        "content_id": "136642"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/86/3525286_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/86/3525286_image2_1.jpg",
-        "alt": "충주_켄싱턴리조트 충주 (3)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "켄싱턴리조트 충주",
-        "license": "공공누리 제3유형",
-        "content_id": "136642"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/87/3525287_image2_1.JPG",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/87/3525287_image2_1.JPG",
-        "alt": "충주_켄싱턴리조트 충주 (4)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "켄싱턴리조트 충주",
-        "license": "공공누리 제3유형",
-        "content_id": "136642"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "태안",
@@ -1468,8 +817,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "태안",
@@ -1479,8 +827,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "태안",
@@ -1490,36 +837,7 @@
     "price_per_night": 199000,
     "capacity": 5,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/54/4073654_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/54/4073654_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/54/4073654_image2_1.jpg",
-        "alt": "태안_아일랜드 리솜_내외부 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아일랜드 리솜",
-        "license": "공공누리 제3유형",
-        "content_id": "2668701"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/55/4073655_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/55/4073655_image2_1.jpg",
-        "alt": "태안_아일랜드 리솜_내외부 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아일랜드 리솜",
-        "license": "공공누리 제3유형",
-        "content_id": "2668701"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/56/4073656_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/56/4073656_image2_1.jpg",
-        "alt": "태안_아일랜드 리솜_내외부 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아일랜드 리솜",
-        "license": "공공누리 제3유형",
-        "content_id": "2668701"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "부여",
@@ -1529,8 +847,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "부여",
@@ -1540,8 +857,7 @@
     "price_per_night": 130000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "부여",
@@ -1551,8 +867,7 @@
     "price_per_night": 266000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "포항",
@@ -1562,8 +877,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "포항",
@@ -1573,36 +887,7 @@
     "price_per_night": 107000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/00/2010000_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/00/2010000_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/00/2010000_image3_1.jpg",
-        "alt": "베스트웨스턴 포항호텔_객실전망",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라한호텔 포항",
-        "license": "공공누리 제3유형",
-        "content_id": "2010024"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/01/2010001_image2_1.JPG",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/01/2010001_image2_1.JPG",
-        "alt": "베스트웨스턴 포항호텔_레스토랑",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라한호텔 포항",
-        "license": "공공누리 제3유형",
-        "content_id": "2010024"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/04/2010004_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/04/2010004_image3_1.jpg",
-        "alt": "베스트웨스턴 포항호텔_PDR",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "라한호텔 포항",
-        "license": "공공누리 제3유형",
-        "content_id": "2010024"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "포항",
@@ -1612,8 +897,7 @@
     "price_per_night": 130000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "문경",
@@ -1623,8 +907,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "문경",
@@ -1634,8 +917,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "문경",
@@ -1645,36 +927,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/91/1070891_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/91/1070891_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/91/1070891_image2_1.jpg",
-        "alt": "STX리조트_17",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "STX리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "970667"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/03/1070903_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/03/1070903_image2_1.jpg",
-        "alt": "STX리조트_23",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "STX리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "970667"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/04/1070904_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/04/1070904_image2_1.jpg",
-        "alt": "STX리조트_24",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "STX리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "970667"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "청송",
@@ -1684,8 +937,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "청송",
@@ -1695,8 +947,7 @@
     "price_per_night": 128000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "청송",
@@ -1706,36 +957,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/13/4071313_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/13/4071313_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/13/4071313_image2_1.jpg",
-        "alt": "청송_소노벨 청송 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 청송",
-        "license": "공공누리 제3유형",
-        "content_id": "2770765"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/14/4071314_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/14/4071314_image2_1.jpg",
-        "alt": "청송_소노벨 청송 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 청송",
-        "license": "공공누리 제3유형",
-        "content_id": "2770765"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/15/4071315_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/15/4071315_image2_1.jpg",
-        "alt": "청송_소노벨 청송 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 청송",
-        "license": "공공누리 제3유형",
-        "content_id": "2770765"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "거제",
@@ -1745,8 +967,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "거제",
@@ -1756,36 +977,7 @@
     "price_per_night": 140000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/76/1609976_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/76/1609976_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/76/1609976_image2_1.jpg",
-        "alt": "거제삼성호텔",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "거제삼성호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "143125"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/77/1609977_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/77/1609977_image2_1.jpg",
-        "alt": "거제삼성호텔",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "거제삼성호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "143125"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/79/1609979_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/79/1609979_image2_1.jpg",
-        "alt": "거제삼성호텔",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "거제삼성호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "143125"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "거제",
@@ -1795,36 +987,7 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/02/4060802_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/02/4060802_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/02/4060802_image2_1.jpg",
-        "alt": "거제_소노캄 거제 (1).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노캄 거제",
-        "license": "공공누리 제3유형",
-        "content_id": "2578495"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/04/4060804_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/04/4060804_image2_1.jpg",
-        "alt": "거제_소노캄 거제 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노캄 거제",
-        "license": "공공누리 제3유형",
-        "content_id": "2578495"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/05/4060805_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/05/4060805_image2_1.jpg",
-        "alt": "거제_소노캄 거제 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노캄 거제",
-        "license": "공공누리 제3유형",
-        "content_id": "2578495"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "통영",
@@ -1834,8 +997,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "통영",
@@ -1845,8 +1007,7 @@
     "price_per_night": 140000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "통영",
@@ -1856,18 +1017,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/37/1899737_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/37/1899737_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/37/1899737_image3_1.jpg",
-        "alt": "금호통영마리나리조트 이미지",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "금호통영마리나리조트",
-        "license": "공공누리 제3유형",
-        "content_id": "136213"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "남해",
@@ -1877,8 +1027,7 @@
     "price_per_night": 130000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "남해",
@@ -1888,8 +1037,7 @@
     "price_per_night": 86000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "남해",
@@ -1899,18 +1047,7 @@
     "price_per_night": 438000,
     "capacity": 2,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/97/206197_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/97/206197_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/97/206197_image2_1.jpg",
-        "alt": "힐튼골프스파리조트",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "아난티 남해",
-        "license": "공공누리 제3유형",
-        "content_id": "232298"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "군산",
@@ -1920,8 +1057,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "군산",
@@ -1931,8 +1067,7 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "군산",
@@ -1942,8 +1077,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "부안",
@@ -1953,8 +1087,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "부안",
@@ -1964,8 +1097,7 @@
     "price_per_night": 123000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "부안",
@@ -1975,36 +1107,7 @@
     "price_per_night": 132000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/63/4060963_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/63/4060963_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/63/4060963_image2_1.jpg",
-        "alt": "부안_소노벨 변산 (1).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 변산",
-        "license": "공공누리 제3유형",
-        "content_id": "978310"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/64/4060964_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/64/4060964_image2_1.jpg",
-        "alt": "부안_소노벨 변산 (2).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 변산",
-        "license": "공공누리 제3유형",
-        "content_id": "978310"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/66/4060966_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/66/4060966_image2_1.jpg",
-        "alt": "부안_소노벨 변산 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 변산",
-        "license": "공공누리 제3유형",
-        "content_id": "978310"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "완주",
@@ -2014,8 +1117,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "완주",
@@ -2025,8 +1127,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "완주",
@@ -2036,36 +1137,7 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/36/2779636_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/36/2779636_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/36/2779636_image2_1.jpg",
-        "alt": "상관리조트_스파 레스토랑",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "상관리조트&스파",
-        "license": "공공누리 제3유형",
-        "content_id": "2778949"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/37/2779637_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/37/2779637_image2_1.jpg",
-        "alt": "상관리조트_스파 내부",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "상관리조트&스파",
-        "license": "공공누리 제3유형",
-        "content_id": "2778949"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/38/2779638_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/38/2779638_image2_1.jpg",
-        "alt": "상관리조트_스파 외관",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "상관리조트&스파",
-        "license": "공공누리 제3유형",
-        "content_id": "2778949"
-      }
-    ]
+    "image_url": null
   },
   {
     "destination_name": "신안",
@@ -2075,8 +1147,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "신안",
@@ -2086,8 +1157,7 @@
     "price_per_night": 172000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "신안",
@@ -2097,8 +1167,7 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "제주 조천",
@@ -2108,8 +1177,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/제주 조천/제주 도유펜션/1.jpg"
   },
   {
     "destination_name": "제주 조천",
@@ -2119,36 +1187,7 @@
     "price_per_night": 121000,
     "capacity": 2,
     "rating": null,
-    "image_url": "http://tong.visitkorea.or.kr/cms/resource/27/2948127_image2_1.jpg",
-    "images": [
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/27/2948127_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/27/2948127_image3_1.jpg",
-        "alt": "에코랜드 호텔 (11)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "에코랜드 호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2948165"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/28/2948128_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/28/2948128_image3_1.jpg",
-        "alt": "에코랜드 호텔 (12)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "에코랜드 호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2948165"
-      },
-      {
-        "url": "http://tong.visitkorea.or.kr/cms/resource/31/2948131_image2_1.jpg",
-        "thumbnail_url": "http://tong.visitkorea.or.kr/cms/resource/31/2948131_image3_1.jpg",
-        "alt": "에코랜드 호텔 (14)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "에코랜드 호텔",
-        "license": "공공누리 제3유형",
-        "content_id": "2948165"
-      }
-    ]
+    "image_url": "/static/img/accommodation/제주 조천/에코랜드 호텔/1.jpg"
   },
   {
     "destination_name": "제주 조천",
@@ -2158,36 +1197,7 @@
     "price_per_night": 132000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/11/4071011_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/11/4071011_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/11/4071011_image2_1.jpg",
-        "alt": "제주_소노벨 제주 (3).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 제주",
-        "license": "공공누리 제3유형",
-        "content_id": "232287"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/13/4071013_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/13/4071013_image2_1.jpg",
-        "alt": "제주_소노벨 제주 (4).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 제주",
-        "license": "공공누리 제3유형",
-        "content_id": "232287"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/14/4071014_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/14/4071014_image2_1.jpg",
-        "alt": "제주_소노벨 제주 (5).jpg",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "소노벨 제주",
-        "license": "공공누리 제3유형",
-        "content_id": "232287"
-      }
-    ]
+    "image_url": "/static/img/accommodation/제주 조천/소노벨 제주/1.jpg"
   },
   {
     "destination_name": "제주 애월",
@@ -2197,8 +1207,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": null
   },
   {
     "destination_name": "제주 애월",
@@ -2208,8 +1217,7 @@
     "price_per_night": 111000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/제주 애월/유니호텔 제주/1.jpg"
   },
   {
     "destination_name": "제주 애월",
@@ -2219,8 +1227,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/제주 애월/제주리조트/1.jpg"
   },
   {
     "destination_name": "서귀포",
@@ -2230,8 +1237,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/서귀포/굿데이펜션/1.jpg"
   },
   {
     "destination_name": "서귀포",
@@ -2241,8 +1247,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": null,
-    "images": []
+    "image_url": "/static/img/accommodation/서귀포/호텔 브릿지 서귀포/1.jpg"
   },
   {
     "destination_name": "서귀포",
@@ -2252,35 +1257,6 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "https://tong.visitkorea.or.kr/cms/resource/44/1341144_image2_1.jpg",
-    "images": [
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/44/1341144_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/44/1341144_image2_1.jpg",
-        "alt": "제주 서귀포시_제주풍림리조트_전경_5",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "켄싱턴리조트 서귀포",
-        "license": "공공누리 제3유형",
-        "content_id": "137369"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/46/1341146_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/46/1341146_image2_1.jpg",
-        "alt": "제주 서귀포시_제주풍림리조트_부대시설(수영장)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "켄싱턴리조트 서귀포",
-        "license": "공공누리 제3유형",
-        "content_id": "137369"
-      },
-      {
-        "url": "https://tong.visitkorea.or.kr/cms/resource/47/1341147_image2_1.jpg",
-        "thumbnail_url": "https://tong.visitkorea.or.kr/cms/resource/47/1341147_image2_1.jpg",
-        "alt": "제주 서귀포시_제주풍림리조트_부대시설(식당)",
-        "source": "한국관광공사 국문 관광정보",
-        "source_title": "켄싱턴리조트 서귀포",
-        "license": "공공누리 제3유형",
-        "content_id": "137369"
-      }
-    ]
+    "image_url": "/static/img/accommodation/서귀포/켄싱턴리조트 서귀포/1.jpg"
   }
 ]

@@ -478,12 +478,7 @@ pip install -r requirements.txt
 ```env
 SECRET_KEY=your-secret-key
 DATABASE_URL=mysql+pymysql://username:password@localhost/trippalette
-TOUR_API_KEY=your-open-api-key
-UNSPLASH_ACCESS_KEY=your-unsplash-access-key
-UNSPLASH_APP_NAME=trippalette
 ```
-
-`UNSPLASH_ACCESS_KEY`는 Unsplash Developers에서 애플리케이션을 만든 뒤 발급받은 Access Key를 사용합니다. 키가 없거나 사진 조회에 실패하면 기존 여행지 이미지가 표시됩니다.
 
 ### 데이터베이스 마이그레이션
 
@@ -521,7 +516,7 @@ http://127.0.0.1:5000
 
 ## 13. 환경변수 보안
 
-`.env` 파일에는 데이터베이스 비밀번호와 Open API 키가 포함되므로 GitHub에 업로드하지 않습니다.
+`.env` 파일에는 데이터베이스 비밀번호와 같은 민감한 정보가 포함되므로 GitHub에 업로드하지 않습니다.
 
 `.gitignore`에 다음 항목을 추가합니다.
 
@@ -544,9 +539,6 @@ GitHub에는 실제 값이 없는 예시 파일만 공유합니다.
 ```env
 SECRET_KEY=
 DATABASE_URL=
-TOUR_API_KEY=
-UNSPLASH_ACCESS_KEY=
-UNSPLASH_APP_NAME=trippalette
 ```
 
 ---
@@ -557,7 +549,7 @@ UNSPLASH_APP_NAME=trippalette
 2. MySQL 연결 및 Model 작성
 3. 공통 Template과 Navigation 구현
 4. 회원가입 및 이메일 로그인 구현
-5. 여행지 Open API 연결
+5. 여행지 로컬 이미지 연결
 6. 여행지 목록 및 상세 구현
 7. 여행지 찜 및 리뷰 구현
 8. 맞춤 여행지 추천 구현

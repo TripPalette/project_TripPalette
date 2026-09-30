@@ -25,27 +25,11 @@
                 {% endfor %}
             </div>
         {% else %}
-            <div
-                class="detail-hero__fallback"
-                data-unsplash-photo
-                data-destination-name="{{ destination.name }}"
-            >
-                <img
-                    alt="{{ destination.name }} 대표 이미지"
-                    data-unsplash-image
-                    data-unsplash-size="regular"
-                    hidden
-                >
-                <div class="detail-hero__placeholder" data-unsplash-placeholder>
+            <div class="detail-hero__fallback">
+                <div class="detail-hero__placeholder">
                     <strong>{{ destination.name }}</strong>
                     <span>여행 사진 준비 중</span>
                 </div>
-                <small class="unsplash-attribution" data-unsplash-attribution hidden>
-                    Photo by
-                    <a data-unsplash-photographer target="_blank" rel="noopener noreferrer"></a>
-                    on
-                    <a data-unsplash-source target="_blank" rel="noopener noreferrer">Unsplash</a>
-                </small>
             </div>
         {% endif %}
 
