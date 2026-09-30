@@ -251,3 +251,93 @@ document.addEventListener("DOMContentLoaded", () => {
         panelDataKey: "companionPanel",
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const revealGroups = [
+        {
+            section: ".popular-section",
+            targets: [".section-heading", ".destination-card"],
+        },
+        {
+            section: ".regional-section",
+            targets: [".section-heading", ".regional-content"],
+        },
+        {
+            section: ".companion-section",
+            targets: [".section-heading", ".companion-layout"],
+        },
+        {
+            section: ".fall-section",
+            targets: [".fall-section__content"],
+        },
+        {
+            section: ".taste-section",
+            targets: [".section-heading", ".taste-card"],
+        },
+        {
+            section: ".recommendation-cta",
+            targets: [".recommendation-cta__inner > div"],
+        },
+    ];
+    const revealItems = [];
+
+    revealGroups.forEach(({ section, targets }) => {
+        const sectionElement = document.querySelector(section);
+
+        if (!sectionElement) {
+            return;
+        }
+
+        let itemIndex = 0;
+        targets.forEach((selector) => {
+            sectionElement.querySelectorAll(selector).forEach((item) => {
+                item.classList.add("main-scroll-reveal");
+                item.style.setProperty(
+                    "--reveal-delay",
+                    `${Math.min(itemIndex * 70, 280)}ms`,
+                );
+                revealItems.push(item);
+                itemIndex += 1;
+            });
+        });
+    });
+
+    if (!revealItems.length) {
+        return;
+    }
+
+    const revealAll = () => {
+        revealItems.forEach((item) => item.classList.add("is-revealed"));
+    };
+
+    if (reduceMotion.matches || !("IntersectionObserver" in window)) {
+        revealAll();
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add("is-revealed");
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -10% 0px",
+        },
+    );
+
+    revealItems.forEach((item) => {
+        if (item.getBoundingClientRect().bottom < 0) {
+            item.classList.add("is-revealed");
+        } else {
+            observer.observe(item);
+        }
+    });
+});

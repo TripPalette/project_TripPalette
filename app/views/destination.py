@@ -98,6 +98,11 @@ def detail(id):
             .limit(3)
         ).scalars()
     )
+    accommodation_count = db.session.scalar(
+        db.select(db.func.count(Accommodation.id)).where(
+            Accommodation.destination_id == destination.id
+        )
+    ) or 0
     is_favorite = False
     can_review = False
     if g.user is not None:
@@ -120,6 +125,7 @@ def detail(id):
         destination=destination,
         reviews=reviews,
         accommodations=accommodations,
+        accommodation_count=accommodation_count,
         is_favorite=is_favorite,
         can_review=can_review,
     )
@@ -140,18 +146,14 @@ def toggle_favorite(id):
         db.session.add(
             Favorite(user_id=g.user.id, destination_id=destination.id)
         )
-        message = "찜 목록에 추가했습니다."
     else:
         db.session.delete(favorite)
-        message = "찜 목록에서 삭제했습니다."
 
     try:
         db.session.commit()
     except IntegrityError:
         db.session.rollback()
         flash("찜 상태를 변경하지 못했습니다. 다시 시도해 주세요.", "error")
-    else:
-        flash(message, "success")
 
     return redirect(url_for("destination.detail", id=destination.id))
 
@@ -193,8 +195,6 @@ def create_review(id):
         except IntegrityError:
             db.session.rollback()
             error = "이 여행지에는 이미 리뷰를 작성했습니다."
-        else:
-            flash("리뷰가 등록되었습니다.", "success")
 
     if error is not None:
         flash(error, "error")
@@ -204,17 +204,10 @@ def create_review(id):
 
 @destination_bp.get("/<int:id>/accommodations")
 def accommodations(id):
-    destination = db.get_or_404(Destination, id)
-    nearby_accommodations = list(
-        db.session.execute(
-            db.select(Accommodation)
-            .where(Accommodation.destination_id == destination.id)
-            .order_by(Accommodation.id)
-        ).scalars()
-    )
-
-    return render_template(
-        "accommodation/list.html",
-        destination=destination,
-        accommodations=nearby_accommodations,
+    db.get_or_404(Destination, id)
+    return redirect(
+        url_for(
+            "accommodation.list",
+            destination_id=id,
+        )
     )

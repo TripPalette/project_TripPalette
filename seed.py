@@ -187,8 +187,9 @@ def upsert_accommodations(items, destinations_by_name):
             item.get("rating"),
             f"숙소 {destination_name} / {name}",
         )
-        # 숙소 외부 이미지 연동을 사용하지 않으므로 기존 URL도 제거한다.
-        accommodation.image_url = None
+        # 검수된 로컬 숙소 이미지는 시드 데이터의 경로를 그대로 유지한다.
+        # 값이 없는 숙소만 사진 준비 중 상태로 표시한다.
+        accommodation.image_url = item.get("image_url") or None
 
     return created, updated
 

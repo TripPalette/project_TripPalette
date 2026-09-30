@@ -4,6 +4,7 @@ from sqlalchemy import delete
 
 from app import db
 from app.models import (
+    AccommodationReview,
     Favorite,
     Payment,
     Reservation,
@@ -42,6 +43,9 @@ def delete_accounts(user_ids):
         delete(Reservation).where(Reservation.user_id.in_(user_ids)),
         delete(UserPreference).where(UserPreference.user_id.in_(user_ids)),
         delete(Favorite).where(Favorite.user_id.in_(user_ids)),
+        delete(AccommodationReview).where(
+            AccommodationReview.user_id.in_(user_ids)
+        ),
         delete(Review).where(Review.user_id.in_(user_ids)),
         delete(User).where(User.id.in_(user_ids)),
     )

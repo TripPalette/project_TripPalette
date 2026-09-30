@@ -104,6 +104,8 @@ class Phase3UserFeatureTestCase(unittest.TestCase):
             follow_redirects=False,
         )
         self.assertEqual(response.status_code, 302)
+        with self.client.session_transaction() as session:
+            self.assertNotIn("_flashes", session)
         favorite = db.session.scalar(
             db.select(Favorite).where(Favorite.user_id == self.user_id)
         )
@@ -192,10 +194,55 @@ class Phase3UserFeatureTestCase(unittest.TestCase):
         db.session.commit()
         self.login_as(self.user_id)
 
-        _, context = self.get_context("/mypage/reviews")
+        response, context = self.get_context("/mypage/reviews")
 
         self.assertEqual(len(context["reviews"]), 1)
         self.assertEqual(context["reviews"][0].content, "내 리뷰")
+        page = response.get_data(as_text=True)
+        self.assertIn("내 리뷰", page)
+        self.assertNotIn("다른 회원 리뷰", page)
+
+    def test_user_can_delete_only_own_destination_review(self):
+        own_review = Review(
+            user_id=self.user_id,
+            destination_id=self.destination_id,
+            rating=5,
+            content="삭제할 여행지 리뷰",
+        )
+        other_review = Review(
+            user_id=self.other_user_id,
+            destination_id=self.other_destination_id,
+            rating=4,
+            content="남겨둘 여행지 리뷰",
+        )
+        db.session.add_all((own_review, other_review))
+        db.session.commit()
+        own_review_id = own_review.id
+        other_review_id = other_review.id
+        self.login_as(self.user_id)
+
+        self.assertEqual(
+            self.client.post(
+                f"/mypage/reviews/destination/{other_review_id}/delete"
+            ).status_code,
+            404,
+        )
+        self.assertEqual(
+            self.client.get(
+                f"/mypage/reviews/destination/{own_review_id}/delete"
+            ).status_code,
+            405,
+        )
+        response = self.client.post(
+            f"/mypage/reviews/destination/{own_review_id}/delete",
+            follow_redirects=False,
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.location, "/mypage/reviews")
+        self.assertIsNone(db.session.get(Review, own_review_id))
+        self.assertIsNotNone(db.session.get(Review, other_review_id))
+        with self.client.session_transaction() as session:
+            self.assertNotIn("_flashes", session)
 
     def test_mypage_index_redirects_to_favorites(self):
         self.login_as(self.user_id)
