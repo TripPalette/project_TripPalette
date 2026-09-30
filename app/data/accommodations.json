@@ -7,7 +7,7 @@
     "price_per_night": 32000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/창원(봄)/깨끗한 호텔외인촌/방.jpg"
   },
   {
     "destination_name": "창원 진해",
@@ -17,7 +17,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/창원(봄)/잔해이터시티호텔/unnamed.jpg"
   },
   {
     "destination_name": "창원 진해",
@@ -27,7 +27,7 @@
     "price_per_night": 190000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/창원(봄)/글로리아글램핑/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -37,7 +37,7 @@
     "price_per_night": 69000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/삼척(봄)/산티아고펜션/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -47,7 +47,7 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/삼척(봄)/힐스노클비치호텔/다운로드.jpg"
   },
   {
     "destination_name": "삼척",
@@ -57,7 +57,7 @@
     "price_per_night": 153000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/삼척(봄)/쏠비치삼척/다운로드.jpg"
   },
   {
     "destination_name": "여수",
@@ -497,7 +497,7 @@
     "price_per_night": 185000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주/휘닉스 아일랜드 제주/1.jpg"
   },
   {
     "destination_name": "제주",
@@ -507,7 +507,7 @@
     "price_per_night": 85000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주/호텔 리젠트마린 제주/1.jpg"
   },
   {
     "destination_name": "경주",
@@ -547,7 +547,7 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/부산/제이스 스파 글램핑/1.jpg"
   },
   {
     "destination_name": "부산",
@@ -557,7 +557,7 @@
     "price_per_night": 135000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/부산/신라스테이 해운대/1.jpg"
   },
   {
     "destination_name": "부산",
@@ -567,7 +567,7 @@
     "price_per_night": 317000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/부산/아난티 앳 부산 코브/1.jpg"
   },
   {
     "destination_name": "가평",
@@ -1177,7 +1177,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주 조천/제주 도유펜션/1.jpg"
   },
   {
     "destination_name": "제주 조천",
@@ -1187,7 +1187,7 @@
     "price_per_night": 121000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주 조천/에코랜드 호텔/1.jpg"
   },
   {
     "destination_name": "제주 조천",
@@ -1197,7 +1197,7 @@
     "price_per_night": 132000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주 조천/소노벨 제주/1.jpg"
   },
   {
     "destination_name": "제주 애월",
@@ -1217,7 +1217,7 @@
     "price_per_night": 111000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주 애월/유니호텔 제주/1.jpg"
   },
   {
     "destination_name": "제주 애월",
@@ -1227,7 +1227,7 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/제주 애월/제주리조트/1.jpg"
   },
   {
     "destination_name": "서귀포",
@@ -1237,7 +1237,7 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/서귀포/굿데이펜션/1.jpg"
   },
   {
     "destination_name": "서귀포",
@@ -1247,7 +1247,7 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/서귀포/호텔 브릿지 서귀포/1.jpg"
   },
   {
     "destination_name": "서귀포",
@@ -1257,6 +1257,6 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/서귀포/켄싱턴리조트 서귀포/1.jpg"
   }
 ]
