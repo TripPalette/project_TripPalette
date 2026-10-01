@@ -22,12 +22,95 @@
             </a>
         {% endif %}
 
-        <article class="accommodation-detail">
-            <div class="accommodation-detail__media">
-                {% if accommodation.image_url %}
-                    <img
-                        src="{{ accommodation.image_url }}"
-                        alt="{{ accommodation.name }} 숙소 전경"
+            <div class="stay-hero__layout">
+                <div class="stay-hero__gallery" data-accommodation-gallery>
+                    <div class="stay-hero__photo">
+                        {% if local_image %}
+                            <img
+                                src="{{ accommodation_images[0] }}"
+                                alt="{{ accommodation.name }} 전경 1"
+                                data-accommodation-main-image
+                                onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+                            >
+                        {% endif %}
+                        <div class="stay-photo-placeholder" {% if local_image %}hidden{% endif %}>
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M7 36V12a4 4 0 0 1 4-4h26a4 4 0 0 1 4 4v24"></path>
+                                <path d="m8 33 9-10 7 7 5-5 11 11"></path>
+                                <circle cx="32" cy="17" r="3"></circle>
+                            </svg>
+                            <strong>숙소 사진 준비 중</strong>
+                            <span>사진이 등록되면 이곳에 표시됩니다.</span>
+                        </div>
+                    </div>
+
+                    {% if accommodation_images|length > 1 %}
+                        <div class="stay-photo-strip{% if accommodation_images|length > 3 %} stay-photo-strip--scrollable{% endif %}">
+                            {% if accommodation_images|length > 3 %}
+                                <button class="stay-photo-strip__arrow" type="button" data-gallery-previous aria-label="이전 숙소 사진" disabled>
+                                    <span aria-hidden="true">‹</span>
+                                </button>
+                            {% endif %}
+                            <div class="stay-photo-strip__viewport" data-gallery-viewport>
+                                <div class="stay-photo-thumbnails" aria-label="{{ accommodation.name }} 사진 선택">
+                                    {% for image_url in accommodation_images %}
+                                        <button
+                                            class="stay-photo-thumbnail{% if loop.first %} is-active{% endif %}"
+                                            type="button"
+                                            data-accommodation-thumbnail
+                                            data-gallery-src="{{ image_url }}"
+                                            data-gallery-alt="{{ accommodation.name }} 전경 {{ loop.index }}"
+                                            aria-label="사진 {{ loop.index }} 크게 보기"
+                                            aria-pressed="{{ 'true' if loop.first else 'false' }}"
+                                        >
+                                            <img src="{{ image_url }}" alt="" loading="lazy">
+                                        </button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% if accommodation_images|length > 3 %}
+                                <button class="stay-photo-strip__arrow" type="button" data-gallery-next aria-label="다음 숙소 사진">
+                                    <span aria-hidden="true">›</span>
+                                </button>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <aside class="stay-booking-card" aria-label="예약 요약">
+                    <div class="stay-booking-card__price">
+                        <strong>₩ {{ "{:,}".format(accommodation.price_per_night) }}</strong>
+                        <span>1박 기준</span>
+                    </div>
+                    <dl class="stay-booking-card__facts">
+                        <div>
+                            <dt>지역</dt>
+                            <dd>{{ destination.name if destination else '지역 정보 없음' }}</dd>
+                        </div>
+                        <div>
+                            <dt>인원</dt>
+                            <dd>최대 {{ accommodation.capacity }}명</dd>
+                        </div>
+                        <div>
+                            <dt>와이파이</dt>
+                            <dd>{{ '이용 가능' if booking_facts.wifi_available else '제공 안 함' }}</dd>
+                        </div>
+                        <div>
+                            <dt>주차</dt>
+                            <dd>{{ '주차 가능' if booking_facts.parking_available else '주차 불가' }}</dd>
+                        </div>
+                        <div>
+                            <dt>입실 시간 /퇴실 시간</dt>
+                            <dd>PM{{ booking_facts.check_in_time }} ~ AM {{ booking_facts.check_out_time }}</dd>
+                        </div>
+                        <div>
+                            <dt>예약 상태</dt>
+                            <dd>날짜 확인 후 예약</dd>
+                        </div>
+                    </dl>
+                    <a
+                        class="stay-booking-card__button"
+                        href="{{ url_for('reservation.create', accommodation_id=accommodation.id) }}"
                     >
                 {% else %}
                     <div class="accommodation-placeholder accommodation-placeholder--detail" aria-hidden="true">
