@@ -1,9 +1,29 @@
-from flask import Blueprint, flash, g, redirect, render_template, request, url_for
+from datetime import datetime, timedelta
+
+from flask import (
+    abort,
+    Blueprint,
+    flash,
+    g,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
 from sqlalchemy.orm import selectinload
+from werkzeug.security import check_password_hash
 
 from app import db
+from app.account_deletion import format_deletion_date, utcnow
 from app.auth_helpers import login_required
-from app.models import Favorite, Review
+from app.models import (
+    Accommodation,
+    AccommodationReview,
+    Favorite,
+    Reservation,
+    Review,
+)
 
 mypage_bp = Blueprint("mypage", __name__)
 
@@ -31,8 +51,25 @@ def favorites():
 @mypage_bp.get("/reservations")
 @login_required
 def reservations():
-    """예약 내역 데이터 연결은 Phase 5에서 구현한다."""
-    return render_template("mypage/reservations.html")
+    user_reservations = list(
+        db.session.execute(
+            db.select(Reservation)
+            .options(
+                selectinload(Reservation.accommodation).selectinload(
+                    Accommodation.destination
+                )
+            )
+            .where(
+                Reservation.user_id == g.user.id,
+                Reservation.status != "CANCELLED",
+            )
+            .order_by(Reservation.created_at.desc(), Reservation.id.desc())
+        ).scalars()
+    )
+    return render_template(
+        "mypage/reservations.html",
+        reservations=user_reservations,
+    )
 
 
 @mypage_bp.get("/reviews")
@@ -46,7 +83,60 @@ def reviews():
             .order_by(Review.created_at.desc(), Review.id.desc())
         ).scalars()
     )
-    return render_template("mypage/reviews.html", reviews=user_reviews)
+    accommodation_reviews = list(
+        db.session.execute(
+            db.select(AccommodationReview)
+            .options(
+                selectinload(AccommodationReview.accommodation).selectinload(
+                    Accommodation.destination
+                )
+            )
+            .where(AccommodationReview.user_id == g.user.id)
+            .order_by(
+                AccommodationReview.created_at.desc(),
+                AccommodationReview.id.desc(),
+            )
+        ).scalars()
+    )
+    review_items = [
+        *(('destination', review) for review in user_reviews),
+        *(('accommodation', review) for review in accommodation_reviews),
+    ]
+    review_items.sort(
+        key=lambda item: (
+            item[1].created_at or datetime.min,
+            item[1].id,
+        ),
+        reverse=True,
+    )
+    return render_template(
+        "mypage/reviews.html",
+        reviews=user_reviews,
+        accommodation_reviews=accommodation_reviews,
+        review_items=review_items,
+    )
+
+
+@mypage_bp.post("/reviews/destination/<int:review_id>/delete")
+@login_required
+def delete_destination_review(review_id):
+    review = db.session.get(Review, review_id)
+    if review is None or review.user_id != g.user.id:
+        abort(404)
+    db.session.delete(review)
+    db.session.commit()
+    return redirect(url_for("mypage.reviews"))
+
+
+@mypage_bp.post("/reviews/accommodation/<int:review_id>/delete")
+@login_required
+def delete_accommodation_review(review_id):
+    review = db.session.get(AccommodationReview, review_id)
+    if review is None or review.user_id != g.user.id:
+        abort(404)
+    db.session.delete(review)
+    db.session.commit()
+    return redirect(url_for("mypage.reviews"))
 
 
 @mypage_bp.route("/profile", methods=("GET", "POST"))
@@ -65,4 +155,50 @@ def profile():
             flash("회원정보가 수정되었습니다.", "success")
             return redirect(url_for("mypage.profile"))
 
-    return render_template("mypage/profile.html", user=g.user)
+    return render_template(
+        "mypage/profile.html",
+        user=g.user,
+        deletion_date=format_deletion_date(g.user.scheduled_deletion_at),
+    )
+
+
+@mypage_bp.post("/profile/withdrawal")
+@login_required
+def schedule_withdrawal():
+    password = request.form.get("password") or ""
+    confirmed = request.form.get("confirm_withdrawal") == "yes"
+
+    if g.user.scheduled_deletion_at is not None:
+        flash("이미 회원 탈퇴가 예약되어 있습니다.", "warning")
+    elif not check_password_hash(g.user.password_hash, password):
+        flash("현재 비밀번호가 올바르지 않습니다.", "error")
+    elif not confirmed:
+        flash("탈퇴 안내를 확인해 주세요.", "error")
+    else:
+        requested_at = utcnow()
+        g.user.withdrawal_requested_at = requested_at
+        g.user.scheduled_deletion_at = requested_at + timedelta(days=30)
+        deletion_date = format_deletion_date(g.user.scheduled_deletion_at)
+        db.session.commit()
+        session.clear()
+        flash(
+            f"회원 탈퇴가 예약되었습니다. 계정은 {deletion_date}에 삭제됩니다.",
+            "success",
+        )
+        return redirect(url_for("auth.login"))
+
+    return redirect(url_for("mypage.profile"))
+
+
+@mypage_bp.post("/profile/withdrawal/cancel")
+@login_required
+def cancel_withdrawal():
+    if g.user.scheduled_deletion_at is None:
+        flash("예약된 회원 탈퇴가 없습니다.", "warning")
+    else:
+        g.user.withdrawal_requested_at = None
+        g.user.scheduled_deletion_at = None
+        db.session.commit()
+        flash("회원 탈퇴 예약이 철회되었습니다.", "success")
+
+    return redirect(url_for("mypage.profile"))

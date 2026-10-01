@@ -1,6 +1,5 @@
 import unittest
 from contextlib import contextmanager
-from unittest.mock import patch
 
 from flask import template_rendered
 
@@ -13,7 +12,6 @@ class TestConfig:
     SECRET_KEY = "phase2-test-key"
     SQLALCHEMY_DATABASE_URI = "sqlite://"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    UNSPLASH_ACCESS_KEY = None
 
 
 @contextmanager
@@ -46,7 +44,6 @@ class Phase2RouteTestCase(unittest.TestCase):
             atmosphere="낭만적인",
             budget_level="보통",
             recommended_days=3,
-            image_url="https://tong.visitkorea.or.kr/legacy-jeju.jpg",
         )
         self.gangneung = Destination(
             name="강릉",
@@ -69,6 +66,7 @@ class Phase2RouteTestCase(unittest.TestCase):
             price_per_night=100000,
             capacity=2,
             rating=4.5,
+            image_url="https://external.example/legacy-photo.jpg",
         )
         self.gangneung_hotel = Accommodation(
             destination_id=self.gangneung.id,
@@ -104,6 +102,8 @@ class Phase2RouteTestCase(unittest.TestCase):
             context["hero_slides"][0]["filename"],
             "img/main/hero-jeju-sunset.png",
         )
+        self.assertEqual(context["hero_slides"][0]["caption"], "바다와 섬이 빚어낸 쉼")
+        self.assertEqual(context["hero_slides"][0]["destination"].name, "제주")
         self.assertEqual(
             [item.name for item in context["popular_destinations"]],
             ["제주"],
@@ -113,51 +113,20 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(page.count("data-hero-dot="), 4)
         self.assertIn('action="/destinations"', page)
         self.assertIn('name="keyword"', page)
-        self.assertIn('data-destination-name="제주"', page)
-        self.assertNotIn("tong.visitkorea.or.kr", page)
+        self.assertIn("검색하기", page)
+        self.assertIn("바다와 섬이 빚어낸 쉼", page)
         self.assertIn(
             "img/destination/generated/jeju-dol-hareubang-v1.png",
             page,
         )
-
-    def test_unsplash_photo_api_returns_async_photo_payload(self):
-        photo = {
-            "id": "photo-1",
-            "urls": {
-                "small": "https://images.unsplash.com/small",
-                "regular": "https://images.unsplash.com/regular",
-            },
-            "alt": "Jeju coast",
-            "photographer": "Test Photographer",
-            "photographer_url": "https://unsplash.com/@tester",
-            "photo_url": "https://unsplash.com/photos/photo-1",
-            "unsplash_url": "https://unsplash.com",
-        }
-        with patch(
-            "app.views.destination.get_destination_photo",
-            return_value=photo,
-        ) as get_photo:
-            response = self.client.get("/destinations/api/photo?name=제주")
-
-        self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.json["available"])
-        self.assertEqual(response.json["photo"]["id"], "photo-1")
-        self.assertIn("max-age=21600", response.headers["Cache-Control"])
-        get_photo.assert_called_once_with("제주")
-
-    def test_unsplash_photo_api_keeps_fallback_when_unavailable(self):
-        with patch(
-            "app.views.destination.get_destination_photo",
-            return_value=None,
-        ):
-            response = self.client.get("/destinations/api/photo?name=제주")
-
-        self.assertEqual(response.status_code, 200)
-        self.assertFalse(response.json["available"])
-        self.assertEqual(response.headers["Cache-Control"], "no-store")
         self.assertEqual(
-            self.client.get("/destinations/api/photo?name=없는지역").status_code,
-            404,
+            [group["headline"] for group in context["companion_groups"]],
+            [
+                "나를 위한 특별한 시간",
+                "둘만의 특별한 추억",
+                "함께여서 더 행복한 여행",
+                "언제나 즐거운 우리",
+            ],
         )
 
     def test_destination_list(self):
@@ -166,14 +135,20 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(template, "destination/list.html")
         self.assertEqual(len(context["destinations"]), 2)
         self.assertEqual(context["keyword"], "")
-        self.assertNotIn(
-            "tong.visitkorea.or.kr",
-            response.get_data(as_text=True),
-        )
         self.assertIn(
             "jeju-dol-hareubang-v1.png",
             response.get_data(as_text=True),
         )
+        page = response.get_data(as_text=True)
+        self.assertNotIn("TRIP SEARCH", page)
+        self.assertNotIn("DESTINATIONS", page)
+        self.assertNotIn("TRIPPALETTE EXPLORE", page)
+        self.assertIn('type="radio" name="season"', page)
+        self.assertIn("조건에 맞는 여행지", page)
+
+    def test_removed_external_photo_endpoint_returns_not_found(self):
+        response = self.client.get("/destinations/api/photo?name=제주")
+        self.assertEqual(response.status_code, 404)
 
     def test_destination_keyword_search(self):
         response, _, context = self.get_context(
@@ -228,10 +203,6 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(template, "destination/detail.html")
         self.assertEqual(context["destination"].name, "제주")
         self.assertEqual(context["reviews"], [])
-        self.assertNotIn(
-            "tong.visitkorea.or.kr",
-            response.get_data(as_text=True),
-        )
         page = response.get_data(as_text=True)
         self.assertIn("destination-detail-gallery", page)
         self.assertIn("jeju-sea-v1.png", page)
@@ -243,11 +214,20 @@ class Phase2RouteTestCase(unittest.TestCase):
         )
         self.assertEqual(self.client.get("/destinations/9999").status_code, 404)
 
-    def test_nearby_accommodations_are_scoped_to_destination(self):
-        response, template, context = self.get_context(
+    def test_nearby_accommodations_redirect_to_filtered_list(self):
+        response = self.client.get(
             f"/destinations/{self.jeju.id}/accommodations"
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(
+            response.headers["Location"].endswith(
+                f"/accommodations?destination_id={self.jeju.id}"
+            )
+        )
+
+        response, template, context = self.get_context(
+            f"/accommodations?destination_id={self.jeju.id}"
+        )
         self.assertEqual(template, "accommodation/list.html")
         self.assertEqual(context["destination"].name, "제주")
         self.assertEqual(
@@ -261,6 +241,37 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertIn("100,000원", page)
         self.assertIn("숙소 이미지 준비 중", page)
 
+    def test_destination_detail_shows_more_button_for_three_or_more_stays(self):
+        for index in range(2, 4):
+            db.session.add(
+                Accommodation(
+                    destination_id=self.jeju.id,
+                    name=f"제주 테스트 숙소 {index}",
+                    address="제주특별자치도 제주시",
+                    description="제주 추가 테스트 숙소",
+                    price_per_night=80000 + index,
+                    capacity=2,
+                    rating=4.0,
+                )
+            )
+        db.session.commit()
+
+        response, template, context = self.get_context(
+            f"/destinations/{self.jeju.id}"
+        )
+        self.assertEqual(template, "destination/detail.html")
+        self.assertEqual(len(context["accommodations"]), 3)
+        self.assertEqual(context["accommodation_count"], 3)
+        page = response.get_data(as_text=True)
+        self.assertIn("숙소 더보기", page)
+        self.assertIn(
+            f"/accommodations?destination_id={self.jeju.id}",
+            page,
+        )
+
+        response = self.client.get(f"/destinations/{self.gangneung.id}")
+        self.assertNotIn("숙소 더보기", response.get_data(as_text=True))
+
     def test_accommodation_list_and_detail(self):
         response, template, context = self.get_context("/accommodations")
         self.assertEqual(response.status_code, 200)
@@ -272,6 +283,7 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertIn("제주 테스트 호텔", list_page)
         self.assertIn("강릉 테스트 호텔", list_page)
         self.assertIn("최대 2명", list_page)
+        self.assertNotIn("external.example", list_page)
 
         response, template, context = self.get_context(
             f"/accommodations/{self.jeju_hotel.id}"
@@ -282,9 +294,10 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(context["accommodation"].destination.name, "제주")
         detail_page = response.get_data(as_text=True)
         self.assertIn("제주 테스트 숙소", detail_page)
-        self.assertIn("제주 여행지 보기", detail_page)
-        self.assertIn("예약 기능은 Phase 5에서 제공됩니다.", detail_page)
-        self.assertNotIn("예약하기", detail_page)
+        self.assertIn("여행지 상세 보기", detail_page)
+        self.assertIn("예약하기", detail_page)
+        self.assertIn(f'/reservations/new/{self.jeju_hotel.id}', detail_page)
+        self.assertNotIn("external.example", detail_page)
         self.assertEqual(self.client.get("/accommodations/9999").status_code, 404)
 
 

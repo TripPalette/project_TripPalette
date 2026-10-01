@@ -44,4 +44,12 @@ def create_app(config_class=Config):
     def inject_destination_media():
         return {"destination_media": DESTINATION_MEDIA}
 
+    @app.cli.command("purge-withdrawn-users")
+    def purge_withdrawn_users():
+        """탈퇴 유예기간이 지난 회원 계정을 영구 삭제한다."""
+        from app.account_deletion import purge_expired_accounts
+
+        deleted_count = purge_expired_accounts()
+        print(f"Purged {deleted_count} withdrawn user(s).")
+
     return app

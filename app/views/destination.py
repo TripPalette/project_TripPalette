@@ -1,11 +1,10 @@
-from flask import Blueprint, flash, g, jsonify, redirect, render_template, request, url_for
+from flask import Blueprint, flash, g, redirect, render_template, request, url_for
 from sqlalchemy import or_
 from sqlalchemy.exc import IntegrityError
 
 from app import db
 from app.auth_helpers import login_required
 from app.models import Accommodation, Destination, Favorite, Review
-from app.unsplash import get_destination_photo, has_search_term
 
 
 destination_bp = Blueprint("destination", __name__)
@@ -27,29 +26,6 @@ def _distinct_values(column):
         .order_by(column)
     )
     return list(db.session.execute(statement).scalars())
-
-
-@destination_bp.get("/api/photo")
-def photo():
-    """Return an Unsplash photo while keeping the access key on the server."""
-    destination_name = (request.args.get("name") or "").strip()
-    if not destination_name or len(destination_name) > 100:
-        return jsonify({"available": False}), 400
-
-    destination_exists = db.session.scalar(
-        db.select(Destination.id).where(Destination.name == destination_name)
-    ) is not None
-    if not destination_exists and not has_search_term(destination_name):
-        return jsonify({"available": False}), 404
-
-    photo_data = get_destination_photo(destination_name)
-    response = jsonify(
-        {"available": photo_data is not None, "photo": photo_data}
-    )
-    response.headers["Cache-Control"] = (
-        "public, max-age=21600" if photo_data else "no-store"
-    )
-    return response
 
 
 @destination_bp.get("", endpoint="list")
@@ -84,6 +60,15 @@ def destination_list():
         "purposes": _distinct_values(Destination.purpose),
         "atmospheres": _distinct_values(Destination.atmosphere),
     }
+    favorite_destination_ids = set()
+    if g.user is not None:
+        favorite_destination_ids = set(
+            db.session.execute(
+                db.select(Favorite.destination_id).where(
+                    Favorite.user_id == g.user.id
+                )
+            ).scalars()
+        )
 
     return render_template(
         "destination/list.html",
@@ -91,6 +76,7 @@ def destination_list():
         filters=filters,
         selected_filters=selected_filters,
         keyword=keyword,
+        favorite_destination_ids=favorite_destination_ids,
     )
 
 
@@ -112,6 +98,11 @@ def detail(id):
             .limit(3)
         ).scalars()
     )
+    accommodation_count = db.session.scalar(
+        db.select(db.func.count(Accommodation.id)).where(
+            Accommodation.destination_id == destination.id
+        )
+    ) or 0
     is_favorite = False
     can_review = False
     if g.user is not None:
@@ -134,6 +125,7 @@ def detail(id):
         destination=destination,
         reviews=reviews,
         accommodations=accommodations,
+        accommodation_count=accommodation_count,
         is_favorite=is_favorite,
         can_review=can_review,
     )
@@ -154,18 +146,14 @@ def toggle_favorite(id):
         db.session.add(
             Favorite(user_id=g.user.id, destination_id=destination.id)
         )
-        message = "찜 목록에 추가했습니다."
     else:
         db.session.delete(favorite)
-        message = "찜 목록에서 삭제했습니다."
 
     try:
         db.session.commit()
     except IntegrityError:
         db.session.rollback()
         flash("찜 상태를 변경하지 못했습니다. 다시 시도해 주세요.", "error")
-    else:
-        flash(message, "success")
 
     return redirect(url_for("destination.detail", id=destination.id))
 
@@ -207,8 +195,6 @@ def create_review(id):
         except IntegrityError:
             db.session.rollback()
             error = "이 여행지에는 이미 리뷰를 작성했습니다."
-        else:
-            flash("리뷰가 등록되었습니다.", "success")
 
     if error is not None:
         flash(error, "error")
@@ -218,17 +204,10 @@ def create_review(id):
 
 @destination_bp.get("/<int:id>/accommodations")
 def accommodations(id):
-    destination = db.get_or_404(Destination, id)
-    nearby_accommodations = list(
-        db.session.execute(
-            db.select(Accommodation)
-            .where(Accommodation.destination_id == destination.id)
-            .order_by(Accommodation.id)
-        ).scalars()
-    )
-
-    return render_template(
-        "accommodation/list.html",
-        destination=destination,
-        accommodations=nearby_accommodations,
+    db.get_or_404(Destination, id)
+    return redirect(
+        url_for(
+            "accommodation.list",
+            destination_id=id,
+        )
     )

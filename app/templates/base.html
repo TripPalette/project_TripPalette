@@ -6,11 +6,20 @@
 
     <title>{% block title %}TripPalette{% endblock %}</title>
 
-       <!-- Link Swiper's CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
-    />
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@1,600&family=Nanum+Pen+Script&display=swap"
+    >
 
     <link
         rel="stylesheet"
@@ -24,7 +33,26 @@
     {% block head %}{% endblock %}
     {% block css %}{% endblock %}
 </head>
-<body data-unsplash-photo-endpoint="{{ url_for('destination.photo') }}">
+<body>
+    <svg class="site-icon-sprite" aria-hidden="true">
+        <symbol id="icon-mypage-heart" viewBox="0 0 24 24">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path>
+        </symbol>
+        <symbol id="icon-mypage-calendar" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="3"></rect>
+            <path d="M7 3v4M17 3v4M3 10h18M8 15l2.2 2.2L16 12"></path>
+        </symbol>
+        <symbol id="icon-mypage-review" viewBox="0 0 24 24">
+            <path d="M4 5h16v12H9l-5 4V5Z"></path>
+            <path d="m12 8 .8 1.7 1.9.2-1.4 1.3.4 1.8-1.7-.9-1.7.9.4-1.8-1.4-1.3 1.9-.2Z"></path>
+        </symbol>
+        <symbol id="icon-mypage-profile" viewBox="0 0 24 24">
+            <circle cx="9" cy="8" r="3.5"></circle>
+            <path d="M3.5 19c.4-4.1 2.2-6.1 5.5-6.1 2.1 0 3.7.8 4.6 2.4"></path>
+            <circle cx="17.5" cy="17.5" r="3"></circle>
+            <path d="M17.5 13.2v1.3M17.5 20.5v1.3M13.2 17.5h1.3M20.5 17.5h1.3"></path>
+        </symbol>
+    </svg>
     <header class="site-header">
         <div class="container site-header__inner">
             <a class="site-logo" href="{{ url_for('main.index') }}">
@@ -53,9 +81,10 @@
             >
                 <div class="mobile-account-navigation">
                     {% if g.user %}
-                        <a href="{{ url_for('mypage.favorites') }}">찜한 여행지</a>
-                        <a href="{{ url_for('mypage.reviews') }}">작성한 리뷰</a>
-                        <a href="{{ url_for('mypage.profile') }}">회원정보 수정</a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.favorites' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.favorites') }}"{% if request.endpoint == 'mypage.favorites' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-heart"></use></svg><span>찜한 여행지</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약 내역</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.reviews' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reviews') }}"{% if request.endpoint == 'mypage.reviews' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-review"></use></svg><span>작성한 리뷰</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.profile' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.profile') }}"{% if request.endpoint == 'mypage.profile' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-profile"></use></svg><span>회원정보 수정</span></a>
                         <form method="post" action="{{ url_for('auth.logout') }}">
                             <button type="submit">로그아웃</button>
                         </form>
@@ -91,9 +120,10 @@
                         data-mypage-menu
                         hidden
                     >
-                        <a href="{{ url_for('mypage.favorites') }}">찜한 여행지</a>
-                        <a href="{{ url_for('mypage.reviews') }}">작성한 리뷰</a>
-                        <a href="{{ url_for('mypage.profile') }}">회원정보 수정</a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.favorites' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.favorites') }}"{% if request.endpoint == 'mypage.favorites' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-heart"></use></svg><span>찜한 여행지</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약 내역</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.reviews' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reviews') }}"{% if request.endpoint == 'mypage.reviews' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-review"></use></svg><span>작성한 리뷰</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.profile' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.profile') }}"{% if request.endpoint == 'mypage.profile' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-profile"></use></svg><span>회원정보 수정</span></a>
                     </nav>
                 </div>
 
@@ -152,23 +182,13 @@
         <div class="container site-footer__inner">
             <div class="site-footer__brand-block">
                 <a class="site-footer__brand" href="{{ url_for('main.index') }}">
-                    <span class="site-footer__brand-mark" aria-hidden="true"></span>
-                    <span>TripPalette</span>
+                    <img
+                        src="{{ url_for('static', filename='img/base/logo.png') }}"
+                        alt="TripPalette 홈"
+                    >
                 </a>
                 <p>나만의 여행을 발견하는 가장 쉬운 방법</p>
             </div>
-
-            <nav class="site-footer__links" aria-label="하단 메뉴">
-                <a href="{{ url_for('destination.list') }}">여행지 찾기</a>
-                <a href="{{ url_for('recommendation.survey') }}">맞춤 추천</a>
-                <a href="{{ url_for('accommodation.list') }}">숙소 찾기</a>
-
-                {% if g.user %}
-                <a href="{{ url_for('mypage.favorites') }}">마이페이지</a>
-                {% else %}
-                <a href="{{ url_for('auth.login') }}">로그인</a>
-                {% endif %}
-            </nav>
 
             <div class="site-footer__message">
                 <div class="site-footer__socials" aria-hidden="true">
@@ -206,28 +226,6 @@
         src="{{ url_for('static', filename='js/common.js') }}"
         defer
     ></script>
-    <script
-        src="{{ url_for('static', filename='js/destination-images.js') }}"
-        defer
-    ></script>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-   var swiper = new Swiper('.mySwiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
-    </script>
-
     {% block scripts %}{% endblock %}
 </body>
 </html>

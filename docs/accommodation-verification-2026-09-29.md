@@ -77,7 +77,7 @@
 | 평창 | 올림피아드호텔 평창 | 강원특별자치도 평창군 대관령면 송천길 30 | [근거](https://place.map.kakao.com/713654690) |
 | 인제 | 인제 스피디움 호텔앤리조트 | 강원특별자치도 인제군 기린면 상하답로 130 | [근거](https://place.map.kakao.com/25617734) |
 | 인제 | 호텔스카이락 | 강원특별자치도 인제군 인제읍 비봉로 39 | [근거](https://map.kakao.com/link/search/호텔스카이락 인제) |
-| 인제 | 인제호텔 | 강원특별자치도 인제군 인제읍 인제로187번길 4 | [근거](https://place.map.kakao.com/25617734) |
+| 인제 | 맑은물리조트 | 강원특별자치도 인제군 기린면 내린천로 4723 | [주소](https://www.oxfamtrailwalker.or.kr/sites/default/files/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A6%E1%84%80%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B5%E1%84%85%E1%85%B5%E1%86%AB%E1%84%86%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%AE%E1%86%A8%E1%84%87%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B5%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC.pdf) / [객실·요금](https://nrcoop.com/portfolio-item/%EB%A7%91%EC%9D%80%EB%AC%BC%EB%A6%AC%EC%A1%B0%ED%8A%B8/) |
 | 강릉 | 라카이 샌드파인 | 강원특별자치도 강릉시 해안로 536 | [근거](https://place.map.kakao.com/17439268) |
 | 강릉 | 오션힐펜션 | 강원특별자치도 강릉시 해안로 651-9 | [근거](https://place.map.kakao.com/707191624) |
 | 강릉 | 스카이베이호텔 경포 | 강원특별자치도 강릉시 해안로 476 | [근거](https://place.map.kakao.com/27507368) |
@@ -102,7 +102,7 @@
 | 양평 | 양평 포레스트펜션 | 경기도 양평군 단월면 석산로 777 | [근거](https://place.map.kakao.com/13087095) |
 | 양평 | 블룸비스타 호텔앤컨퍼런스 | 경기도 양평군 강하면 강남로 316 | [근거](https://place.map.kakao.com/21573522) |
 | 양평 | 소노벨 양평 | 경기도 양평군 개군면 신내길7번길 55 | [근거](https://place.map.kakao.com/7825452) |
-| 홍천 | 홍천 신영펜션 | 강원특별자치도 홍천군 서면 한치골길 75-12 | [근거](https://place.map.kakao.com/14520661) |
+| 홍천 | 오유원 | 강원특별자치도 홍천군 서면 한치골길 83-5 | [공식 숙소·객실·요금](https://www.stayfolio.com/findstay/ouwon) |
 | 홍천 | 세이지우드 호텔 홍천 | 강원특별자치도 홍천군 두촌면 광석로 898-160 | [근거](https://homepage.sagewood.co.kr/hongcheon/main) |
 | 홍천 | 소노펠리체 빌리지 비발디파크 | 강원특별자치도 홍천군 서면 한치골길 262 | [근거](https://place.map.kakao.com/1147176592) |
 | 양양 | 양양 프리지아 펜션 | 강원특별자치도 양양군 강현면 진미로54번길 10 | [근거](https://place.map.kakao.com/17187844) |

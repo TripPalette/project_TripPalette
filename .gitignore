@@ -32,9 +32,6 @@ dist/
 # Logs
 *.log
 
-# Generated TourAPI image matching report
-app/data/tour-image-report.json
-
 # IDE and editor settings
 .vscode/
 .idea/

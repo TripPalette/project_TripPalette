@@ -9,6 +9,12 @@
 {% block content %}
 <section class="accommodation-page" aria-labelledby="accommodation-page-title">
     <header class="accommodation-hero">
+        <img
+            class="accommodation-hero__image"
+            src="{{ url_for('static', filename='img/base/accommodation-list-hero-v1.png') }}"
+            alt=""
+            aria-hidden="true"
+        >
         <div class="container accommodation-hero__inner">
             {% if destination %}
                 <a class="accommodation-back-link" href="{{ url_for('destination.detail', id=destination.id) }}">
@@ -19,7 +25,6 @@
 
             <div class="accommodation-heading">
                 <div>
-                    <p class="accommodation-eyebrow">TRIPPALETTE STAY</p>
                     <h1 id="accommodation-page-title">
                         {% if destination %}{{ destination.name }} 주변 숙소{% else %}전체 숙소{% endif %}
                     </h1>
@@ -49,7 +54,7 @@
                             href="{{ url_for('accommodation.detail', id=accommodation.id) }}"
                         >
                             <div class="accommodation-card__media">
-                                {% if accommodation.image_url %}
+                                {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}
                                     <img
                                         src="{{ accommodation.image_url }}"
                                         alt="{{ accommodation.name }} 숙소 전경"
@@ -57,7 +62,7 @@
                                         onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
                                     >
                                 {% endif %}
-                                <div class="accommodation-placeholder" {% if accommodation.image_url %}hidden{% endif %}>
+                                <div class="accommodation-placeholder" {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}hidden{% endif %}>
                                     <span class="accommodation-placeholder__mark" aria-hidden="true">⌂</span>
                                     <strong>{{ accommodation.name }}</strong>
                                     <span>숙소 이미지 준비 중</span>
