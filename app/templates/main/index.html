@@ -63,7 +63,7 @@
     data-hero-carousel
     aria-roledescription="carousel"
     aria-label="추천 여행지 사진"
->
+>                      
     <div class="hero__track" data-hero-track>
         {% for slide in hero_slides %}
             <div
@@ -199,6 +199,7 @@
                             {% endif %}
                             <span class="destination-card__badge">{{ destination.name }}</span>
                         </div>
+
                         <div class="destination-card__body">
                             <h3 class="destination-card__name">{{ destination.name }}</h3>
                             <p>{{ destination.description }}</p>

@@ -664,12 +664,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
         grid-template-columns: 1fr;
         gap: 7px;
     }
+<<<<<<< HEAD
+}
+=======
     .site-footer__bottom > small,
     .site-footer__bottom > span { grid-column: 1; grid-row: auto; }
 }
+<<<<<<< HEAD
+>>>>>>> main
+=======
 
 @media (prefers-reduced-motion: reduce) {
     .site-footer-goods__image,
     .site-footer-goods__button,
     .site-footer-goods__button span { transition: none; }
 }
+>>>>>>> main
